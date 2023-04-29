@@ -1,0 +1,20 @@
+/* For screens with width less than 600px */
+@media only screen and (max-width: 600px) {
+    .button {
+        -fx-font-size: 20px;
+    }
+}
+
+/* For screens with width between 600px and 1200px */
+@media only screen and (min-width: 600px) and (max-width: 1200px) {
+    .button {
+        -fx-font-size: 25px;
+    }
+}
+
+/* For screens with width greater than 1200px */
+@media only screen and (min-width: 1200px) {
+    .button {
+        -fx-font-size: 30px;
+    }
+}
