@@ -155,6 +155,7 @@ public class HelloController {
         Button runTestButton = (Button) newSidePane.lookup("#ramtest_btn");
 
 
+
         Text ram_capacity = (Text) newSidePane.lookup("#RAM_TCapacity");
         Text ram_frequency = (Text) newSidePane.lookup("#RAM_Freq");
         Text ram_type = (Text) newSidePane.lookup("#RAM_Type");

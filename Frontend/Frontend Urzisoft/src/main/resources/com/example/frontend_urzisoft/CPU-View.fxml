@@ -13,48 +13,48 @@
    <children>
       <Pane fx:id="RAM_Info" prefHeight="550.0" prefWidth="320.0" scaleShape="false">
          <children>
-            <Text fill="WHITE" layoutX="80.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RAM Information">
+            <Text fill="WHITE" layoutX="80.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CPU Information">
                <font>
                   <Font name="Calibri" size="20.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="20.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Capacity:">
+            <Text fill="WHITE" layoutX="20.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:">
                <font>
                   <Font name="Calibri" size="20.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="20.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Frequency:">
+            <Text fill="WHITE" layoutX="20.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Physical Processors:">
                <font>
                   <Font name="Calibri" size="20.0" />
                </font>
             </Text>
-            <Text fx:id="RAM_TCapacity" boundsType="VISUAL" fill="WHITE" layoutX="150.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Model" wrappingWidth="200.0">
+            <Text boundsType="VISUAL" fill="WHITE" layoutX="150.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Model" wrappingWidth="200.0">
                <font>
                   <Font name="Calibri" size="16.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="20.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type:">
+            <Text fill="WHITE" layoutX="20.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logical Processors:">
                <font>
                   <Font name="Calibri" size="20.0" />
                </font>
             </Text>
-            <Text fx:id="RAM_Type" fill="WHITE" layoutX="80.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Type:">
+            <Text fill="WHITE" layoutX="178.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Type:">
                <font>
                   <Font name="Calibri" size="16.0" />
                </font>
             </Text>
             <Separator layoutX="315.0" orientation="VERTICAL" prefHeight="550.0" prefWidth="5.0" style="-fx-background-color: #C2C0A6;" />
-            <Button fx:id="ramtest_btn" layoutX="115.0" layoutY="448.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="90.0" style="-fx-background-color: #C2C0A6; -fx-background-radius: 10; -fx-alignment: center;" text="Run Test" textAlignment="CENTER" wrapText="true">
+            <Button layoutX="115.0" layoutY="448.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="90.0" style="-fx-background-color: #C2C0A6; -fx-background-radius: 10; -fx-alignment: center;" text="Run Test" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font name="Calibri" size="15.0" />
                </font>
             </Button>
-            <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="119.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="115.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@png/ram.png" />
+                  <Image url="@png/cpu.png" />
                </image>
             </ImageView>
-            <Text fx:id="RAM_Freq" boundsType="VISUAL" fill="WHITE" layoutX="135.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Model" wrappingWidth="200.0">
+            <Text boundsType="VISUAL" fill="WHITE" layoutX="195.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Model" wrappingWidth="200.0">
                <font>
                   <Font name="Calibri" size="16.0" />
                </font>

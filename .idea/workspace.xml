@@ -4,23 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e57a20e6-0f23-41e6-937b-3a158c4b4f94" name="Changes" comment="extract all hardware deatils">
-      <change afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/png/cpu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/png/cpuFire.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/png/exit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/png/information.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/png/networking.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/png/pc-tower.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/png/podium.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/png/ram.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/png/ramFire.png" afterDir="false" />
+    <list default="true" id="e57a20e6-0f23-41e6-937b-3a158c4b4f94" name="Changes" comment="added Icons for home page&#10;added Ram Page">
+      <change afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/CPU-View.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/HardwareDetails/HardwareDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/HardwareDetails/HardwareDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/HardwareDetails/RAM.java" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/HardwareDetails/RAM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/HelloController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/Home-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/Home-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/RAM-View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/RAM-View.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -119,7 +109,7 @@
       <workItem from="1682770631537" duration="20210000" />
       <workItem from="1682799783413" duration="46000" />
       <workItem from="1682836376987" duration="9573000" />
-      <workItem from="1682858816686" duration="13934000" />
+      <workItem from="1682858816686" duration="15699000" />
     </task>
     <task id="LOCAL-00001" summary="Added Scene in Scene">
       <created>1682795848210</created>
@@ -149,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682844253980</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added Icons for home page&#10;added Ram Page">
+      <created>1682881402738</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1682881402738</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,7 +197,8 @@
     <MESSAGE value="Added Scene in Scene" />
     <MESSAGE value="extract hardware details" />
     <MESSAGE value="extract all hardware deatils" />
-    <option name="LAST_COMMIT_MESSAGE" value="extract all hardware deatils" />
+    <MESSAGE value="added Icons for home page&#10;added Ram Page" />
+    <option name="LAST_COMMIT_MESSAGE" value="added Icons for home page&#10;added Ram Page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

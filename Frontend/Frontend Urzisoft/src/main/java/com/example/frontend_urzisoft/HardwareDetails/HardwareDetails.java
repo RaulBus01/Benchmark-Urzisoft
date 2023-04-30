@@ -31,7 +31,6 @@ public void getHardwareInfo() {
     List<PhysicalMemory> ram = memory.getPhysicalMemory();
 
     Baseboard baseboard = hardware.getComputerSystem().getBaseboard();
-
     systemBoard = new SystemBoard(baseboard.getManufacturer(),os.getFamily() + " " + os.getVersionInfo(),hardware.getComputerSystem().getModel());
     cpuInst = new CPU(cpuID.getName(), cpu.getPhysicalProcessorCount(), cpu.getLogicalProcessorCount());
     for (PhysicalMemory ramItem : ram)

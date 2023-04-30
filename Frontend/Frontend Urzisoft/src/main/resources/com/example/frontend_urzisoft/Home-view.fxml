@@ -50,7 +50,7 @@
             </Text>
             <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="125.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../../../Users/sraul/OneDrive/Desktop/networking.png" />
+                  <Image url="@png/networking.png" />
                </image>
             </ImageView>
          </children>
@@ -110,7 +110,7 @@
             </Button>
             <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="125.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../../../Users/sraul/OneDrive/Desktop/ram.png" />
+                  <Image url="@png/ram.png" />
                </image>
             </ImageView>
          </children>
@@ -155,7 +155,7 @@
             <Separator layoutX="-5.0" orientation="VERTICAL" prefHeight="550.0" prefWidth="5.0" style="-fx-background-color: #C2C0A6;" />
             <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="125.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../../../Users/sraul/OneDrive/Desktop/cpu.png" />
+                  <Image url="@png/cpu.png" />
                </image>
             </ImageView>
          </children>

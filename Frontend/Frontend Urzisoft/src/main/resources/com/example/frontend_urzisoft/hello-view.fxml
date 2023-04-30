@@ -58,32 +58,32 @@
             </Button>
             <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="190.0" layoutY="155.0" onMouseClicked="#onRAMTestButtonClicked" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../../../Users/sraul/OneDrive/Desktop/ramFire.png" />
+                  <Image url="@png/ramFire.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="190.0" layoutY="80.0" onDragDetected="#onCPUTestButtonClicked" onMouseClicked="#onCPUTestButtonClicked" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../../../Users/sraul/OneDrive/Desktop/cpuFire.png" />
+                  <Image url="@png/cpuFire.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="190.0" layoutY="5.0" onMouseClicked="#onHomeButtonClicked" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../../../Users/sraul/OneDrive/Desktop/pc-tower.png" />
+                  <Image url="@png/pc-tower.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="190.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../../../Users/sraul/OneDrive/Desktop/podium.png" />
+                  <Image url="@png/podium.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="190.0" layoutY="380.0" onMouseClicked="#onExitButtonClicked" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../../../Users/sraul/OneDrive/Desktop/exit.png" />
+                  <Image url="@png/exit.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="190.0" layoutY="305.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../../../Users/sraul/OneDrive/Desktop/information.png" />
+                  <Image url="@png/information.png" />
                </image>
             </ImageView>
          </children>
