@@ -7,12 +7,18 @@ public class RAM {
     private String frequency;
     private  String memoryType;
 
-    public RAM(String manufacturer,String memoryType ,String bankLabel, String Capacity, String frequency) {
+    private String TotalMemory;
+
+
+
+    public RAM(String manufacturer, String memoryType , String bankLabel, String Capacity, String frequency)
+    {
         this.manufacturer = manufacturer;
         this.bankLabel = bankLabel;
         this.Capacity = Capacity;
         this.frequency = frequency;
         this.memoryType = memoryType;
+
     }
 
     public String getManufacturer() {

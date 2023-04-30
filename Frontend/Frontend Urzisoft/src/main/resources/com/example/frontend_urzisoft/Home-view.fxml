@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -37,16 +38,21 @@
                   <Font name="Calibri" size="16.0" />
                </font>
             </Text>
-            <Text fx:id="SY_Model" boundsType="VISUAL" fill="WHITE" layoutX="185.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Model" wrappingWidth="200.0">
+            <Text fx:id="SY_Model" boundsType="VISUAL" fill="WHITE" layoutX="100.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Model" wrappingWidth="200.0">
                <font>
                   <Font name="Calibri" size="16.0" />
                </font>
             </Text>
-            <Text fx:id="SY_Motherboard" fill="WHITE" layoutX="185.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Operating System:" wrappingWidth="105.0">
+            <Text fx:id="SY_Motherboard" fill="WHITE" layoutX="148.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Operating System:" wrappingWidth="105.0">
                <font>
                   <Font name="Calibri" size="16.0" />
                </font>
             </Text>
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="125.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../../../../Users/sraul/OneDrive/Desktop/networking.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
       <Pane fx:id="RAM_Info" layoutX="320.0" prefHeight="550.0" prefWidth="320.0" scaleShape="false">
@@ -56,7 +62,7 @@
                   <Font name="Calibri" size="16.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="80.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RAM Information">
+            <Text fill="WHITE" layoutX="90.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RAM Information">
                <font>
                   <Font name="Calibri" size="20.0" />
                </font>
@@ -97,17 +103,21 @@
                </font>
             </Text>
             <Separator layoutX="-5.0" orientation="VERTICAL" prefHeight="550.0" prefWidth="5.0" style="-fx-background-color: #C2C0A6;" />
-            <SplitMenuButton fx:id="BankDropdown" layoutX="105.0" layoutY="441.0" mnemonicParsing="false" text="Bank">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-                <MenuItem mnemonicParsing="false" text="Action 2" />
-              </items>
-            </SplitMenuButton>
+            <Button fx:id="bank_btn" layoutX="115.0" layoutY="448.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="90.0" style="-fx-background-color: #2D3E40; -fx-background-radius: 10; -fx-alignment: center;" text="Select Bank" textAlignment="CENTER" textFill="#e4f2e7" wrapText="true">
+               <font>
+                  <Font name="Constantia" size="15.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="125.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../../../../Users/sraul/OneDrive/Desktop/ram.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
       <Pane fx:id="CPU_Info" layoutX="640.0" prefHeight="550.0" prefWidth="320.0">
          <children>
-            <Text fill="WHITE" layoutX="80.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CPU Information" wrappingWidth="166.458984375">
+            <Text fill="WHITE" layoutX="90.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CPU Information" wrappingWidth="166.458984375">
                <font>
                   <Font name="Calibri" size="20.0" />
                </font>
@@ -132,7 +142,7 @@
                   <Font name="Calibri" size="16.0" />
                </font>
             </Text>
-            <Text fx:id="CPU_Physical_Processors" boundsType="VISUAL" fill="WHITE" layoutX="195.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Model" wrappingWidth="200.0">
+            <Text fx:id="CPU_Physical_Processors" boundsType="VISUAL" fill="WHITE" layoutX="200.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Model" wrappingWidth="200.0">
                <font>
                   <Font name="Calibri" size="16.0" />
                </font>
@@ -143,6 +153,11 @@
                </font>
             </Text>
             <Separator layoutX="-5.0" orientation="VERTICAL" prefHeight="550.0" prefWidth="5.0" style="-fx-background-color: #C2C0A6;" />
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="125.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../../../../Users/sraul/OneDrive/Desktop/cpu.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
    </children>

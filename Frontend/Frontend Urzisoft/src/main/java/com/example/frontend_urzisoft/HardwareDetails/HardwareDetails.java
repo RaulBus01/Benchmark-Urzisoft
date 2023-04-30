@@ -36,7 +36,11 @@ public void getHardwareInfo() {
     cpuInst = new CPU(cpuID.getName(), cpu.getPhysicalProcessorCount(), cpu.getLogicalProcessorCount());
     for (PhysicalMemory ramItem : ram)
     {
-        ramList.add(new RAM(ramItem.getManufacturer(), ramItem.getMemoryType(), ramItem.getBankLabel(), FormatUtil.formatBytesDecimal(ramItem.getCapacity()), FormatUtil.formatHertz(ramItem.getClockSpeed())));
+        double  ramCapacity =ramItem.getCapacity()/(1024*1024*1024);
+        int totalRam = (int)ramCapacity;
+        long ramFrequency = ramItem.getClockSpeed()/1000000;
+
+        ramList.add(new RAM(ramItem.getManufacturer(), ramItem.getMemoryType(), ramItem.getBankLabel(), totalRam+" GB", ramFrequency+ " MHz"));
     }
 }
 
