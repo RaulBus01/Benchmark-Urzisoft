@@ -1,26 +1,26 @@
 package com.example.frontend_urzisoft.HardwareDetails;
 
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
 import oshi.SystemInfo;
 import oshi.hardware.*;
-import oshi.util.FormatUtil;
 import oshi.software.os.OperatingSystem;
+import oshi.util.FormatUtil;
 
-public class GetDetailsHardware
+public class HardwareDetails
 {
+
+    private List<RAM> ramList = new ArrayList<RAM>();
+    private CPU cpuInst;
+    private SystemBoard systemBoard;
+
+
 public void getHardwareInfo() {
     // Retrieve the operating system MXBean
     SystemInfo sys = new SystemInfo();
     OperatingSystem os = sys.getOperatingSystem();
-
-
-
     HardwareAbstractionLayer hardware = sys.getHardware();
 
     CentralProcessor cpu = hardware.getProcessor();
@@ -29,23 +29,26 @@ public void getHardwareInfo() {
 
     GlobalMemory memory = hardware.getMemory();
     List<PhysicalMemory> ram = memory.getPhysicalMemory();
-    List<RAM> ramList = new ArrayList<RAM>();
-
-
-
-//    for (RAM ramItem : ramList)
-//    {
-//        //System.out.println(ramItem.getManufacturer() + " " + ramItem.getMemoryType() + " " + ramItem.getBankLabel() + " " + ramItem.getGetCapacity() + " " + ramItem.getFrequency());
-//    }
-    // System.out.println(cpuInst.getName() + " " + cpuInst.getLogicalCores() + " " + cpuInst.getPhysicalCores());
 
     Baseboard baseboard = hardware.getComputerSystem().getBaseboard();
 
-    SystemBoard systemBoard = new SystemBoard(baseboard.getManufacturer(),hardware.getComputerSystem().getModel(), os.getFamily() + " " + os.getVersionInfo());
-    CPU cpuInst = new CPU(cpuID.getName(), cpu.getPhysicalProcessorCount(), cpu.getLogicalProcessorCount());
+    systemBoard = new SystemBoard(baseboard.getManufacturer(),os.getFamily() + " " + os.getVersionInfo(),hardware.getComputerSystem().getModel());
+    cpuInst = new CPU(cpuID.getName(), cpu.getPhysicalProcessorCount(), cpu.getLogicalProcessorCount());
     for (PhysicalMemory ramItem : ram)
     {
         ramList.add(new RAM(ramItem.getManufacturer(), ramItem.getMemoryType(), ramItem.getBankLabel(), FormatUtil.formatBytesDecimal(ramItem.getCapacity()), FormatUtil.formatHertz(ramItem.getClockSpeed())));
     }
 }
+
+    public List<RAM> getRamList() {
+        return ramList;
+    }
+
+    public CPU getCpuInst() {
+        return cpuInst;
+    }
+
+    public SystemBoard getSystemBoard() {
+        return systemBoard;
+    }
 }

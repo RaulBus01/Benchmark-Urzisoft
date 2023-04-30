@@ -3,14 +3,14 @@ package com.example.frontend_urzisoft.HardwareDetails;
 public class RAM {
     private String manufacturer;
     private String bankLabel;
-    private String getCapacity;
+    private String Capacity;
     private String frequency;
     private  String memoryType;
 
-    public RAM(String manufacturer,String memoryType ,String bankLabel, String getCapacity, String frequency) {
+    public RAM(String manufacturer,String memoryType ,String bankLabel, String Capacity, String frequency) {
         this.manufacturer = manufacturer;
         this.bankLabel = bankLabel;
-        this.getCapacity = getCapacity;
+        this.Capacity = Capacity;
         this.frequency = frequency;
         this.memoryType = memoryType;
     }
@@ -31,12 +31,12 @@ public class RAM {
         this.bankLabel = bankLabel;
     }
 
-    public String getGetCapacity() {
-        return getCapacity;
+    public String getCapacity() {
+        return Capacity;
     }
 
     public void setGetCapacity(String getCapacity) {
-        this.getCapacity = getCapacity;
+        this.Capacity = getCapacity;
     }
 
     public String getFrequency() {
@@ -54,4 +54,6 @@ public class RAM {
     public void setMemoryType(String memoryType) {
         this.memoryType = memoryType;
     }
+
+
 }

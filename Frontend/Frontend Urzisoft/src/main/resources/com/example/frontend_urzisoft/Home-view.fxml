@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitMenuButton?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -8,51 +10,50 @@
 
 <AnchorPane maxHeight="550.0" maxWidth="958.0" minHeight="550.0" minWidth="958.0" prefHeight="550.0" prefWidth="958.0" style="-fx-background-color: #53736A;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Text layoutX="271.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-      <Pane prefHeight="550.0" prefWidth="320.0">
+      <Pane fx:id="SY" prefHeight="550.0" prefWidth="320.0">
          <children>
             <Text fill="WHITE" layoutX="80.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="System Information">
                <font>
                   <Font name="Calibri" size="20.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="30.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Operating System:">
+            <Text fill="WHITE" layoutX="30.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Operating System:">
                <font>
                   <Font name="Calibri" size="20.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="30.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Model:">
+            <Text fill="WHITE" layoutX="30.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Model:">
                <font>
                   <Font name="Calibri" size="20.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="30.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Motherboard:">
+            <Text fill="WHITE" layoutX="30.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Motherboard:">
                <font>
                   <Font name="Calibri" size="20.0" />
                </font>
             </Text>
-            <Text fx:id="SY_OS" fill="WHITE" layoutX="210.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OS" wrappingWidth="200.0">
+            <Text fx:id="SY_OS" fill="WHITE" layoutX="185.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="OS" wrappingWidth="125.0">
                <font>
-                  <Font name="Calibri" size="20.0" />
+                  <Font name="Calibri" size="16.0" />
                </font>
             </Text>
-            <Text fx:id="SY_Model" boundsType="VISUAL" fill="WHITE" layoutX="210.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Model" wrappingWidth="200.0">
+            <Text fx:id="SY_Model" boundsType="VISUAL" fill="WHITE" layoutX="185.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Model" wrappingWidth="200.0">
                <font>
-                  <Font name="Calibri" size="20.0" />
+                  <Font name="Calibri" size="16.0" />
                </font>
             </Text>
-            <Text fx:id="SY_Motherboard" fill="WHITE" layoutX="201.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Operating System:" wrappingWidth="105.0">
+            <Text fx:id="SY_Motherboard" fill="WHITE" layoutX="185.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Operating System:" wrappingWidth="105.0">
                <font>
-                  <Font name="Calibri" size="20.0" />
+                  <Font name="Calibri" size="16.0" />
                </font>
             </Text>
          </children>
       </Pane>
-      <Pane layoutX="320.0" prefHeight="550.0" prefWidth="320.0" scaleShape="false">
+      <Pane fx:id="RAM_Info" layoutX="320.0" prefHeight="550.0" prefWidth="320.0" scaleShape="false">
          <children>
-            <Text fx:id="CPU_Name1" fill="WHITE" layoutX="200.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OS" wrappingWidth="200.0">
+            <Text fx:id="RAM_Manufacturer" fill="WHITE" layoutX="150.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="OS" wrappingWidth="155.0">
                <font>
-                  <Font name="Calibri" size="20.0" />
+                  <Font name="Calibri" size="16.0" />
                </font>
             </Text>
             <Text fill="WHITE" layoutX="80.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RAM Information">
@@ -75,14 +76,14 @@
                   <Font name="Calibri" size="20.0" />
                </font>
             </Text>
-            <Text fx:id="RAM_Capacity" boundsType="VISUAL" fill="WHITE" layoutX="200.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Model" wrappingWidth="200.0">
+            <Text fx:id="RAM_Capacity" boundsType="VISUAL" fill="WHITE" layoutX="150.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Model" wrappingWidth="200.0">
                <font>
-                  <Font name="Calibri" size="20.0" />
+                  <Font name="Calibri" size="16.0" />
                </font>
             </Text>
-            <Text fx:id="RAM_Frequency" fill="WHITE" layoutX="200.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="200.0">
+            <Text fx:id="RAM_Frequency" fill="WHITE" layoutX="150.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" wrappingWidth="200.0">
                <font>
-                  <Font name="Calibri" size="20.0" />
+                  <Font name="Calibri" size="16.0" />
                </font>
             </Text>
             <Text fill="WHITE" layoutX="20.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type:">
@@ -90,49 +91,55 @@
                   <Font name="Calibri" size="20.0" />
                </font>
             </Text>
-            <Text fx:id="RAM_Type" fill="WHITE" layoutX="200.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type:">
+            <Text fx:id="RAM_Type" fill="WHITE" layoutX="150.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Type:">
                <font>
-                  <Font name="Calibri" size="20.0" />
+                  <Font name="Calibri" size="16.0" />
                </font>
             </Text>
             <Separator layoutX="-5.0" orientation="VERTICAL" prefHeight="550.0" prefWidth="5.0" style="-fx-background-color: #C2C0A6;" />
+            <SplitMenuButton fx:id="BankDropdown" layoutX="105.0" layoutY="441.0" mnemonicParsing="false" text="Bank">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+                <MenuItem mnemonicParsing="false" text="Action 2" />
+              </items>
+            </SplitMenuButton>
          </children>
       </Pane>
-      <Pane layoutX="640.0" prefHeight="550.0" prefWidth="320.0">
+      <Pane fx:id="CPU_Info" layoutX="640.0" prefHeight="550.0" prefWidth="320.0">
          <children>
             <Text fill="WHITE" layoutX="80.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CPU Information" wrappingWidth="166.458984375">
                <font>
                   <Font name="Calibri" size="20.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="31.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:">
+            <Text fill="WHITE" layoutX="31.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:">
                <font>
                   <Font name="Calibri" size="20.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="31.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Physical Proccesors:">
+            <Text fill="WHITE" layoutX="31.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Physical Processors:">
                <font>
                   <Font name="Calibri" size="20.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="31.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logical Processors:">
+            <Text fill="WHITE" layoutX="31.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logical Processors:">
                <font>
                   <Font name="Calibri" size="20.0" />
                </font>
             </Text>
-            <Text fx:id="CPU_Name" fill="WHITE" layoutX="211.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OS" wrappingWidth="200.0">
+            <Text fx:id="CPU_Name" fill="WHITE" layoutX="90.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="I10" wrappingWidth="215.0">
                <font>
-                  <Font name="Calibri" size="20.0" />
+                  <Font name="Calibri" size="16.0" />
                </font>
             </Text>
-            <Text fx:id="CPU_Physical_Proccesors" boundsType="VISUAL" fill="WHITE" layoutX="211.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Model" wrappingWidth="200.0">
+            <Text fx:id="CPU_Physical_Processors" boundsType="VISUAL" fill="WHITE" layoutX="195.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Model" wrappingWidth="200.0">
                <font>
-                  <Font name="Calibri" size="20.0" />
+                  <Font name="Calibri" size="16.0" />
                </font>
             </Text>
-            <Text fx:id="CPU_Logical_Proccesors" fill="WHITE" layoutX="211.0" layoutY="336.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="200.0">
+            <Text fx:id="CPU_Logical_Processors" fill="WHITE" layoutX="195.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" wrappingWidth="100.0">
                <font>
-                  <Font name="Calibri" size="20.0" />
+                  <Font name="Calibri" size="16.0" />
                </font>
             </Text>
             <Separator layoutX="-5.0" orientation="VERTICAL" prefHeight="550.0" prefWidth="5.0" style="-fx-background-color: #C2C0A6;" />
