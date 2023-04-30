@@ -41,4 +41,19 @@ public class HelloController {
     {
 
     }
+    @FXML
+    protected void onRAMTestButtonClicked()
+    {
+
+    }
+    @FXML
+    protected void onLeaderboardButtonClicked()
+    {
+
+    }
+    @FXML
+    protected void onExitButtonClicked()
+    {
+        System.exit(0);
+    }
 }

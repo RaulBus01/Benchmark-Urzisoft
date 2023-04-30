@@ -14,22 +14,33 @@ import oshi.util.FormatUtil;
 public class GetDetailsHardware
 {
 public void getHardwareInfo() {
-        // Retrieve the operating system MXBean
+    // Retrieve the operating system MXBean
     SystemInfo sys = new SystemInfo();
+
+
+
     HardwareAbstractionLayer hardware = sys.getHardware();
 
     CentralProcessor cpu = hardware.getProcessor();
-    CentralProcessor.ProcessorIdentifier cpuID =  cpu.getProcessorIdentifier();
+
+    CentralProcessor.ProcessorIdentifier cpuID = cpu.getProcessorIdentifier();
 
     GlobalMemory memory = hardware.getMemory();
     List<PhysicalMemory> ram = memory.getPhysicalMemory();
-
-    for(PhysicalMemory ramSlot : ram)
+    List<RAM> ramList = new ArrayList<RAM>();
+    for (PhysicalMemory ramItem : ram)
     {
-        System.out.println(ramSlot.getCapacity());
+        ramList.add(new RAM(ramItem.getManufacturer(), ramItem.getMemoryType(), ramItem.getBankLabel(), FormatUtil.formatBytesDecimal(ramItem.getCapacity()), FormatUtil.formatHertz(ramItem.getClockSpeed())));
     }
-    CPU cpuInst = new CPU(cpuID.getName(),cpu.getPhysicalProcessorCount(),cpu.getLogicalProcessorCount());
-   // System.out.println(cpuInst.getName() + " " + cpuInst.getLogicalCores() + " " + cpuInst.getPhysicalCores());
+    CPU cpuInst = new CPU(cpuID.getName(), cpu.getPhysicalProcessorCount(), cpu.getLogicalProcessorCount());
 
+    for (RAM ramItem : ramList)
+    {
+        System.out.println(ramItem.getManufacturer() + " " + ramItem.getMemoryType() + " " + ramItem.getBankLabel() + " " + ramItem.getGetCapacity() + " " + ramItem.getFrequency());
+    }
+    // System.out.println(cpuInst.getName() + " " + cpuInst.getLogicalCores() + " " + cpuInst.getPhysicalCores());
+
+    Baseboard baseboard = hardware.getComputerSystem().getBaseboard();
+    System.out.println(baseboard.getManufacturer()+"\n" + hardware.getComputerSystem().getModel() + "\n" + baseboard.getVersion() + "\n" + baseboard.getSerialNumber());
 }
 }

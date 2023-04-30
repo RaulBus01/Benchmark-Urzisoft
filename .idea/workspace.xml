@@ -4,18 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e57a20e6-0f23-41e6-937b-3a158c4b4f94" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/HardwareDetails/CPU.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/HardwareDetails/GetDetailsHardware.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/CSS/button.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/FXMLDocumentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/Home-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/pom.xml" afterDir="false" />
+    <list default="true" id="e57a20e6-0f23-41e6-937b-3a158c4b4f94" name="Changes" comment="Added Scene in Scene">
+      <change afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/HardwareDetails/SystemBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/HardwareDetails/GetDetailsHardware.java" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/HardwareDetails/GetDetailsHardware.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/HardwareDetails/RAM.java" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/HardwareDetails/RAM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/Home-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/Home-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,20 +47,20 @@
     <option name="showMembers" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.example.frontend_urzisoft" />
@@ -107,8 +103,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1682770630070</updated>
-      <workItem from="1682770631537" duration="18551000" />
+      <workItem from="1682770631537" duration="20210000" />
+      <workItem from="1682799783413" duration="46000" />
+      <workItem from="1682836376987" duration="3491000" />
     </task>
+    <task id="LOCAL-00001" summary="Added Scene in Scene">
+      <created>1682795848210</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1682795848210</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added Scene in Scene">
+      <created>1682795860858</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1682795860858</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,8 +135,42 @@
             <State />
           </value>
         </entry>
+        <entry key="a761a834-520e-4938-9007-c5e6329037d9">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
       </map>
     </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="a761a834-520e-4938-9007-c5e6329037d9" value="TOOL_WINDOW" />
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added Scene in Scene" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Scene in Scene" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
