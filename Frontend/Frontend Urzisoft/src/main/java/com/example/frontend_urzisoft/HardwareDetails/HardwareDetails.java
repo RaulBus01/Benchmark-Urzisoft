@@ -32,8 +32,7 @@ public void getHardwareInfo() {
 
     Baseboard baseboard = hardware.getComputerSystem().getBaseboard();
     systemBoard = new SystemBoard(baseboard.getManufacturer(),os.getFamily() + " " + os.getVersionInfo(),hardware.getComputerSystem().getModel());
-    cpuInst = new CPU(cpuID.getName(), cpu.getPhysicalProcessorCount(), cpu.getLogicalProcessorCount());
-    cpuInst.setFrequency(FormatUtil.formatHertz(cpuID.getVendorFreq()));
+    cpuInst = new CPU(cpuID.getName(), cpu.getPhysicalProcessorCount(), cpu.getLogicalProcessorCount(), FormatUtil.formatHertz(cpuID.getVendorFreq()));
 
 
     for (PhysicalMemory ramItem : ram)
@@ -42,7 +41,7 @@ public void getHardwareInfo() {
         int totalRam = (int)ramCapacity;
         long ramFrequency = ramItem.getClockSpeed()/1000000;
 
-        ramList.add(new RAM(ramItem.getManufacturer(), ramItem.getMemoryType(), ramItem.getBankLabel(), totalRam+" GB", ramFrequency+ " MHz"));
+        ramList.add(new RAM(ramItem.getManufacturer(), ramItem.getMemoryType(), ramItem.getBankLabel(), totalRam+" GB", ramFrequency+ " MHz", ramItem.));
     }
 }
 

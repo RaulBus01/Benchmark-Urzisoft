@@ -9,53 +9,11 @@ public class CPU {
     private String frequency;
 
 
-    public String getFrequency() {
-        return frequency;
-    }
 
-    public void setFrequency(String frequency) {
+    public CPU(String name, int physicalCores, int logicalCores, String frequency)
+    {
+        this.name = name;
         this.frequency = frequency;
-    }
-
-
-
-    public void setName(String name)
-    {
-        this.name = name;
-    }
-    public String getName()
-    {
-        return name;
-    }
-
-    public long getScore() {
-        return score;
-    }
-
-    public void setScore(long score) {
-        this.score = score;
-    }
-
-    public int getPhysicalCores() {
-        return physicalCores;
-    }
-
-    public void setPhysicalCores(int physicalCores) {
-        this.physicalCores = physicalCores;
-    }
-
-    public int getLogicalCores() {
-        return logicalCores;
-    }
-
-    public void setLogicalCores(int logicalCores) {
-        this.logicalCores = logicalCores;
-    }
-
-    public CPU(String name, int physicalCores, int logicalCores)
-    {
-        this.name = name;
-
         this.physicalCores = physicalCores;
         this.logicalCores = logicalCores;
     }
