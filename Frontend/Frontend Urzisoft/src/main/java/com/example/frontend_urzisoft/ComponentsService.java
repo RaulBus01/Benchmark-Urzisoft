@@ -10,6 +10,7 @@ import oshi.hardware.*;
 import oshi.software.os.OperatingSystem;
 import oshi.util.FormatUtil;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ComponentsService {
@@ -40,15 +41,16 @@ public ComponentsService(){
         return cpu;
     }
 
-    public List<RAM> createRam()
+    public List<RAM> createRAM()
     {
-        List<RAM> ram = null;
+        int bank = 1;
+        List<RAM> ram = new ArrayList<RAM>();
         for (PhysicalMemory ramItem : this.ram)
         {
-            int totalRam = (int)ramItem.getCapacity()/(1024*1024*1024);
+            long totalRam = ramItem.getCapacity()/(1024*1024*1024);
             long ramFrequency = ramItem.getClockSpeed()/1000000;
-            int index = 0;
-            ram.add(new RAM(ramItem.getManufacturer(), ramItem.getBankLabel(),totalRam + " GB", ramFrequency + " MHz", index+1));
+            ram.add(new RAM(ramItem.getManufacturer(), ramItem.getMemoryType(), totalRam + " GB", ramFrequency + " MHz", bank));
+            bank++;
         }
         return ram;
     }

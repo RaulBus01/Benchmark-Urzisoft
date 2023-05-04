@@ -2,12 +2,15 @@ package com.example.frontend_urzisoft;
 
 import com.example.frontend_urzisoft.DataBase.LeaderboardEntry;
 import com.example.frontend_urzisoft.DataBase.MongoDB;
+import com.example.frontend_urzisoft.HardwareDetails.CPU;
 import com.example.frontend_urzisoft.HardwareDetails.RAM;
+import com.example.frontend_urzisoft.HardwareDetails.SYI;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.geometry.Side;
 
 import javafx.scene.control.*;
@@ -16,7 +19,10 @@ import javafx.scene.layout.AnchorPane;
 
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.List;
 import java.util.Objects;
+import java.util.ResourceBundle;
 
 import com.example.frontend_urzisoft.HardwareDetails.HardwareDetails;
 import javafx.scene.layout.Pane;
@@ -30,7 +36,7 @@ import oshi.driver.linux.proc.UserGroupInfo;
 
 import static oshi.util.Util.sleep;
 
-public class HelloController {
+public class HelloController implements Initializable {
 
 
     @FXML
@@ -39,17 +45,38 @@ public class HelloController {
     @FXML
     private AnchorPane borderpane;
     private String CPU_id, RAM_id;
+
+    private CPU cpu;
+    private List<RAM> ram;
+    private SYI syi;
     private int CPUScore, RAMScore, TotalScore;
     private String user_id;
 
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        System.out.println("HelloController initialized");
+        ComponentsService componentsService = new ComponentsService();
+        this.cpu = componentsService.createCPU();
+        this.ram = componentsService.createRAM();
+        this.syi = componentsService.createSYI();
+
+        System.out.println("CPU: " + this.cpu.getName() + " " + this.cpu.getPhysicalCores() + " " + this.cpu.getLogicalCores() + " " + this.cpu.getFrequency());
+
+        for (RAM ram1 : ram) {
+            if(ram1 != null){
+                System.out.println("RAM: " + ram1.getManufacturer() + " " + ram1.getBank() + " " + ram1.getCapacity() + " " + ram1.getFrequency());
+            }
+        }
+
+        System.out.println("SYI: " + this.syi.getOperatingSystem() + " " + this.syi.getModel() + " Motherboard: " + this.syi.getMotherboard());
+    }
 
     @FXML
     private void SetSystemInformation(AnchorPane parent) {
 
         int bank = 0;
 
-        HardwareDetails hardware = new HardwareDetails();
-        hardware.getHardwareInfo();
 
 
         Pane SY = (Pane) parent.lookup("#SY"),
@@ -88,18 +115,19 @@ public class HelloController {
 
         bankMenu.setStyle("-fx-background-color:#2D3E40;-fx-font-size: 16px;-fx-background-radius: 5px; -fx-text-alignment: center; -fx-padding: 5px; -fx-border-color: #2D3E40; -fx-border-radius: 5px; -fx-border-width: 2px; -fx-text-fill: white;");
 
-        if (hardware.getRamList().size() > 1) {
-            for (int i = 0; i < hardware.getRamList().size(); i++) {
+        if (this.ram.size() > 1) {
+            for (int i = 0; i < this.ram.size(); i++) {
                 final int index = i;
-                MenuItem item = new MenuItem("Bank " + (i + 1));
+                MenuItem item = new MenuItem("Bank " + this.ram.get(i).getBank());
                 item.setStyle(" -fx-text-fill: #e4f2e7;");
                 item.setOnAction(event -> {
-                    RAM ram = hardware.getRamList().get(index);
-                    bankButton.setText("Bank " + (index + 1));
-                    RAM_Manufacturer.setText(ram.getManufacturer());
-                    RAM_Capacity.setText(ram.getCapacity());
-                    RAM_Frequency.setText(ram.getFrequency());
-                    RAM_Type.setText(ram.getMemoryType());
+                    RAM ramItem = this.ram.get(index);
+                    bankButton.setText("Bank " + ramItem.getBank());
+                    RAM_Manufacturer.setText(ramItem.getManufacturer());
+                    RAM_Capacity.setText(ramItem.getCapacity());
+                    RAM_Frequency.setText(ramItem.getFrequency());
+                    System.out.println(ramItem.getMemoryType());
+                    RAM_Type.setText(String.valueOf(ramItem.getMemoryType()));
                 });
                 bankMenu.getItems().add(item);
             }
@@ -115,18 +143,18 @@ public class HelloController {
         bankButton.setContextMenu(bankMenu);
 
 
-        SY_OS.setText(hardware.getSystemBoard().getOperatingSystem());
-        SY_Model.setText(hardware.getSystemBoard().getModel());
-        SY_Motherboard.setText(hardware.getSystemBoard().getMotherboard());
+        SY_OS.setText(this.syi.getOperatingSystem());
+        SY_Model.setText(this.syi.getModel());
+        SY_Motherboard.setText(this.syi.getMotherboard());
 
-        CPU_Name.setText(hardware.getCpuInst().getName());
-        CPU_Physical_Processors.setText(String.valueOf(hardware.getCpuInst().getPhysicalCores()));
-        CPU_Logical_Processors.setText(String.valueOf(hardware.getCpuInst().getLogicalCores()));
+        CPU_Name.setText(this.cpu.getName());
+        CPU_Physical_Processors.setText(String.valueOf(this.cpu.getPhysicalCores()));
+        CPU_Logical_Processors.setText(String.valueOf(this.cpu.getLogicalCores()));
 
-        RAM_Manufacturer.setText(hardware.getRamList().get(bank).getManufacturer());
-        RAM_Capacity.setText(hardware.getRamList().get(bank).getCapacity());
-        RAM_Frequency.setText(hardware.getRamList().get(bank).getFrequency());
-        RAM_Type.setText(hardware.getRamList().get(bank).getMemoryType());
+        RAM_Manufacturer.setText(this.ram.get(bank).getManufacturer());
+        RAM_Capacity.setText(this.ram.get(bank).getCapacity());
+        RAM_Frequency.setText(this.ram.get(bank).getFrequency());
+        RAM_Type.setText(this.ram.get(bank).getMemoryType());
 
 
     }
@@ -150,8 +178,7 @@ public class HelloController {
     protected void onCPUTestButtonClicked() throws IOException {
         AnchorPane newSidePane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("CPU-View.fxml")));
         borderpane.getChildren().setAll(newSidePane);
-        HardwareDetails hardware = new HardwareDetails();
-        hardware.getHardwareInfo();
+
         Button startButton = (Button) newSidePane.lookup("#cputest_btn");
         AnchorPane CPU_load = (AnchorPane) newSidePane.lookup("#CPUTest_View");
         startButton.setOnAction(event -> {
@@ -167,12 +194,12 @@ public class HelloController {
         Text CPU_Logical_Processors = (Text) newSidePane.lookup("#Logic_Core");
         Text CPU_Frequency = (Text) newSidePane.lookup("#CPU_Freq");
 
-        CPU_Name.setText(hardware.getCpuInst().getName());
-        CPU_Physical_Processors.setText(String.valueOf(hardware.getCpuInst().getPhysicalCores()));
-        CPU_Logical_Processors.setText(String.valueOf(hardware.getCpuInst().getLogicalCores()));
-        CPU_Frequency.setText(String.valueOf(hardware.getCpuInst().getFrequency()));
+        CPU_Name.setText(this.cpu.getName());
+        CPU_Physical_Processors.setText(String.valueOf(this.cpu.getPhysicalCores()));
+        CPU_Logical_Processors.setText(String.valueOf(this.cpu.getLogicalCores()));
+        CPU_Frequency.setText(String.valueOf(this.cpu.getFrequency()));
 
-        CPU_id = hardware.getCpuInst().getName();
+        CPU_id = this.cpu.getName();
 
 
 
@@ -196,13 +223,11 @@ public class HelloController {
                 e.printStackTrace();
             }
         });
-        HardwareDetails hardware = new HardwareDetails();
-        hardware.getHardwareInfo();
 
         int totalMemory=0;
         int frequency=0;
-        String memoryType= hardware.getRamList().get(0).getMemoryType();
-        for (RAM ram : hardware.getRamList()) {
+        String memoryType= this.ram.get(0).getMemoryType();
+        for (RAM ram : this.ram) {
             totalMemory = Integer.parseInt(ram.getCapacity().substring(0, ram.getCapacity().indexOf(" ")))+totalMemory;
             if(frequency<Integer.parseInt(ram.getFrequency().substring(0, ram.getFrequency().indexOf(" "))))
                 frequency=Integer.parseInt(ram.getFrequency().substring(0, ram.getFrequency().indexOf(" ")));

@@ -7,7 +7,6 @@ public class RAM {
     private  String memoryType;
 
     private int bank;
-    private String TotalMemory;
 
 
 
@@ -21,45 +20,24 @@ public class RAM {
 
     }
 
+
     public String getManufacturer() {
         return manufacturer;
-    }
-
-    public void setManufacturer(String manufacturer) {
-        this.manufacturer = manufacturer;
-    }
-
-    public String getBankLabel() {
-        return bankLabel;
-    }
-
-    public void setBankLabel(String bankLabel) {
-        this.bankLabel = bankLabel;
     }
 
     public String getCapacity() {
         return Capacity;
     }
 
-    public void setGetCapacity(String getCapacity) {
-        this.Capacity = getCapacity;
-    }
-
     public String getFrequency() {
         return frequency;
-    }
-
-    public void setFrequency(String frequency) {
-        this.frequency = frequency;
     }
 
     public String getMemoryType() {
         return memoryType;
     }
 
-    public void setMemoryType(String memoryType) {
-        this.memoryType = memoryType;
+    public int getBank() {
+        return bank;
     }
-
-
 }

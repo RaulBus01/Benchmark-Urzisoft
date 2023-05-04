@@ -11,4 +11,16 @@ public class SYI {
         this.Model = Model;
         this.Motherboard = Motherboard;
     }
+
+    public String getOperatingSystem() {
+        return OperatingSystem;
+    }
+
+    public String getModel() {
+        return Model;
+    }
+
+    public String getMotherboard() {
+        return Motherboard;
+    }
 }

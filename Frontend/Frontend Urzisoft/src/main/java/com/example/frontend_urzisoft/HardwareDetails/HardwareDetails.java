@@ -41,7 +41,7 @@ public void getHardwareInfo() {
         int totalRam = (int)ramCapacity;
         long ramFrequency = ramItem.getClockSpeed()/1000000;
 
-        ramList.add(new RAM(ramItem.getManufacturer(), ramItem.getMemoryType(), ramItem.getBankLabel(), totalRam+" GB", ramFrequency+ " MHz", ramItem.));
+        ramList.add(new RAM(ramItem.getManufacturer(), ramItem.getMemoryType(), totalRam+" GB", ramFrequency+ " MHz", ram.indexOf(ramItem)+1));
     }
 }
 

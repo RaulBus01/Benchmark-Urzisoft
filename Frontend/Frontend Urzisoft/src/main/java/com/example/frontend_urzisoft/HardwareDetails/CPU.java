@@ -19,4 +19,23 @@ public class CPU {
     }
 
 
+    public String getName() {
+        return name;
+    }
+
+    public long getScore() {
+        return score;
+    }
+
+    public int getPhysicalCores() {
+        return physicalCores;
+    }
+
+    public int getLogicalCores() {
+        return logicalCores;
+    }
+
+    public String getFrequency() {
+        return frequency;
+    }
 }
