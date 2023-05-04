@@ -6,6 +6,18 @@ public class CPU {
 
     private int physicalCores;
     private int logicalCores;
+    private String frequency;
+
+
+    public String getFrequency() {
+        return frequency;
+    }
+
+    public void setFrequency(String frequency) {
+        this.frequency = frequency;
+    }
+
+
 
     public void setName(String name)
     {

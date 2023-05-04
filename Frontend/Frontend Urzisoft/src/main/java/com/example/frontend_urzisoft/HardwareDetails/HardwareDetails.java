@@ -18,7 +18,7 @@ public class HardwareDetails
 
 
 public void getHardwareInfo() {
-    // Retrieve the operating system MXBean
+
     SystemInfo sys = new SystemInfo();
     OperatingSystem os = sys.getOperatingSystem();
     HardwareAbstractionLayer hardware = sys.getHardware();
@@ -33,6 +33,9 @@ public void getHardwareInfo() {
     Baseboard baseboard = hardware.getComputerSystem().getBaseboard();
     systemBoard = new SystemBoard(baseboard.getManufacturer(),os.getFamily() + " " + os.getVersionInfo(),hardware.getComputerSystem().getModel());
     cpuInst = new CPU(cpuID.getName(), cpu.getPhysicalProcessorCount(), cpu.getLogicalProcessorCount());
+    cpuInst.setFrequency(FormatUtil.formatHertz(cpuID.getVendorFreq()));
+
+
     for (PhysicalMemory ramItem : ram)
     {
         double  ramCapacity =ramItem.getCapacity()/(1024*1024*1024);

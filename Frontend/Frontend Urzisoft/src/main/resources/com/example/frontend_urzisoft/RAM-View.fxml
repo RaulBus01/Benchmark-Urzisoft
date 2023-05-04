@@ -61,5 +61,6 @@
             </Text>
          </children>
       </Pane>
+      <AnchorPane fx:id="RAMTest_View" layoutX="320.0" prefHeight="550.0" prefWidth="645.0" style="-fx-background-color: #28403D;" />
    </children>
 </AnchorPane>

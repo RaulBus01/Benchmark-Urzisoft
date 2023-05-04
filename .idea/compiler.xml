@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Frontend_Urzisoft" target="19" />
+      <module name="Frontend_Urzisoft" target="9" />
     </bytecodeTargetLevel>
   </component>
 </project>

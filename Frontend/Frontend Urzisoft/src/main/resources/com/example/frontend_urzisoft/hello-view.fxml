@@ -33,7 +33,7 @@
                   <Font name="Snap ITC" size="79.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutY="75.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="250.0" style="-fx-background-color: #6A8C69; -fx-background-radius: 40px; -fx-font-size: 25px; -fx-font-family: Calibri;" stylesheets="@CSS/file.css" text="CPU Test" textFill="WHITE">
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutY="75.0" mnemonicParsing="false" onAction="#onCPUTestButtonClicked" prefHeight="54.0" prefWidth="250.0" style="-fx-background-color: #6A8C69; -fx-background-radius: 40px; -fx-font-size: 25px; -fx-font-family: Calibri;" text="CPU Test" textFill="WHITE">
                <font>
                   <Font name="Calibri" size="79.0" />
                </font>
@@ -41,12 +41,12 @@
                   <Insets />
                </opaqueInsets>
             </Button>
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutY="222.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="250.0" style="-fx-background-color: #6A8C69; -fx-background-radius: 40px; -fx-font-size: 25px; -fx-font-family: Calibri;" text="Ledearboard" textFill="WHITE">
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutY="222.0" mnemonicParsing="false" onAction="#onLeaderboardButtonClicked" prefHeight="54.0" prefWidth="250.0" style="-fx-background-color: #6A8C69; -fx-background-radius: 40px; -fx-font-size: 25px; -fx-font-family: Calibri;" text="Ledearboard" textFill="WHITE">
                <font>
                   <Font name="Snap ITC" size="79.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutY="300.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="250.0" style="-fx-background-color: #6A8C69; -fx-background-radius: 40px; -fx-font-size: 25px; -fx-font-family: Calibri;" text="About" textFill="WHITE">
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutY="300.0" mnemonicParsing="false" onAction="#onAboutButtonClicked" prefHeight="54.0" prefWidth="250.0" style="-fx-background-color: #6A8C69; -fx-background-radius: 40px; -fx-font-size: 25px; -fx-font-family: Calibri;" text="About" textFill="WHITE">
                <font>
                   <Font name="Snap ITC" size="79.0" />
                </font>
@@ -71,7 +71,7 @@
                   <Image url="@png/pc-tower.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="190.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="190.0" layoutY="225.0" onMouseClicked="#onLeaderboardButtonClicked" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@png/podium.png" />
                </image>
@@ -81,7 +81,7 @@
                   <Image url="@png/exit.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="190.0" layoutY="305.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="190.0" layoutY="305.0" onMouseClicked="#onAboutButtonClicked" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@png/information.png" />
                </image>
@@ -91,6 +91,6 @@
       <Separator layoutX="315.0" layoutY="173.0" orientation="VERTICAL" prefHeight="547.0" prefWidth="7.0" style="-fx-background-color: #C2C0A6;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="315.0" AnchorPane.topAnchor="173.0" />
 
       <Separator layoutY="173.0" prefHeight="5.0" prefWidth="1280.0" style="-fx-background-color: #C2C0A6;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="173.0" />
-      <AnchorPane fx:id="borderpane" layoutX="322.0" layoutY="178.0" maxHeight="958.0" maxWidth="964.0" minHeight="550.0" minWidth="958.0" prefHeight="550.0" prefWidth="964.0" style="-fx-background-color: #61727C;" />
+      <AnchorPane fx:id="borderpane" layoutX="321.0" layoutY="178.0" maxHeight="958.0" maxWidth="964.0" minHeight="550.0" minWidth="958.0" prefHeight="550.0" prefWidth="958.0" style="-fx-background-color: transparent;" />
    </children>
 </AnchorPane>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="RAMTest_View" prefHeight="555.0" prefWidth="645.0" style="-fx-background-color: #28403D;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" />
