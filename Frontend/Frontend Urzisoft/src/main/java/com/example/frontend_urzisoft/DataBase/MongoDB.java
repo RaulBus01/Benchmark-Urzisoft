@@ -15,12 +15,19 @@ public class MongoDB {
 
     public void connect() {
         //Need to ask for the connection string
-        String connectionString = "mongodb://localhost:27017";
+        String connectionString = "mongodb+srv://testUser:testPass123@urzisoft.8s0ynmh.mongodb.net/?retryWrites=true&w=majority";
         this.mongoClient = MongoClients.create(connectionString);
         this.database = mongoClient.getDatabase("leaderboard-Urzisoft");
         this.collection = database.getCollection("Leaderboard");
 
         System.out.println("Connected to MongoDB");
+    }
+    public void getData()
+    {
+        for (Document doc : collection.find())
+        {
+            System.out.println(doc.toJson());
+        }
     }
 
     public void insertDocument(Document doc) {
@@ -36,6 +43,9 @@ public class MongoDB {
 
         }
     }
+    public MongoCollection<Document> getCollection() {
+        return collection;
+    }
 
     public void closeConnection() {
         if (this.mongoClient != null)
@@ -43,6 +53,7 @@ public class MongoDB {
             this.mongoClient.close();
         }
     }
+
     public static void main(String args[])
     {
         MongoDB mongoDB = new MongoDB();
@@ -50,6 +61,7 @@ public class MongoDB {
 
 
     }
+
 
 }
 

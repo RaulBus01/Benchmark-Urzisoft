@@ -5,34 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e57a20e6-0f23-41e6-937b-3a158c4b4f94" name="Changes" comment="Added CPUTest-view&#10;Added RAMTEST-view&#10;Added Leaderboard-view&#10;Added About-view&#10;Linked the mongoDB with the app">
-      <change afterPath="$PROJECT_DIR$/.idea/cssdialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_bson_4_9_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_bson_record_codec_4_9_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_mongodb_driver_core_4_9_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_mongodb_driver_sync_4_9_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/DataBase/LeaderboardEntry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/DataBase/MongoDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/About-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/CPUTEST-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/CSS/table.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/Leaderboard-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/RAMTEST-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_04_2023_15_47_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_04_2023_15_47_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_04_2023_15_47__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_04_2023_15_47__Changes_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_04_2023_15_47__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_04_2023_15_47__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_04_2023_15_47__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_04_2023_15_47__Changes_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/HardwareDetails/CPU.java" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/HardwareDetails/CPU.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/HardwareDetails/HardwareDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/HardwareDetails/HardwareDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/DataBase/MongoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/DataBase/MongoDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/HardwareDetails/HardwareDetails.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/CPU-View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/CPU-View.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/CSS/file.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/RAM-View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/RAM-View.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +27,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="refactorController" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="KEEP" />
   </component>
@@ -132,6 +116,8 @@
         <item itemvalue="Application.HelloApplication" />
         <item itemvalue="Application.MongoDB" />
         <item itemvalue="Application.GetDetailsHardware" />
+        <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="Application.MongoDB" />
       </list>
     </recent_temporary>
   </component>
@@ -155,7 +141,9 @@
       <workItem from="1683095615608" duration="12265000" />
       <workItem from="1683126173065" duration="220000" />
       <workItem from="1683129302976" duration="12883000" />
-      <workItem from="1683183971188" duration="630000" />
+      <workItem from="1683183971188" duration="7295000" />
+      <workItem from="1683205272809" duration="1098000" />
+      <workItem from="1683280423211" duration="1819000" />
     </task>
     <task id="LOCAL-00001" summary="Added Scene in Scene">
       <created>1682795848210</created>
@@ -206,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683184267141</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added CPUTest-view&#10;Added RAMTEST-view&#10;Added Leaderboard-view&#10;Added About-view&#10;Linked the mongoDB with the app">
+      <created>1683184656098</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1683184656098</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,7 +212,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="refactorController" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
         <entry key="a761a834-520e-4938-9007-c5e6329037d9">
@@ -247,11 +254,6 @@
         </entry>
       </map>
     </option>
-    <option name="OPEN_GENERIC_TABS">
-      <map>
-        <entry key="a761a834-520e-4938-9007-c5e6329037d9" value="TOOL_WINDOW" />
-      </map>
-    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added Scene in Scene" />
@@ -269,11 +271,6 @@
           <properties class="java.lang.ClassCastException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/HelloController.java</url>
-          <line>346</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
