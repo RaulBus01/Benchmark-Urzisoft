@@ -5,6 +5,7 @@ import com.example.frontend_urzisoft.DataBase.MongoDB;
 import com.example.frontend_urzisoft.HardwareDetails.CPU;
 import com.example.frontend_urzisoft.HardwareDetails.RAM;
 import com.example.frontend_urzisoft.HardwareDetails.SYI;
+import com.mongodb.client.FindIterable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
@@ -24,7 +25,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-import com.example.frontend_urzisoft.HardwareDetails.HardwareDetails;
+
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.scene.control.TableView;
@@ -126,7 +127,7 @@ public class HelloController implements Initializable {
                     RAM_Manufacturer.setText(ramItem.getManufacturer());
                     RAM_Capacity.setText(ramItem.getCapacity());
                     RAM_Frequency.setText(ramItem.getFrequency());
-                    System.out.println(ramItem.getMemoryType());
+                   // System.out.println(ramItem.getMemoryType());
                     RAM_Type.setText(String.valueOf(ramItem.getMemoryType()));
                 });
                 bankMenu.getItems().add(item);
@@ -376,6 +377,10 @@ public class HelloController implements Initializable {
         TableColumn<LeaderboardEntry, Integer> cpuScoreColumn = (TableColumn<LeaderboardEntry, Integer>) table.getColumns().get(3);
         TableColumn<LeaderboardEntry, Integer> ramScoreColumn = (TableColumn<LeaderboardEntry, Integer>) table.getColumns().get(4);
         TableColumn<LeaderboardEntry, Integer> totalScoreColumn = (TableColumn<LeaderboardEntry, Integer>) table.getColumns().get(5);
+        MongoDB mongoDB = new MongoDB();
+        mongoDB.connect();
+        FindIterable<Document> documents = mongoDB.getCollection().find();
+
 
 
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("user"));
@@ -385,14 +390,19 @@ public class HelloController implements Initializable {
         ramScoreColumn.setCellValueFactory(new PropertyValueFactory<>("RAMScore"));
         totalScoreColumn.setCellValueFactory(new PropertyValueFactory<>("TotalScore"));
 
-
-
-
-        LeaderboardEntry newEntry = new LeaderboardEntry("Test", "I5","8GB", 10, 12);
-
-
         ObservableList<LeaderboardEntry> data = FXCollections.observableArrayList();
-        data.add(newEntry);
+        for (Document doc : documents)
+        {
+            LeaderboardEntry entry= new LeaderboardEntry("1", doc.getString("CPU"), doc.getString("RAM"), doc.getInteger("CPUScore"), doc.getInteger("RAMScore"));
+
+            for(int i=0;i<10;i++)
+            {
+
+                data.add(entry);
+
+            }
+        }
+
 
 
 
