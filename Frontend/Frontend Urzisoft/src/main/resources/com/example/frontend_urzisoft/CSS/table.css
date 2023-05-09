@@ -1,0 +1,57 @@
+.table-column
+{
+    -fx-text-alignment:center;
+    -fx-alignment: CENTER;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Calibri";
+    -fx-background-color:#599FA6;
+    -fx-text-fill: #0A7373;
+
+}
+.table-column:even
+{
+    -fx-text-alignment:center;
+    -fx-alignment: CENTER;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Calibri";
+    -fx-background-color:  #CBA834;
+    -fx-text-fill: #0A7373;
+
+
+}
+.table-column:odd
+{
+    -fx-text-alignment:center;
+    -fx-alignment: CENTER;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Calibri";
+    -fx-background-color:  #024959;
+    -fx-text-fill: #CBA834;
+}
+.table-view .scroll-bar:horizontal {
+    -fx-opacity: 0;
+    -fx-pref-height: 0;
+}
+
+.table-column .scroll-bar:vertical .thumb
+{
+    -fx-background-color: #CBA834;
+    -fx-background-radius: 0;
+    -fx-scale-x: 0.7;
+
+}
+.table-column .scroll-bar:vertical
+{
+    -fx-translate-y: -20;
+    -fx-background-color: #024959;
+    -fx-scale-x: 0.7;
+}
+.table-column .scroll-bar:vertical .increment-button
+{
+
+    -fx-background-color: #024959;
+    -fx-scale-x: 0.7;
+}

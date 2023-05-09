@@ -1,0 +1,20 @@
+/* Color Theme Swatches in Hex */
+.Holiday-Cheer-1-hex { color: #024554; }
+.Holiday-Cheer-2-hex { color: #53736A; }
+.Holiday-Cheer-3-hex { color: #6A8C69; }
+.Holiday-Cheer-4-hex { color: #A8B545; }
+.Holiday-Cheer-5-hex { color: #C2C0A6; }
+
+/* Color Theme Swatches in RGBA */
+.Holiday-Cheer-1-rgba { color: rgba(2, 68, 84, 1); }
+.Holiday-Cheer-2-rgba { color: rgba(82, 114, 105, 1); }
+.Holiday-Cheer-3-rgba { color: rgba(105, 140, 105, 1); }
+.Holiday-Cheer-4-rgba { color: rgba(168, 181, 68, 1); }
+.Holiday-Cheer-5-rgba { color: rgba(193, 191, 165, 1); }
+
+/* Color Theme Swatches in HSLA */
+.Holiday-Cheer-1-hsla { color: hsla(190, 95, 16, 1); }
+.Holiday-Cheer-2-hsla { color: hsla(163, 16, 38, 1); }
+.Holiday-Cheer-3-hsla { color: hsla(118, 14, 48, 1); }
+.Holiday-Cheer-4-hsla { color: hsla(66, 44, 49, 1); }
+.Holiday-Cheer-5-hsla { color: hsla(55, 18, 70, 1); }
