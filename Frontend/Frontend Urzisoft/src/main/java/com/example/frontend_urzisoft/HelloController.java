@@ -5,7 +5,12 @@ import com.example.frontend_urzisoft.DataBase.MongoDB;
 import com.example.frontend_urzisoft.HardwareDetails.CPU;
 import com.example.frontend_urzisoft.HardwareDetails.RAM;
 import com.example.frontend_urzisoft.HardwareDetails.SYI;
+
+import com.example.frontend_urzisoft.ui.RingProgressIndicator;
+import com.example.frontend_urzisoft.ui.RingProgressIndicatorSkin;
+import com.example.frontend_urzisoft.ui.UILoading;
 import com.mongodb.client.FindIterable;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
@@ -21,27 +26,27 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
 
+import javafx.scene.layout.Background;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TableColumn;
-import com.example.frontend_urzisoft.DataBase.LeaderboardEntry;
-import org.bson.Document;
-import oshi.SystemInfo;
-import oshi.driver.linux.proc.UserGroupInfo;
 
-import static oshi.util.Util.sleep;
+import org.bson.Document;
+
+
 
 public class HelloController implements Initializable {
 
 
-    @FXML
-    private Button homeButton, CPUTestButton, RAMTestButton, LeaderboardButton, ExitButton;
+
 
     @FXML
     private AnchorPane borderpane;
@@ -253,49 +258,151 @@ public class HelloController implements Initializable {
         side.getChildren().setAll(viewLoad);
 
 
-        // Create a progress bar
-        ProgressBar progressBar = new ProgressBar(0);
-        Label v = new Label();
+        UILoading sideLoad = new UILoading();
+        sideLoad.setUI(side);
 
-        progressBar.setPrefWidth(200);
-        progressBar.setPrefHeight(20);
-        progressBar.setLayoutX(230);
-        progressBar.setLayoutY(270);
-        v.setStyle("-fx-font-size: 16px; -fx-text-fill: #C2C0A6;");
-        v.setLayoutX(290);
-        v.setLayoutY(230);
-        side.getChildren().add(progressBar);
-        side.getChildren().add(v);
-        progressBar.setStyle("-fx-accent: #2D3E40;");
+        RingProgressIndicator totalScoreIndicator= new RingProgressIndicator();
+        RingProgressIndicator singleScoreIndicator= new RingProgressIndicator();
+        RingProgressIndicator multiScoreIndicator= new RingProgressIndicator();
+        singleScoreIndicator.setInnerCircleRadius(40);
+        singleScoreIndicator.setRingWidth(15);
+        multiScoreIndicator.setInnerCircleRadius(50);
+        multiScoreIndicator.setRingWidth(16);
+        totalScoreIndicator.setInnerCircleRadius(60);
+        totalScoreIndicator.setRingWidth(17);
 
-        // Create a task to perform the RAM test
+
+
+        singleScoreIndicator.setLayoutX(83);
+        singleScoreIndicator.setLayoutY(200);
+        multiScoreIndicator.setLayoutX(420);
+        multiScoreIndicator.setLayoutY(189);
+
+        totalScoreIndicator.setLayoutX(240);
+        totalScoreIndicator.setLayoutY(360);
+        String css = getClass().getResource("/com/example/frontend_urzisoft/CSS/circleProgressSingle.css").toExternalForm();
+        singleScoreIndicator.getStylesheets().add(css);
+        multiScoreIndicator.getStylesheets().add(css);
+
+
+
+
+
 
         Task<Void> cpuTestTask = new Task<>() {
             @Override
             protected Void call() throws Exception {
                 //First Message
-                updateMessage("Testing CPU...");
-
-                for (int i = 0; i < 5; i++) {
-                    Thread.sleep(1000);
-                    //Multiple messages
-
-                    updateMessage("Testing CPU with Algo... " );
-
+                updateMessage("Loading Tests...");
+                Thread.sleep(1000);
+                updateMessage("Testing CPU with Algo... ");
+                Thread.sleep(4000);
+                for (int i = 0; i < 10; i++) {
+                    Thread.sleep(40);
+                    updateProgress(i + 1, 10);
                 }
                 updateMessage("CPU Test Complete");
-                updateProgress(1, 1);
+                Thread.sleep(750);
+
+
                 return null;
             }
         };
-        progressBar.progressProperty().bind(cpuTestTask.progressProperty());
 
 
-        v.setLayoutX(250);
-        v.textProperty().bind(cpuTestTask.messageProperty());
+        sideLoad.getProgressBar().progressProperty().bind(cpuTestTask.progressProperty());
+        sideLoad.getTaskText().textProperty().bind(cpuTestTask.messageProperty());
+// Create a task to update the ring indicator
+        Task<Void> updateRingTask = new Task<>()
+        {
+
+            @Override
+            protected Void call() throws Exception
+            {
+                int single = 8907;
+                int multi = 12407;
+                int total = single + multi;
+                int targetProgress = total;
+                int increment = Math.max(targetProgress / 100, 1);
+                int progress = 0;
+
+                while (progress < targetProgress )
+                {
+                    progress += increment;
+                    Thread.sleep(10);
+                    if (progress < targetProgress)
+                    {
+                        int finalProgress = progress;
+                        Platform.runLater(() -> totalScoreIndicator.setProgress(finalProgress));
+                        if( progress < multi)
+                        {
+                            Platform.runLater(() -> multiScoreIndicator.setProgress(finalProgress));
+                            if(progress<single)
+                            {
+                                Platform.runLater(() -> singleScoreIndicator.setProgress(finalProgress));
+                            }
+                            else
+                            {
+                                Platform.runLater(() -> singleScoreIndicator.setProgress(single));
+                            }
+
+
+
+                        }
+                        else {
+                            Platform.runLater(() -> multiScoreIndicator.setProgress(multi));
+                        }
+                    }
+                    else
+                    {
+                        Platform.runLater(() ->totalScoreIndicator.setProgress(total));
+                    }
+
+
+                }
+
+                sideLoad.getTaskText().setVisible(false);
+                MongoDB mongoDB = new MongoDB();
+                mongoDB.connect();
+
+                Document document = new Document("user","AP" ).append("CPU", CPU_id)
+                        .append("RAM", RAM_id)
+                        .append("RAMScore", 200)
+                        .append("CPUScore", 200)
+                        .append("TotalScore", 200);
+                mongoDB.insertDocument(document);
+
+                mongoDB.closeConnection();
+                return null;
+            }
+
+        };
+
+
 
         Thread thread = new Thread(cpuTestTask);
         thread.start();
+
+        cpuTestTask.setOnSucceeded(event -> {
+
+            sideLoad.getProgressBar().setVisible(false);
+            sideLoad.getTaskText().setLayoutX(255);
+            sideLoad.getTaskText().setLayoutY(25);
+            sideLoad.getTaskText().textProperty().unbind();
+            sideLoad.getTaskText().setText("Loading Scores...");
+            Thread thread2 = new Thread(updateRingTask);
+            thread2.start();
+            viewLoad.getChildren().add(singleScoreIndicator);
+            viewLoad.getChildren().add(totalScoreIndicator);
+            viewLoad.getChildren().add(multiScoreIndicator);
+            viewLoad.getChildren().add(sideLoad.getSingleScoreText());
+            viewLoad.getChildren().add(sideLoad.getMultiScoreText());
+            viewLoad.getChildren().add(sideLoad.getTotalScoreText());
+            sideLoad.getSingleScoreText().setText("Single Core Score ");
+            sideLoad.getMultiScoreText().setText("Multi Core Score ");
+            sideLoad.getTotalScoreText().setText("Total Score ");
+
+        });
 
     }
 
@@ -305,62 +412,148 @@ public class HelloController implements Initializable {
         AnchorPane viewLoad = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("RAMTEST-view.fxml")));
         side.getChildren().setAll(viewLoad);
 
+        UILoading ramLoad = new UILoading();
+        ramLoad.setUI(side);
 
-        // Create a progress bar
-        ProgressBar progressBar = new ProgressBar(0);
-        Label v = new Label("Ram Test");
+        RingProgressIndicator totalScoreIndicator= new RingProgressIndicator();
+        RingProgressIndicator singleScoreIndicator= new RingProgressIndicator();
+        RingProgressIndicator multiScoreIndicator= new RingProgressIndicator();
+        singleScoreIndicator.setInnerCircleRadius(40);
+        singleScoreIndicator.setRingWidth(15);
+        multiScoreIndicator.setInnerCircleRadius(50);
+        multiScoreIndicator.setRingWidth(16);
+        totalScoreIndicator.setInnerCircleRadius(60);
+        totalScoreIndicator.setRingWidth(17);
 
-        progressBar.setPrefWidth(200);
-        progressBar.setPrefHeight(20);
-        progressBar.setLayoutX(230);
-        progressBar.setLayoutY(270);
-        v.setStyle("-fx-font-size: 16px; -fx-text-fill: #C2C0A6;");
-        v.setLayoutX(290);
-        v.setLayoutY(230);
-        side.getChildren().add(progressBar);
-        side.getChildren().add(v);
-        progressBar.setStyle("-fx-accent: #2D3E40;");
+
+
+        singleScoreIndicator.setLayoutX(83);
+        singleScoreIndicator.setLayoutY(200);
+        multiScoreIndicator.setLayoutX(420);
+        multiScoreIndicator.setLayoutY(189);
+
+        totalScoreIndicator.setLayoutX(240);
+        totalScoreIndicator.setLayoutY(360);
+        String css = getClass().getResource("/com/example/frontend_urzisoft/CSS/circleProgressSingle.css").toExternalForm();
+        singleScoreIndicator.getStylesheets().add(css);
+        multiScoreIndicator.getStylesheets().add(css);
 
         // Create a task to perform the RAM test
 
-        Task<Void> ramTestTask = new Task<>() {
+        Task<Void> cpuTestTask = new Task<>() {
             @Override
             protected Void call() throws Exception {
                 //First Message
-                updateMessage("Testing RAM...");
-                sleep(1000);
-                updateMessage("Testing RAM with Algo... " );
-                MongoDB mongoDB = new MongoDB();
-
-
+                updateMessage("Loading Tests...");
+                Thread.sleep(1000);
+                updateMessage("Testing RAM with Algo... ");
+                Thread.sleep(4000);
+                for (int i = 0; i < 10; i++) {
+                    Thread.sleep(40);
+                    updateProgress(i + 1, 10);
+                }
                 updateMessage("RAM Test Complete");
-                updateProgress(1, 1);
-                mongoDB.connect();
-
-                Document document = new Document("user:","Test" ).append("CPU", CPU_id)
-                        .append("RAM", RAM_id)
-                        .append("RAMScore", 100)
-                        .append("CPUScore", 100)
-                        .append("TotalScore", 100);
-                mongoDB.insertDocument(document);
-
-
-
-
-
+                Thread.sleep(750);
 
 
                 return null;
             }
         };
-        progressBar.progressProperty().bind(ramTestTask.progressProperty());
 
 
-        v.setLayoutX(250);
-        v.textProperty().bind(ramTestTask.messageProperty());
+        ramLoad.getProgressBar().progressProperty().bind(cpuTestTask.progressProperty());
+        ramLoad.getTaskText().textProperty().bind(cpuTestTask.messageProperty());
+// Create a task to update the ring indicator
+        Task<Void> updateRingTask = new Task<>()
+        {
 
-            Thread thread = new Thread(ramTestTask);
-            thread.start();
+            @Override
+            protected Void call() throws Exception
+            {
+                int single = 8907;
+                int multi = 12407;
+                int total = single + multi;
+                int targetProgress = total;
+                int increment = Math.max(targetProgress / 100, 1);
+                int progress = 0;
+
+                while (progress < targetProgress )
+                {
+                    progress += increment;
+                    Thread.sleep(10);
+                    if (progress < targetProgress)
+                    {
+                        int finalProgress = progress;
+                        Platform.runLater(() -> totalScoreIndicator.setProgress(finalProgress));
+                        if( progress < multi)
+                        {
+                            Platform.runLater(() -> multiScoreIndicator.setProgress(finalProgress));
+                            if(progress<single)
+                            {
+                                Platform.runLater(() -> singleScoreIndicator.setProgress(finalProgress));
+                            }
+                            else
+                            {
+                                Platform.runLater(() -> singleScoreIndicator.setProgress(single));
+                            }
+
+
+
+                        }
+                        else {
+                            Platform.runLater(() -> multiScoreIndicator.setProgress(multi));
+                        }
+                    }
+                    else
+                    {
+                        Platform.runLater(() ->totalScoreIndicator.setProgress(total));
+                    }
+
+
+                }
+
+                ramLoad.getTaskText().setVisible(false);
+                MongoDB mongoDB = new MongoDB();
+                mongoDB.connect();
+
+                Document document = new Document("user","AP" ).append("CPU", CPU_id)
+                        .append("RAM", RAM_id)
+                        .append("RAMScore", 200)
+                        .append("CPUScore", 200)
+                        .append("TotalScore", 200);
+                mongoDB.insertDocument(document);
+
+                mongoDB.closeConnection();
+                return null;
+            }
+
+        };
+
+
+
+        Thread thread = new Thread(cpuTestTask);
+        thread.start();
+
+        cpuTestTask.setOnSucceeded(event -> {
+
+            ramLoad.getProgressBar().setVisible(false);
+            ramLoad.getTaskText().setLayoutX(255);
+            ramLoad.getTaskText().setLayoutY(25);
+            ramLoad.getTaskText().textProperty().unbind();
+            ramLoad.getTaskText().setText("Loading Scores...");
+            Thread thread2 = new Thread(updateRingTask);
+            thread2.start();
+            viewLoad.getChildren().add(singleScoreIndicator);
+            viewLoad.getChildren().add(totalScoreIndicator);
+            viewLoad.getChildren().add(multiScoreIndicator);
+            viewLoad.getChildren().add(ramLoad.getSingleScoreText());
+            viewLoad.getChildren().add(ramLoad.getMultiScoreText());
+            viewLoad.getChildren().add(ramLoad.getTotalScoreText());
+            ramLoad.getSingleScoreText().setText("Single Core Score ");
+            ramLoad.getMultiScoreText().setText("Multi Core Score ");
+            ramLoad.getTotalScoreText().setText("Total Score ");
+
+        });
 
     }
 

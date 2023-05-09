@@ -6,7 +6,7 @@
 
 <AnchorPane maxHeight="550.0" maxWidth="958.0" minHeight="550.0" minWidth="958.0" prefHeight="550.0" prefWidth="958.0" style="-fx-background-color: #53736A;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TableView fx:id="Table" fixedCellSize="100.0" prefHeight="550.0" prefWidth="958.0" styleClass="table-column" stylesheets="@CSS/table.css">
+      <TableView fx:id="Table" fixedCellSize="80.0" prefHeight="550.0" prefWidth="958.0" styleClass="table-column" stylesheets="@CSS/table.css">
         <columns>
           <TableColumn id="table-column" fx:id="user" editable="false" maxWidth="160.0" minWidth="160.0" prefWidth="160.0" resizable="false" text="Number User" />
             <TableColumn id="CPU" fx:id="CPU" editable="false" maxWidth="160.0" minWidth="160.0" prefWidth="160.0" resizable="false" text="CPU" />

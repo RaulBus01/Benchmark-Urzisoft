@@ -5,6 +5,7 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.IndexOptions;
 import org.bson.Document;
 
@@ -22,27 +23,28 @@ public class MongoDB {
 
         System.out.println("Connected to MongoDB");
     }
-    public void getData()
-    {
-        for (Document doc : collection.find())
-        {
-            System.out.println(doc.toJson());
-        }
+
+    public boolean checkUser(String user) {
+        long count = collection.countDocuments(Filters.eq("user", user));
+        return count > 0;
     }
 
     public void insertDocument(Document doc) {
-        if (this.collection != null)
-        {
-            collection.createIndex(new Document("user",1),new IndexOptions().unique(true));
-            try {
-                this.collection.insertOne(doc);
+        if (this.collection != null) {
+            System.out.println(doc.getString("user"));
+            System.out.println(checkUser(doc.getString("user")));
+            if (!checkUser(doc.getString("user"))) {
+                collection.insertOne(doc);
                 System.out.println("Document inserted");
-            } catch (Exception e) {
-                System.out.println("Document already exists");
+            } else {
+                collection.updateOne(Filters.eq("user", doc.getString("user")), new Document("$set", doc));
+                System.out.println("User already exists");
             }
-
+        } else {
+            System.out.println("Collection is null");
         }
     }
+
     public MongoCollection<Document> getCollection() {
         return collection;
     }
