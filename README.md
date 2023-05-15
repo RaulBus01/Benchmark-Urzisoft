@@ -6,7 +6,7 @@ Benchmark of Urzisoft team
   -loading bar when running cu trotinetist
 
 - implementare backend benchmark RAM (Dragos)
-- implementare backend benchmark CPU  (file compression,  ) (Zandar)
+- implementare backend benchmark com.example.backend.CPU  (file compression,  ) (Zandar)
   ->mutli-threaded
   ->single-threaded
 - mai multi algoritmi scor acumulat

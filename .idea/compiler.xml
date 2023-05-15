@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Frontend_Urzisoft" />
+        <module name="Benchmark-Urzisoft" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Frontend_Urzisoft" target="9" />
+      <module name="Frontend_Urzisoft" target="19" />
     </bytecodeTargetLevel>
   </component>
 </project>
