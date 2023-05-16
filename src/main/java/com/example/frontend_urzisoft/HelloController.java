@@ -22,11 +22,13 @@ import javafx.geometry.Side;
 
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
@@ -56,6 +58,8 @@ public class HelloController implements Initializable {
     private int CPUScore, RAMScore, TotalScore;
     private String user_id;
 
+    public boolean disableButtons = false;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -74,6 +78,45 @@ public class HelloController implements Initializable {
         }
 
         System.out.println("SYI: " + this.syi.getOperatingSystem() + " " + this.syi.getModel() + " Motherboard: " + this.syi.getMotherboard());
+    }
+
+    private void changePanesView(boolean disabled){
+        AnchorPane menu = (AnchorPane) HelloApplication.scene.lookup("#menuPane");
+
+
+        ArrayList<Button> buttons = new ArrayList<>(6);
+        ArrayList<ImageView> icons = new ArrayList<>(6);
+
+            icons.add((ImageView) menu.lookup("#homeIcon"));
+            icons.add((ImageView) menu.lookup("#cpuTestIcon"));
+            icons.add((ImageView) menu.lookup("#ramTestIcon"));
+            icons.add((ImageView) menu.lookup("#leaderboardIcon"));
+            icons.add((ImageView) menu.lookup("#aboutIcon"));
+            icons.add((ImageView) menu.lookup("#exitIcon"));
+//    nu sunt sigur ca trebuie facut si asta.
+
+        menu.setDisable(disabled);
+
+//        buttons.add((Button) menu.lookup("#homeButton"));
+//        buttons.add((Button) menu.lookup("#cpuTestButton"));
+//        buttons.add((Button) menu.lookup("#ramTestButton"));
+//        buttons.add((Button) menu.lookup("#leaderboardButton"));
+//        buttons.add((Button) menu.lookup("#aboutButton"));
+//        buttons.add((Button) menu.lookup("#exitButton"));
+//
+//        for (Button button : buttons) {
+//            button.setDisable(disabled);
+//        }
+
+        if(disabled){
+            for (ImageView icon : icons) {
+                icon.setStyle("-fx-opacity: 0.5");
+            }
+        }else{
+            for (ImageView icon : icons) {
+                icon.setStyle("-fx-opacity: 1");
+            }
+        }
     }
 
     @FXML
@@ -188,7 +231,9 @@ public class HelloController implements Initializable {
         AnchorPane CPU_load = (AnchorPane) newSidePane.lookup("#CPUTest_View");
         startButton.setOnAction(event -> {
             try {
-                TestCPU(CPU_load);
+                changePanesView(true);
+                startButton.setDisable(true);
+                TestCPU(CPU_load, startButton);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -222,8 +267,9 @@ public class HelloController implements Initializable {
 
         runTestButton.setOnAction(event -> {
             try {
-
-                TestRam(RAM_load);
+                changePanesView(true);
+                runTestButton.setDisable(true);
+                TestRam(RAM_load, runTestButton);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -251,10 +297,11 @@ public class HelloController implements Initializable {
         RAM_id = totalMemory+" GB "+frequency+" MHz "+memoryType;
 
     }
-    protected void TestCPU(AnchorPane side) throws IOException
+    protected void TestCPU(AnchorPane side, Button runTestButton) throws IOException
     {
         AnchorPane viewLoad = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("CPUTEST-View.fxml")));
         side.getChildren().setAll(viewLoad);
+        viewLoad.requestFocus();
 
 
         UILoading sideLoad = new UILoading();
@@ -406,15 +453,19 @@ public class HelloController implements Initializable {
             sideLoad.getMultiScoreText().setText("Multi Core Score ");
             sideLoad.getTotalScoreText().setText("Total Score ");
 
+            changePanesView(false);
+            runTestButton.setDisable(false);
+
         });
 
     }
 
 
-    protected void TestRam(AnchorPane side) throws IOException
+    protected void TestRam(AnchorPane side, Button runTestButton) throws IOException
     {
         AnchorPane viewLoad = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("RAMTEST-view.fxml")));
         side.getChildren().setAll(viewLoad);
+
 
         UILoading ramLoad = new UILoading();
         ramLoad.setUI(side);
@@ -442,7 +493,10 @@ public class HelloController implements Initializable {
         singleScoreIndicator.getStylesheets().add(css);
         multiScoreIndicator.getStylesheets().add(css);
 
+        System.out.println("RAM TEST");
+
         // Create a task to perform the RAM test
+
 
         Task<Void> cpuTestTask = new Task<>() {
             @Override
@@ -557,8 +611,9 @@ public class HelloController implements Initializable {
             ramLoad.getMultiScoreText().setText("Multi Core Score ");
             ramLoad.getTotalScoreText().setText("Total Score ");
 
+            changePanesView(false);
+            runTestButton.setDisable(false);
         });
-
     }
 
     @FXML
