@@ -28,10 +28,7 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.ResourceBundle;
+import java.util.*;
 
 
 import javafx.scene.layout.Pane;
@@ -456,7 +453,7 @@ public class HelloController implements Initializable {
             Label dialogText = cpuLoad.getDialogText();
             dialogButton.setOnAction(eventButton -> {
                 String user = dialog.getText();
-                System.out.println(user);
+
                 if(user.length()>0)
                 {
                         dialog.setDisable(true);
@@ -522,7 +519,7 @@ public class HelloController implements Initializable {
 
 
 
-        Task<Void> cpuTestTask = new Task<>() {
+        Task<Void> ramTestTask = new Task<>() {
             @Override
             protected Void call() throws Exception {
                 //First Message
@@ -641,7 +638,7 @@ public class HelloController implements Initializable {
             Label dialogText = ramLoad.getDialogText();
             dialogButton.setOnAction(eventButton -> {
                 String user = dialog.getText();
-                System.out.println(user);
+
                 if (user.length() > 0) {
                     dialog.setDisable(true);
                     dialogButton.setVisible(false);

@@ -59,7 +59,7 @@
          <children>
             <Text fx:id="RAM_Manufacturer" fill="#dbf227" layoutX="150.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="OS" wrappingWidth="155.0">
                <font>
-                  <Font name="Calibri" size="16.0" />
+                  <Font name="Calibri Bold" size="16.0" />
                </font>
             </Text>
             <Text fill="WHITE" layoutX="90.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RAM Information">
@@ -69,37 +69,37 @@
             </Text>
             <Text fill="WHITE" layoutX="20.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manufacturer:">
                <font>
-                  <Font name="Calibri" size="20.0" />
+                  <Font name="Calibri Bold" size="18.0" />
                </font>
             </Text>
             <Text fill="WHITE" layoutX="20.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Capacity:">
                <font>
-                  <Font name="Calibri" size="20.0" />
+                  <Font name="Calibri Bold" size="20.0" />
                </font>
             </Text>
             <Text fill="WHITE" layoutX="20.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Frequency:">
                <font>
-                  <Font name="Calibri" size="20.0" />
+                  <Font name="Calibri Bold" size="20.0" />
                </font>
             </Text>
-            <Text fx:id="RAM_Capacity" boundsType="VISUAL" fill="#dbf227" layoutX="150.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Model" wrappingWidth="200.0">
+            <Text fx:id="RAM_Capacity" boundsType="VISUAL" fill="WHITE" layoutX="150.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Model" wrappingWidth="200.0">
                <font>
-                  <Font name="Calibri" size="16.0" />
+                  <Font name="Calibri Bold" size="16.0" />
                </font>
             </Text>
-            <Text fx:id="RAM_Frequency" fill="#dbf227" layoutX="150.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" wrappingWidth="200.0">
+            <Text fx:id="RAM_Frequency" fill="WHITE" layoutX="150.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" wrappingWidth="200.0">
                <font>
                   <Font name="Calibri" size="16.0" />
                </font>
             </Text>
             <Text fill="WHITE" layoutX="20.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type:">
                <font>
-                  <Font name="Calibri" size="20.0" />
+                  <Font name="Calibri Bold" size="20.0" />
                </font>
             </Text>
             <Text fx:id="RAM_Type" fill="#dbf227" layoutX="150.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Type:">
                <font>
-                  <Font name="Calibri" size="16.0" />
+                  <Font name="Calibri Bold" size="16.0" />
                </font>
             </Text>
             <Separator layoutX="-5.0" orientation="VERTICAL" prefHeight="550.0" prefWidth="5.0" style="-fx-background-color: #C2C0A6;" />
@@ -124,17 +124,17 @@
             </Text>
             <Text fill="WHITE" layoutX="31.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:">
                <font>
-                  <Font name="Calibri" size="20.0" />
+                  <Font name="Calibri Bold" size="20.0" />
                </font>
             </Text>
             <Text fill="WHITE" layoutX="31.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Physical Processors:">
                <font>
-                  <Font name="Calibri" size="20.0" />
+                  <Font name="Calibri Bold" size="20.0" />
                </font>
             </Text>
             <Text fill="WHITE" layoutX="31.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logical Processors:">
                <font>
-                  <Font name="Calibri" size="20.0" />
+                  <Font name="Calibri Bold" size="20.0" />
                </font>
             </Text>
             <Text fx:id="CPU_Name" fill="#dbf227" layoutX="90.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="I10" wrappingWidth="215.0">
@@ -144,7 +144,7 @@
             </Text>
             <Text fx:id="CPU_Physical_Processors" boundsType="VISUAL" fill="#dbf227" layoutX="200.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Model" wrappingWidth="200.0">
                <font>
-                  <Font name="Calibri" size="16.0" />
+                  <Font name="Calibri Bold" size="16.0" />
                </font>
             </Text>
             <Text fx:id="CPU_Logical_Processors" fill="#dbf227" layoutX="195.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" wrappingWidth="100.0">
