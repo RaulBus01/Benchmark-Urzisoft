@@ -11,13 +11,14 @@ import java.io.IOException;
 
 public class HelloApplication extends Application {
 
+    public static Scene scene;
 
     @Override
     public void start(Stage stage) throws IOException
     {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
 
-        Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
+        scene = new Scene(fxmlLoader.load(), 1280, 720);
 
         stage.setTitle("Benchmark Application");
         Image iconApp = new Image(getClass().getResource("/com/example/frontend_urzisoft/png/logo_file.jpg").toExternalForm());

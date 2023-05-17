@@ -13,19 +13,19 @@
    <children>
       <Pane fx:id="RAM_Info" prefHeight="550.0" prefWidth="320.0" scaleShape="false">
          <children>
-            <Text fill="WHITE" layoutX="80.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RAM Information">
+            <Text fill="WHITE" layoutX="80.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RAM Information">
                <font>
                   <Font name="Calibri" size="20.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="20.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Capacity:">
+            <Text fill="WHITE" layoutX="20.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Capacity:">
                <font>
-                  <Font name="Calibri" size="20.0" />
+                  <Font name="Calibri Bold" size="18.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="20.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Frequency:">
+            <Text fill="WHITE" layoutX="20.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Frequency:">
                <font>
-                  <Font name="Calibri" size="20.0" />
+                  <Font name="Calibri Bold" size="18.0" />
                </font>
             </Text>
             <Text fx:id="RAM_TCapacity" boundsType="VISUAL" fill="WHITE" layoutX="150.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16; -fx-fill: #DBF227;" text="Model" wrappingWidth="200.0">
@@ -33,9 +33,9 @@
                   <Font name="Calibri" size="16.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="20.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type:">
+            <Text fill="WHITE" layoutX="20.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type:">
                <font>
-                  <Font name="Calibri" size="20.0" />
+                  <Font name="Calibri Bold" size="18.0" />
                </font>
             </Text>
             <Text fx:id="RAM_Type" fill="WHITE" layoutX="80.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16; -fx-fill: #DBF227;" text="Type:">
@@ -49,7 +49,7 @@
                   <Font name="Calibri Bold" size="19.0" />
                </font>
             </Button>
-            <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="119.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="115.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@png/ram.png" />
                </image>

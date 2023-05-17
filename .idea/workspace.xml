@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e57a20e6-0f23-41e6-937b-3a158c4b4f94" name="Changes" comment="Refactored code&#10;Implemented CPU benchmark and GUI">
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CPU_Benchmark/src/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_04_2023_15_47__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_04_2023_15_47__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CPU_Benchmark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/CPU_Benchmark.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/CPU/LZWEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/CPU/LZWEncoder.java" afterDir="false" />
@@ -15,6 +19,12 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/ui/UILoading.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/ui/UILoading.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/CSS/table.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/CSS/table.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/RAM-View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/RAM-View.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/CPU-View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/CPU-View.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/Home-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/Home-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/RAM-View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/RAM-View.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +48,19 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="KEEP" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="6126c950-174b-47a9-80f8-c5ed73407a59" />
+        <option name="url" value="https://github.com/RaulBus01/Benchmark-Urzisoft.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -58,15 +81,11 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Java/Benchmark-Urzisoft/src/main/resources/com/example/frontend_urzisoft&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/openjfx-20_windows-x64_bin-sdk/javafx-sdk-20/lib&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -81,20 +100,14 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Java\Benchmark-Urzisoft\src\main\resources\com\example\frontend_urzisoft" />
-      <recent name="C:\Java\Benchmark-Urzisoft\src\main\resources" />
-      <recent name="C:\Java\Benchmark-Urzisoft\src\main\resources\com\example\frontend_urzisoft\png" />
       <recent name="C:\Java\Benchmark-Urzisoft\Frontend\Frontend Urzisoft\src\main\resources\com\example\frontend_urzisoft\png" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Java\Benchmark-Urzisoft\src\main\resources" />
-      <recent name="C:\Java\Benchmark-Urzisoft\src\main\java\com\example\backend\CPU" />
-      <recent name="C:\Java\Benchmark-Urzisoft\src\main\java" />
       <recent name="C:\Java\Benchmark-Urzisoft\Frontend\Frontend Urzisoft\src\main\resources\com\example\frontend_urzisoft\CSS" />
       <recent name="C:\Java\Benchmark-Urzisoft\Frontend\Frontend Urzisoft\src\main\resources\com\example\frontend_urzisoft\ProgressCircleCSS" />
+      <recent name="C:\Java\Benchmark-Urzisoft\Frontend\Frontend Urzisoft\src\main\java\com\example\frontend_urzisoft\ProgressCircle" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.example" />
       <recent name="com.example.frontend_urzisoft" />
       <recent name="" />
     </key>
@@ -113,25 +126,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.frontend_urzisoft.HelloApplication" />
-      <module name="Benchmark-Urzisoft" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.frontend_urzisoft.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+    <configuration name="GetDetailsHardware" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GetDetailsHardware" />
+      <module name="Frontend_Urzisoft" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Test.Main" />
-      <module name="Benchmark-Urzisoft" />
+    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.frontend_urzisoft.HelloApplication" />
+      <module name="Frontend_Urzisoft" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Test.*" />
+          <option name="PATTERN" value="com.example.frontend_urzisoft.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -168,10 +175,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.HelloApplication" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.RingProgressIndicatorExample" />
         <item itemvalue="Application.FillProgressIndicatorExample" />
         <item itemvalue="Application.MongoDB" />
+        <item itemvalue="Application.GetDetailsHardware" />
       </list>
     </recent_temporary>
   </component>
@@ -205,6 +212,11 @@
       <workItem from="1683445120548" duration="3000" />
       <workItem from="1683610331160" duration="45000" />
       <workItem from="1683613668688" duration="18000" />
+      <workItem from="1683653273282" duration="3504000" />
+      <workItem from="1684172785383" duration="17000" />
+      <workItem from="1684219027779" duration="801000" />
+      <workItem from="1684221491809" duration="23000" />
+      <workItem from="1684248749081" duration="5977000" />
       <workItem from="1683653273282" duration="4675000" />
       <workItem from="1683701402768" duration="330000" />
       <workItem from="1683703770737" duration="461000" />
@@ -276,6 +288,7 @@
       <option name="project" value="LOCAL" />
       <updated>1683184656098</updated>
     </task>
+    <option name="localTasksCounter" value="9" />
     <task id="LOCAL-00009" summary="Refactored Code&#10;added ringIndicator">
       <created>1683656939817</created>
       <option name="number" value="00009" />
@@ -321,7 +334,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/Update_Frontend" />
+                        <option value="refactorController" />
                       </list>
                     </value>
                   </entry>
@@ -385,22 +398,28 @@
     <MESSAGE value="added Icons for home page&#10;added Ram Page" />
     <MESSAGE value="Fixed PNGS" />
     <MESSAGE value="Added CPUTest-view&#10;Added RAMTEST-view&#10;Added Leaderboard-view&#10;Added About-view&#10;Linked the mongoDB with the app" />
-    <MESSAGE value="Refactored Code&#10;added ringIndicator" />
-    <MESSAGE value="Refactored code&#10;Implemented CPU benchmark and GUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored code&#10;Implemented CPU benchmark and GUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added CPUTest-view&#10;Added RAMTEST-view&#10;Added Leaderboard-view&#10;Added About-view&#10;Linked the mongoDB with the app" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ClassCastException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/CPU_Benchmark.java</url>
           <line>137</line>
+          <url>file://$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/ui/FillProgressIndicator.java</url>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/CPU_Benchmark.java</url>
           <line>51</line>
           <option name="timeStamp" value="5" />
+          <url>file://$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/example/RingProgressIndicatorExample.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
