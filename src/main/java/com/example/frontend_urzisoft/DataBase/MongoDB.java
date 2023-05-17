@@ -21,7 +21,7 @@ public class MongoDB {
         this.database = mongoClient.getDatabase("leaderboard-Urzisoft");
         this.collection = database.getCollection("Leaderboard");
 
-        System.out.println("Connected to MongoDB");
+       // System.out.println("Connected to MongoDB");
     }
 
     public boolean checkUser(String user) {
@@ -31,17 +31,28 @@ public class MongoDB {
 
     public void insertDocument(Document doc) {
         if (this.collection != null) {
-            System.out.println(doc.getString("user"));
-            System.out.println(checkUser(doc.getString("user")));
-            if (!checkUser(doc.getString("user"))) {
+            String user = doc.getString("user");
+            int newTotalScore = doc.getInteger("TotalScore", 0);
+            if (!checkUser(user))
+            {
                 collection.insertOne(doc);
-                System.out.println("Document inserted");
-            } else {
-                collection.updateOne(Filters.eq("user", doc.getString("user")), new Document("$set", doc));
-                System.out.println("User already exists");
+
+               // System.out.println("Document inserted");
+            }
+            else
+            {
+                Document existingDocument = collection.find(Filters.eq("user", user)).first();
+                int existingTotalScore = existingDocument.getInteger("TotalScore", 0);
+
+                if (newTotalScore > existingTotalScore) {
+                    collection.updateOne(
+                            Filters.eq("user", user),
+                            new Document("$set", doc)
+                    );
+                }
             }
         } else {
-            System.out.println("Collection is null");
+           // System.out.println("Collection is null");
         }
     }
 

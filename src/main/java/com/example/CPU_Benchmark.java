@@ -14,6 +14,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
+import static javafx.application.Platform.exit;
+
 public class CPU_Benchmark{
     private  long  scoreMultiThreaded = 0;
     private  long scoreSingleThreaded = 0;
@@ -45,37 +47,37 @@ public class CPU_Benchmark{
             long stopTimeRoots;
             long stopTimeLZW = 0;
         // RUN_LZW
-//            for(int i = 0; i < 2; i++) {
-//                try {
-//                    System.out.println("Start");
-//                    Path path = Paths.get("src/main/resources/in.pdf");
-//
-//                    size_of_file = Files.size(path);//in bytes
-//
-//
-//
-//                    timer.start();
-//
-//                    LZWEncoder.compress(new File(path.toUri()), new File("src/main/resources/out.txt"));
-//                    System.out.println("Stop");
-//                    stopTimeLZW = timer.stop();
-//
-//                } catch (IOException | InterruptedException e) {
-//                    e.printStackTrace();
-//                    System.out.println("Error");
-//                }
-//                // COMPUTE_SCORE_LZW
-//
-//                stopTimeLZW = timer.transformToUnitTime(UnitTime.SECONDS, stopTimeLZW);
-//                System.out.println(stopTimeLZW);
-//                scoreLZW = (long) ((double) (size_of_file / (stopTimeLZW * 10)));
-//                System.out.println(scoreLZW);
-//                scoresList_LZW.add(scoreLZW);
-//
-//            }
+            for(int i = 0; i < 2; i++) {
+                try {
+                    System.out.println("Start");
+                    Path path = Paths.get("src/main/resources/in.pdf");
+
+                    size_of_file = Files.size(path);//in bytes
+
+
+
+                    timer.start();
+
+                    LZWEncoder.compress(new File(path.toUri()), new File("src/main/resources/out.txt"));
+                    System.out.println("Stop");
+                    stopTimeLZW = timer.stop();
+
+                } catch (IOException | InterruptedException e) {
+                    e.printStackTrace();
+                    System.out.println("Error");
+                }
+                // COMPUTE_SCORE_LZW
+                System.out.println("Start");
+                stopTimeLZW = timer.transformToUnitTime(UnitTime.SECONDS, stopTimeLZW);
+
+                scoreLZW = (long) ((double) (size_of_file / (stopTimeLZW *10 +1) ));
+                System.out.println(scoreLZW);
+                scoresList_LZW.add(scoreLZW);
+
+       }
             System.out.println("Start");
             // RUN_ROOTS
-            for(int i = 0; i < 3; i++) {
+            for(int i = 0; i < 2; i++) {
                 long SystemThreadCount = Runtime.getRuntime().availableProcessors();
                 ThreadedRoots threadedRoots = new ThreadedRoots();
                 threadedRoots.initialize(1000000000L);
@@ -91,13 +93,12 @@ public class CPU_Benchmark{
             }
             // INIT_FIXED_POINT_OP
             final int n = 1000000000;
-            System.out.println("Start");
             FixedPointBenchmark fixedPointBenchmark = new FixedPointBenchmark();
             fixedPointBenchmark.initialize(n);
 
             // FIXED_POINT_OP_WARMUP
             fixedPointBenchmark.warmup();
-            for(int i = 0; i < 3; i++) {
+            for(int i = 0; i <2; i++) {
 
                 // RUN_ARITHMETIC
                 TypeOfOperation operation = TypeOfOperation.ARITHMETIC;
@@ -128,16 +129,21 @@ public class CPU_Benchmark{
             // COMPUTE_FINAL_SCORES
             scoresList_LZW.sort(Long::compareTo);
              scoresList_SQ_ROOTS.sort(Long::compareTo);
-            System.out.println("Done1");
+
             scoresList_FIXED_POINT_OP.sort(Long::compareTo);
-            System.out.println("Done2");
-           scoreSingleThreaded = scoresList_FIXED_POINT_OP.get(2);
+
+           scoreSingleThreaded = scoresList_FIXED_POINT_OP.get(1);
 
             System.out.println("Done3");
-            scoreMultiThreaded = (10000+scoresList_SQ_ROOTS.get(2)) / 2;
+            scoreMultiThreaded = (scoresList_SQ_ROOTS.get(1)) ;
             System.out.println(scoreMultiThreaded);
             System.out.println("Done4");
+            System.out.println(scoreSingleThreaded);
             //scoreTotal = (scoreMultiThreaded + scoreSingleThreaded) / 2;
             System.out.println("Score done");
+    }
+    public void cancel()
+    {
+        exit();
     }
 }

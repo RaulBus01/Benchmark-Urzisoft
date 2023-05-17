@@ -5,104 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e57a20e6-0f23-41e6-937b-3a158c4b4f94" name="Changes" comment="Refactored code&#10;Implemented CPU benchmark and GUI">
-      <change beforePath="$PROJECT_DIR$/.idea/Benchmark-Urzisoft.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/cssdialects.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_dlsc_formsfx_formsfx_core_11_5_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_oshi_oshi_core_6_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_java_dev_jna_jna_5_10_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_java_dev_jna_jna_platform_5_10_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_controlsfx_controlsfx_11_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_9_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_9_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_9_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_9_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_kordamp_bootstrapfx_bootstrapfx_core_0_4_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_kordamp_ikonli_ikonli_core_12_3_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_kordamp_ikonli_ikonli_javafx_12_3_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_bson_4_9_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_bson_record_codec_4_9_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_mongodb_driver_core_4_9_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_mongodb_driver_sync_4_9_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_19.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_win_19.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_19.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_win_19.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_19.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_19.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_19.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_19.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_32.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_simple_1_7_21.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/ComponentsService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/DataBase/LeaderboardEntry.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/DataBase/MongoDB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/HardwareDetails/CPU.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/HardwareDetails/RAM.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/HardwareDetails/SYI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/HardwareDetails/SystemBoard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/HelloApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/HelloController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/ui/FillProgressIndicator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/ui/FillProgressIndicatorSkin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/ui/ProgressCircleIndicator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/ui/RingProgressIndicator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/ui/RingProgressIndicatorSkin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/ui/UILoading.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/module-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/color-theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/About-view.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/CPU-View.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/CPUTEST-view.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/CSS/button.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/CSS/circleProgressSingle.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/CSS/circleprogress.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/CSS/file.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/CSS/fillprogress.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/CSS/ringprogress.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/CSS/table.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/FXMLDocumentController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/Home-view.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/Leaderboard-view.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/RAM-View.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/RAMTEST-view.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/hello-view.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/png/cpu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/png/cpuFire.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/png/exit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/png/information.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/png/networking.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/png/pc-tower.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/png/podium.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/png/ram.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/resources/com/example/frontend_urzisoft/png/ramFire.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CPU/FixedPointBenchmark.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CPU/LZWEncoder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CPU/ThreadedRoots.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CPU/TypeOfOperation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/timing/ITimer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/timing/Timer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/timing/TimmerState.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/timing/UnitTime.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CPU_Benchmark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/CPU_Benchmark.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/CPU/LZWEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/CPU/LZWEncoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/DataBase/LeaderboardEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/DataBase/LeaderboardEntry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/DataBase/MongoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/DataBase/MongoDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/ui/UILoading.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/ui/UILoading.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/CSS/table.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/CSS/table.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/RAM-View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/RAM-View.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +32,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="createFrontend" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -160,7 +72,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.40846366&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
@@ -301,7 +213,12 @@
       <workItem from="1683802165433" duration="29000" />
       <workItem from="1684148547577" duration="99000" />
       <workItem from="1684157568079" duration="8855000" />
-      <workItem from="1684166672905" duration="802000" />
+      <workItem from="1684166672905" duration="1979000" />
+      <workItem from="1684220682846" duration="21000" />
+      <workItem from="1684236251986" duration="16956000" />
+      <workItem from="1684256287976" duration="1000" />
+      <workItem from="1684323340295" duration="14000" />
+      <workItem from="1684339880419" duration="1740000" />
     </task>
     <task id="LOCAL-00001" summary="Added Scene in Scene">
       <created>1682795848210</created>
@@ -380,7 +297,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684166982090</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Refactored code&#10;Implemented CPU benchmark and GUI">
+      <created>1684167868965</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1684167868965</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -397,7 +321,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/main" />
+                        <option value="origin/Update_Frontend" />
                       </list>
                     </value>
                   </entry>
@@ -470,13 +394,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/CPU_Benchmark.java</url>
-          <line>136</line>
+          <line>137</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/CPU_Benchmark.java</url>
-          <line>58</line>
-          <option name="timeStamp" value="3" />
+          <line>51</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

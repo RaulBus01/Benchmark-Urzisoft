@@ -59,13 +59,13 @@ public class LeaderboardEntry {
 
     private int TotalScore;
 
-    public LeaderboardEntry(String user,String CPU, String RAM, int CPUScore,int RAMScore)
+    public LeaderboardEntry(String user,String CPU, String RAM, int CPUScore,int RAMScore,int TotalScore)
     {
         this.user = user;
         this.CPU = CPU;
         this.RAM = RAM;
         this.CPUScore = CPUScore;
         this.RAMScore = RAMScore;
-        this.TotalScore = CPUScore + RAMScore;
+        this.TotalScore = TotalScore;
     }
 }
