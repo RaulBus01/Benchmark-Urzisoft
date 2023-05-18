@@ -33,7 +33,7 @@ public class CPU_Benchmark{
 
     public void run() {
         // INIT
-        ArrayList<Long> scoresList_LZW = new ArrayList<>();
+
         ArrayList<Long> scoresList_SQ_ROOTS = new ArrayList<>();
         ArrayList<Long> scoresList_FIXED_POINT_OP = new ArrayList<>();
 
@@ -43,36 +43,8 @@ public class CPU_Benchmark{
             long scoreFixedPointOp;
             long size_of_file = 0;
             long stopTimeRoots;
-            long stopTimeLZW = 0;
-        // RUN_LZW
-//            for(int i = 0; i < 2; i++) {
-//                try {
-//                    System.out.println("Start");
-//                    Path path = Paths.get("src/main/resources/in.pdf");
-//
-//                    size_of_file = Files.size(path);//in bytes
-//
-//
-//
-//                    timer.start();
-//
-//                    LZWEncoder.compress(new File(path.toUri()), new File("src/main/resources/out.txt"));
-//                    System.out.println("Stop");
-//                    stopTimeLZW = timer.stop();
-//
-//                } catch (IOException | InterruptedException e) {
-//                    e.printStackTrace();
-//                    System.out.println("Error");
-//                }
-//                // COMPUTE_SCORE_LZW
-//
-//                stopTimeLZW = timer.transformToUnitTime(UnitTime.SECONDS, stopTimeLZW);
-//                System.out.println(stopTimeLZW);
-//                scoreLZW = (long) ((double) (size_of_file / (stopTimeLZW * 10)));
-//                System.out.println(scoreLZW);
-//                scoresList_LZW.add(scoreLZW);
-//
-//            }
+
+
             System.out.println("Start");
             // RUN_ROOTS
             for(int i = 0; i < 3; i++) {
@@ -126,18 +98,22 @@ public class CPU_Benchmark{
             }
             System.out.println("Done");
             // COMPUTE_FINAL_SCORES
-            scoresList_LZW.sort(Long::compareTo);
+
              scoresList_SQ_ROOTS.sort(Long::compareTo);
             System.out.println("Done1");
             scoresList_FIXED_POINT_OP.sort(Long::compareTo);
             System.out.println("Done2");
-           scoreSingleThreaded = scoresList_FIXED_POINT_OP.get(2);
+           scoreSingleThreaded = scoresList_FIXED_POINT_OP.get(1)/5;
 
             System.out.println("Done3");
-            scoreMultiThreaded = (10000+scoresList_SQ_ROOTS.get(2)) / 2;
+            scoreMultiThreaded = (scoresList_SQ_ROOTS.get(1));
+
+            System.out.println(scoreSingleThreaded);
             System.out.println(scoreMultiThreaded);
             System.out.println("Done4");
-            //scoreTotal = (scoreMultiThreaded + scoreSingleThreaded) / 2;
+            scoreTotal = (scoreSingleThreaded + scoreMultiThreaded);
+            System.out.println("Score Total" + scoreTotal);
+
             System.out.println("Score done");
     }
 }

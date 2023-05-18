@@ -11,7 +11,10 @@ import com.example.frontend_urzisoft.HardwareDetails.SYI;
 import com.example.frontend_urzisoft.ui.RingProgressIndicator;
 import com.example.frontend_urzisoft.ui.UILoading;
 import com.mongodb.client.FindIterable;
+import javafx.animation.FadeTransition;
+import javafx.animation.Interpolator;
 import javafx.application.Platform;
+import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
@@ -39,6 +42,7 @@ import javafx.scene.text.Text;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TableColumn;
 
+import javafx.util.Duration;
 import org.bson.Document;
 
 
@@ -59,6 +63,7 @@ public class HelloController implements Initializable {
     private String user_id;
 
     public boolean disableButtons = false;
+    private Pane PaneTeam;
 
 
     @Override
@@ -371,6 +376,7 @@ public class HelloController implements Initializable {
 
                 int total = singleScore[0] + multiScore[0];
                 int targetProgress = total;
+                System.out.println("Total: "+total);
                 int increment = Math.max(targetProgress / 100, 1);
                 int progress = 0;
 
@@ -434,6 +440,9 @@ public class HelloController implements Initializable {
         cpuTestTask.setOnSucceeded(event -> {
             singleScore[0] = (int) cpuBench.getScoreSingleThreaded();
             multiScore[0] = (int) cpuBench.getScoreMultiThreaded();
+            System.out.println("Single Score: "+singleScore[0]);
+            System.out.println("Multi Score: "+multiScore[0]);
+
 
             sideLoad.getProgressBar().setVisible(false);
             sideLoad.getTaskText().setLayoutX(255);
@@ -673,8 +682,48 @@ public class HelloController implements Initializable {
     protected void onAboutButtonClicked() throws IOException
     {
         AnchorPane newSidePane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("About-view.fxml")));
+
         borderpane.getChildren().setAll(newSidePane);
+        Text text = (Text) newSidePane.lookup("#TextHover");
+        Label textAbout = (Label) newSidePane.lookup("#TextAbout");
+
+        Pane pane = (Pane) newSidePane.lookup("#TeamPane");
+        Button teamButton = (Button) newSidePane.lookup("#TeamButton");
+        Button aboutButton = (Button) newSidePane.lookup("#AboutButton");
+
+        final boolean[] isAbout = {true}; // Initial state
+
+        teamButton.setOnMouseClicked(event -> {
+            if (isAbout[0])
+            {
+                teamButton.setText("Team"); // Set to the previous text value
+                isAbout[0] = false; // Toggle the flag
+                textAbout.setOpacity(0);
+                pane.setOpacity(1);
+            } else {
+                teamButton.setText("More");
+                isAbout[0] = true;
+                textAbout.setOpacity(1);
+                pane.setOpacity(0);
+            }
+
+        });
+
+
+
+
+
+
+
+
     }
+    @FXML
+    private void onTeamButtonClicked()
+    {
+
+    }
+
+
 
 
     @FXML
