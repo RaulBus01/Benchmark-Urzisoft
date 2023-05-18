@@ -4,19 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e57a20e6-0f23-41e6-937b-3a158c4b4f94" name="Changes" comment="Refactored code&#10;Implemented CPU benchmark and GUI">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="e57a20e6-0f23-41e6-937b-3a158c4b4f94" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CPU_Benchmark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/CPU_Benchmark.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/CPU/LZWEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/CPU/LZWEncoder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/DataBase/LeaderboardEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/DataBase/LeaderboardEntry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/DataBase/MongoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/DataBase/MongoDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/ui/RingProgressIndicatorSkin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/ui/RingProgressIndicatorSkin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/ui/UILoading.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/ui/UILoading.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/CSS/table.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/CSS/table.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/CPU-View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/CPU-View.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/FXMLDocumentController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/Home-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/Home-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/RAM-View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/RAM-View.fxml" afterDir="false" />
     </list>
-    <list default="true" id="e57a20e6-0f23-41e6-937b-3a158c4b4f94" name="Changes" comment="Added hover effects for buttons;&#10;Fixed styling + Fixed Circle Progress Score" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -144,52 +142,58 @@
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.frontend_urzisoft.HelloApplication" />
       <module name="Benchmark-Urzisoft" />
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Test.Main" />
-      <module name="Benchmark-Urzisoft" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MongoDB" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.frontend_urzisoft.DataBase.MongoDB" />
-      <module name="Frontend_Urzisoft" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.frontend_urzisoft.DataBase.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RingProgressIndicatorExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.frontend_urzisoft.example.RingProgressIndicatorExample" />
-      <module name="Frontend_Urzisoft" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.frontend_urzisoft.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+      <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+        <option name="MAIN_CLASS_NAME" value="Test.Main" />
+        <module name="Benchmark-Urzisoft" />
+        <extension name="coverage">
+          <pattern>
+            <option name="PATTERN" value="Test.*" />
+            <option name="ENABLED" value="true" />
+          </pattern>
+        </extension>
+        <method v="2">
+          <option name="Make" enabled="true" />
+        </method>
+      </configuration>
+      <configuration name="MongoDB" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+        <option name="MAIN_CLASS_NAME" value="com.example.frontend_urzisoft.DataBase.MongoDB" />
+        <module name="Frontend_Urzisoft" />
+        <extension name="coverage">
+          <pattern>
+            <option name="PATTERN" value="com.example.frontend_urzisoft.DataBase.*" />
+            <option name="ENABLED" value="true" />
+          </pattern>
+        </extension>
+        <method v="2">
+          <option name="Make" enabled="true" />
+        </method>
+      </configuration>
+      <configuration name="RingProgressIndicatorExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+        <option name="MAIN_CLASS_NAME" value="com.example.frontend_urzisoft.example.RingProgressIndicatorExample" />
+        <module name="Frontend_Urzisoft" />
+        <extension name="coverage">
+          <pattern>
+            <option name="PATTERN" value="com.example.frontend_urzisoft.example.*" />
+            <option name="ENABLED" value="true" />
+          </pattern>
+        </extension>
+        <method v="2">
+          <option name="Make" enabled="true" />
+        </method>
+      </configuration>
+      <recent_temporary>
+        <list>
+          <item itemvalue="Application.HelloApplication" />
+          <item itemvalue="Application.RingProgressIndicatorExample" />
+          <item itemvalue="Application.MongoDB" />
+          <item itemvalue="Application.Main" />
+          <item itemvalue="Application.FillProgressIndicatorExample" />
+        </list>
+      </recent_temporary>
     </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.HelloApplication" />
-        <item itemvalue="Application.RingProgressIndicatorExample" />
-        <item itemvalue="Application.MongoDB" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.FillProgressIndicatorExample" />
       </list>
     </recent_temporary>
   </component>

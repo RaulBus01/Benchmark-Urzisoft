@@ -298,7 +298,6 @@ public class HelloController implements Initializable {
     {
         AnchorPane viewLoad = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("CPUTEST-View.fxml")));
         side.getChildren().setAll(viewLoad);
-        viewLoad.requestFocus();
 
 
         UILoading cpuLoad = new UILoading();
@@ -341,11 +340,10 @@ public class HelloController implements Initializable {
                 //First Message
                 updateMessage("Loading Tests...");
                 Thread.sleep(1000);
-                updateMessage("Testing CPU with Algo... ");
-
-                cpuBench.run();
-
-                Thread.sleep(4000);
+                updateMessage("Testing CPU with Single Core...");
+                cpuBench.runSingle();
+                updateMessage("Testing CPU with Multi Core...");
+                cpuBench.runMulti();
                 for (int i = 0; i < 10; i++) {
                     Thread.sleep(40);
                     updateProgress(i + 1, 10);
@@ -368,9 +366,9 @@ public class HelloController implements Initializable {
             {
 
 
-                int total = singleScore[0] + multiScore[0];
-                int targetProgress = total;
-                int increment = Math.max(targetProgress / 100, 1);
+                totalScoreCPU[0] = singleScoreCPU[0] + multiScoreCPU[0];
+
+                int increment = Math.max(totalScoreCPU[0] / 100, 1);
                 int progress = 0;
 
                 while (progress < totalScoreCPU[0] )
@@ -426,8 +424,9 @@ public class HelloController implements Initializable {
 
 
         cpuTestTask.setOnSucceeded(event -> {
-            singleScore[0] = (int) cpuBench.getScoreSingleThreaded();
-            multiScore[0] = (int) cpuBench.getScoreMultiThreaded();
+
+            singleScoreCPU[0] = (int) cpuBench.getScoreSingleThreaded();
+            multiScoreCPU[0] = (int) cpuBench.getScoreMultiThreaded();
 
             cpuLoad.getProgressBar().setVisible(false);
             cpuLoad.getTaskText().setLayoutX(255);
@@ -459,19 +458,20 @@ public class HelloController implements Initializable {
 
                 if(user.length()>0)
                 {
-                        dialog.setDisable(true);
-                        dialogButton.setVisible(false);
-                        dialogText.setText(user + " ,your score has been saved!");
-                        mongoDB.connect();
-                        Document document = new Document("user", user)
-                                .append("CPU", CPU_id)
-                                .append("RAM", RAM_id)
-                                .append("RAMScore", 200)
-                                .append("CPUScore", totalScoreCPU[0]+1000)
-                                .append("TotalScore", totalScoreCPU[0] +1000);
-                        mongoDB.insertDocument(document);
+                    dialog.setDisable(true);
+                    dialogButton.setVisible(false);
+                    dialogText.setText(user + " ,your score has been saved!");
 
-                        mongoDB.closeConnection();
+                    mongoDB.connect();
+                    Document document = new Document("user", user)
+                            .append("CPU", CPU_id)
+                            .append("RAM", RAM_id)
+                            .append("RAMScore", 200)
+                            .append("CPUScore", totalScoreCPU[0])
+                            .append("TotalScore", totalScoreCPU[0]+200);
+                    mongoDB.insertDocument(document);
+
+                    mongoDB.closeConnection();
                 }
             });
 
@@ -481,13 +481,10 @@ public class HelloController implements Initializable {
         });
 
     }
-
-
     protected void TestRam(AnchorPane side, Button runTestButton) throws IOException
     {
         AnchorPane viewLoad = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("RAMTEST-view.fxml")));
         side.getChildren().setAll(viewLoad);
-
 
         UILoading ramLoad = new UILoading();
         ramLoad.setUI(side);
@@ -511,16 +508,19 @@ public class HelloController implements Initializable {
 
         totalScoreIndicator.setLayoutX(240);
         totalScoreIndicator.setLayoutY(360);
-        String css = getClass().getResource("/com/example/frontend_urzisoft/CSS/circleProgressSingle.css").toExternalForm();
+        String css = Objects.requireNonNull(getClass().getResource("/com/example/frontend_urzisoft/CSS/circleProgressSingle.css")).toExternalForm();
         singleScoreIndicator.getStylesheets().add(css);
         multiScoreIndicator.getStylesheets().add(css);
 
-        System.out.println("RAM TEST");
-
         // Create a task to perform the RAM test
+        final int[] singleScoreRAM = {0};
+        final int[] multiScoreRAM = {0};
+        final int[] totalScoreRAM = {0};
 
 
-        Task<Void> cpuTestTask = new Task<>() {
+
+
+        Task<Void> ramTestTask = new Task<>() {
             @Override
             protected Void call() throws Exception {
                 //First Message
@@ -541,8 +541,8 @@ public class HelloController implements Initializable {
         };
 
 
-        ramLoad.getProgressBar().progressProperty().bind(cpuTestTask.progressProperty());
-        ramLoad.getTaskText().textProperty().bind(cpuTestTask.messageProperty());
+        ramLoad.getProgressBar().progressProperty().bind(ramTestTask.progressProperty());
+        ramLoad.getTaskText().textProperty().bind(ramTestTask.messageProperty());
 // Create a task to update the ring indicator
         Task<Void> updateRingTask = new Task<>()
         {
@@ -550,43 +550,45 @@ public class HelloController implements Initializable {
             @Override
             protected Void call() throws Exception
             {
-                int single = 8907;
-                int multi = 12407;
-                int total = single + multi;
-                int targetProgress = total;
-                int increment = Math.max(targetProgress / 100, 1);
+
+
+                singleScoreRAM[0] = 11234;
+                multiScoreRAM[0] = 25506;
+                totalScoreRAM[0] = singleScoreRAM[0] + multiScoreRAM[0];
+
+                int increment = Math.max(totalScoreRAM[0] / 100, 1);
                 int progress = 0;
 
-                while (progress < targetProgress )
+                while (progress < totalScoreRAM[0] )
                 {
                     progress += increment;
                     Thread.sleep(10);
-                    if (progress < targetProgress)
+                    if (progress < totalScoreRAM[0])
                     {
                         int finalProgress = progress;
                         Platform.runLater(() -> totalScoreIndicator.setProgress(finalProgress));
-                        if( progress < multi)
+                        if( progress < multiScoreRAM[0])
                         {
                             Platform.runLater(() -> multiScoreIndicator.setProgress(finalProgress));
-                            if(progress<single)
+                            if(progress<singleScoreRAM[0])
                             {
                                 Platform.runLater(() -> singleScoreIndicator.setProgress(finalProgress));
                             }
                             else
                             {
-                                Platform.runLater(() -> singleScoreIndicator.setProgress(single));
+                                Platform.runLater(() -> singleScoreIndicator.setProgress(singleScoreRAM[0]));
                             }
 
 
 
                         }
                         else {
-                            Platform.runLater(() -> multiScoreIndicator.setProgress(multi));
+                            Platform.runLater(() -> multiScoreIndicator.setProgress(multiScoreRAM[0]));
                         }
                     }
                     else
                     {
-                        Platform.runLater(() ->totalScoreIndicator.setProgress(total));
+                        Platform.runLater(() ->totalScoreIndicator.setProgress(totalScoreRAM[0]));
                     }
 
 
@@ -596,14 +598,9 @@ public class HelloController implements Initializable {
                 MongoDB mongoDB = new MongoDB();
                 mongoDB.connect();
 
-                Document document = new Document("user","AP" ).append("CPU", CPU_id)
-                        .append("RAM", RAM_id)
-                        .append("RAMScore", 200)
-                        .append("CPUScore", 200)
-                        .append("TotalScore", 200);
-                mongoDB.insertDocument(document);
-
-                mongoDB.closeConnection();
+                ramLoad.getDialogText().setVisible(true);
+                ramLoad.getDialog().setVisible(true);
+                ramLoad.getDialogButton().setVisible(true);
                 return null;
             }
 
@@ -611,10 +608,10 @@ public class HelloController implements Initializable {
 
 
 
-        Thread thread = new Thread(cpuTestTask);
+        Thread thread = new Thread(ramTestTask);
         thread.start();
 
-        cpuTestTask.setOnSucceeded(event -> {
+        ramTestTask.setOnSucceeded(event -> {
 
             ramLoad.getProgressBar().setVisible(false);
             ramLoad.getTaskText().setLayoutX(255);
@@ -635,6 +632,30 @@ public class HelloController implements Initializable {
 
             changePanesView(false);
             runTestButton.setDisable(false);
+        });
+        updateRingTask.setOnSucceeded(event -> {
+            Button dialogButton = ramLoad.getDialogButton();
+            TextField dialog = ramLoad.getDialog();
+            Label dialogText = ramLoad.getDialogText();
+            dialogButton.setOnAction(eventButton -> {
+                String user = dialog.getText();
+
+                if (user.length() > 0) {
+                    dialog.setDisable(true);
+                    dialogButton.setVisible(false);
+                    dialogText.setText(user + " ,your score has been saved!");
+                    mongoDB.connect();
+                    Document document = new Document("user", user)
+                            .append("CPU", CPU_id)
+                            .append("RAM", RAM_id)
+                            .append("RAMScore", 200)
+                            .append("CPUScore", totalScoreRAM[0] + 30)
+                            .append("TotalScore", totalScoreRAM[0] + 330);
+                    mongoDB.insertDocument(document);
+
+                    mongoDB.closeConnection();
+                }
+            });
         });
     }
 
@@ -664,22 +685,15 @@ public class HelloController implements Initializable {
         ramScoreColumn.setCellValueFactory(new PropertyValueFactory<>("RAMScore"));
         totalScoreColumn.setCellValueFactory(new PropertyValueFactory<>("TotalScore"));
 
+
         ObservableList<LeaderboardEntry> data = FXCollections.observableArrayList();
         for (Document doc : documents)
         {
-            LeaderboardEntry entry= new LeaderboardEntry("1", doc.getString("CPU"), doc.getString("RAM"), doc.getInteger("CPUScore"), doc.getInteger("RAMScore"));
+            LeaderboardEntry entry= new LeaderboardEntry(doc.getString("user"), doc.getString("CPU"), doc.getString("RAM"), doc.getInteger("CPUScore"), doc.getInteger("RAMScore"), doc.getInteger("TotalScore"));
 
-            for(int i=0;i<10;i++)
-            {
-
-                data.add(entry);
-
-            }
+            data.add(entry);
         }
-
-
-
-
+        data.sort(Comparator.comparingInt(LeaderboardEntry::getTotalScore).reversed());
 
         table.setItems(data);
 
@@ -697,6 +711,32 @@ public class HelloController implements Initializable {
     {
         AnchorPane newSidePane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("About-view.fxml")));
         borderpane.getChildren().setAll(newSidePane);
+        borderpane.getChildren().setAll(newSidePane);
+        Text text = (Text) newSidePane.lookup("#TextHover");
+        Label textAbout = (Label) newSidePane.lookup("#TextAbout");
+
+        Pane pane = (Pane) newSidePane.lookup("#TeamPane");
+        Button teamButton = (Button) newSidePane.lookup("#TeamButton");
+        Button aboutButton = (Button) newSidePane.lookup("#AboutButton");
+
+        final boolean[] isAbout = {true};
+
+        teamButton.setOnMouseClicked(event -> {
+            if (isAbout[0])
+            {
+                teamButton.setText("About");
+                isAbout[0] = false;
+                textAbout.setOpacity(0);
+                pane.setOpacity(1);
+            } else {
+                teamButton.setText("Team");
+                isAbout[0] = true;
+                textAbout.setOpacity(1);
+                pane.setOpacity(0);
+            }
+
+        });
+
     }
 
 

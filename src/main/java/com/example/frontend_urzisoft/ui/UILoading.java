@@ -64,9 +64,9 @@ public class UILoading {
     }
     public void setUI(AnchorPane side)
     {
-        progressBar.setPrefWidth(250);
+        progressBar.setPrefWidth(280);
         progressBar.setPrefHeight(20);
-        progressBar.setLayoutX(205);
+        progressBar.setLayoutX(195);
         progressBar.setLayoutY(270);
 
         taskText.setStyle("-fx-font-size: 18px; -fx-text-fill: #C2C0A6;");
@@ -85,7 +85,7 @@ public class UILoading {
         totalScoreText.setLayoutY(320);
 
 
-        taskText.setLayoutX(220);
+        taskText.setLayoutX(210);
         taskText.setLayoutY(235);
 
         dialog.setLayoutX(225);
@@ -95,7 +95,7 @@ public class UILoading {
         dialog.setVisible(false);
 
         dialog.setStyle("-fx-background-color: #2D3E40; -fx-text-fill: #C2C0A6; -fx-font-size: 18px; -fx-border-color: #C2C0A6; -fx-border-width: 1px; -fx-border-radius: 5px;");
-        dialogText.setLayoutX(190);
+        dialogText.setLayoutX(205);
         dialogText.setLayoutY(80);
 
         dialogButton.setStyle("-fx-background-color: #2D3E40; -fx-text-fill: #C2C0A6; -fx-font-size: 14px; -fx-border-color: #C2C0A6; -fx-border-width: 1px; -fx-border-radius: 5px;");
