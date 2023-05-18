@@ -117,7 +117,8 @@ public class LZWEncoder {
 
         private void writeCode(DataOutputStream outputStream, int code, int dictSize) throws IOException {
             int bits = (int) Math.ceil(Math.log(dictSize) / Math.log(2));
-            outputStream.writeShort(code << (16 - bits));
+            int shiftedCode = code << (16 - bits);
+            outputStream.writeShort(shiftedCode);
         }
     }
 }

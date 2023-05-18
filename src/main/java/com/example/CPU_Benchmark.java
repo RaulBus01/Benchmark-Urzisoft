@@ -14,6 +14,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
+import static javafx.application.Platform.exit;
+
 public class CPU_Benchmark{
     private  long  scoreMultiThreaded = 0;
     private  long scoreSingleThreaded = 0;
@@ -96,24 +98,21 @@ public class CPU_Benchmark{
                 scoreFixedPointOp = (long) (((double) (scoreAssignement) * 0.46) + ((double) (scoreBranching) * 0.15) + ((double) (scoreArithmeic) * 0.39));// fixed-point score
                 scoresList_FIXED_POINT_OP.add(scoreFixedPointOp);
             }
-            System.out.println("Done");
+
             // COMPUTE_FINAL_SCORES
 
              scoresList_SQ_ROOTS.sort(Long::compareTo);
-            System.out.println("Done1");
             scoresList_FIXED_POINT_OP.sort(Long::compareTo);
-            System.out.println("Done2");
+
            scoreSingleThreaded = scoresList_FIXED_POINT_OP.get(1)/5;
 
-            System.out.println("Done3");
+
             scoreMultiThreaded = (scoresList_SQ_ROOTS.get(1));
 
             System.out.println(scoreSingleThreaded);
             System.out.println(scoreMultiThreaded);
-            System.out.println("Done4");
-            scoreTotal = (scoreSingleThreaded + scoreMultiThreaded);
-            System.out.println("Score Total" + scoreTotal);
 
-            System.out.println("Score done");
+            scoreTotal = (scoreSingleThreaded + scoreMultiThreaded);
+
     }
 }
