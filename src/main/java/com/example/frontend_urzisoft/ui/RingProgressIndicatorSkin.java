@@ -63,7 +63,7 @@ public class RingProgressIndicatorSkin implements Skin<RingProgressIndicator> {
         this.indicator.progressProperty().addListener((o, oldVal, newVal) -> {
             if (newVal.intValue() >= 0) {
                 setProgressLabel(newVal.intValue());
-                fillerArc.setLength(newVal.intValue() * -0.007);
+                fillerArc.setLength(newVal.intValue() * -0.011);
 
             }
         });

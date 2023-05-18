@@ -1,0 +1,53 @@
+.menuButton {
+    -fx-background-color:#6A8C69;
+    -fx-background-radius: 40px;
+    -fx-font-size: 25px;
+    -fx-font-family: "Calibri";
+}
+
+.exitButton{
+    -fx-background-color:#700000;
+    -fx-background-radius: 40px;
+    -fx-font-size: 25px;
+    -fx-font-family: "Calibri";
+}
+
+.exitButton:hover{
+    -fx-background-color:#FF0000;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.menuButton:hover{
+    -fx-background-color:#8FB58F;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.smallButton{
+    -fx-background-color:#A3CD32;
+    -fx-background-radius: 10px;
+    -fx-alignment: center;
+}
+
+.smallButton:hover{
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.smallRedButton{
+    -fx-background-color:#FF0000;
+    -fx-background-radius: 10px;
+    -fx-alignment: center;
+}
+
+.smallRedButton:hover{
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.textLabel
+{
+    -fx-spacing: 10px;
+
+}

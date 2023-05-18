@@ -30,7 +30,7 @@
             </Text>
             <Text fx:id="CPU_Name" boundsType="VISUAL" fill="WHITE" layoutX="90.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16; -fx-fill: #DBF227;" text="Model" wrappingWidth="200.0">
                <font>
-                  <Font name="Calibri" size="16.0" />
+                  <Font name="Calibri Bold" size="16.0" />
                </font>
             </Text>
             <Text fill="WHITE" layoutX="20.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ECF6FC;" text="Logical Processors:">
@@ -40,11 +40,11 @@
             </Text>
             <Text fx:id="Logic_Core" fill="WHITE" layoutX="185.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16; -fx-fill: #DBF227;" text="Type:">
                <font>
-                  <Font name="Calibri" size="16.0" />
+                  <Font name="Calibri Bold" size="16.0" />
                </font>
             </Text>
             <Separator layoutX="315.0" orientation="VERTICAL" prefHeight="550.0" prefWidth="5.0" style="-fx-background-color: #C2C0A6;" />
-            <Button fx:id="cputest_btn" layoutX="105.0" layoutY="448.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #A3CD32; -fx-background-radius: 10; -fx-alignment: center;" text="Run Test" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <Button fx:id="cputest_btn" layoutX="20.0" layoutY="440.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="100.0" styleClass="smallButton" stylesheets="@CSS/styles.css" text="Run Test" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                <font>
                   <Font name="Calibri Bold" size="19.0" />
                </font>
@@ -56,7 +56,7 @@
             </ImageView>
             <Text fx:id="Phiys_Core" boundsType="VISUAL" fill="WHITE" layoutX="185.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16; -fx-fill: #DBF227;" text="Model" wrappingWidth="200.0">
                <font>
-                  <Font name="Calibri" size="16.0" />
+                  <Font name="Calibri Bold" size="16.0" />
                </font>
             </Text>
             <Text fill="WHITE" layoutX="20.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ECF6FC;" text="Base Frequency:">
@@ -66,9 +66,14 @@
             </Text>
             <Text fx:id="CPU_Freq" fill="WHITE" layoutX="185.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16; -fx-fill: #DBF227;" text="Type:">
                <font>
-                  <Font name="Calibri" size="16.0" />
+                  <Font name="Calibri Bold" size="16.0" />
                </font>
             </Text>
+            <Button fx:id="cputest_btn1" layoutX="190.0" layoutY="440.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="100.0" styleClass="smallRedButton" stylesheets="@CSS/styles.css" text="Stop" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Calibri Bold" size="19.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
       <AnchorPane fx:id="CPUTest_View" layoutX="320.0" prefHeight="550.0" prefWidth="645.0" style="-fx-background-color: #28403D;" />

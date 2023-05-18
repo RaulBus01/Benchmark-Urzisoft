@@ -36,6 +36,7 @@ import javafx.scene.text.Text;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TableColumn;
 
+import javafx.util.Duration;
 import org.bson.Document;
 
 
@@ -56,6 +57,7 @@ public class HelloController implements Initializable {
 
 
     public boolean disableButtons = false;
+    private Pane PaneTeam;
 
 
     @Override
@@ -338,11 +340,10 @@ public class HelloController implements Initializable {
                 //First Message
                 updateMessage("Loading Tests...");
                 Thread.sleep(1000);
-                updateMessage("Testing CPU with Algo... ");
-
-                //cpuBench.run();
-
-                Thread.sleep(4000);
+                updateMessage("Testing CPU with Single Core...");
+                cpuBench.runSingle();
+                updateMessage("Testing CPU with Multi Core...");
+                cpuBench.runMulti();
                 for (int i = 0; i < 10; i++) {
                     Thread.sleep(40);
                     updateProgress(i + 1, 10);
@@ -364,8 +365,7 @@ public class HelloController implements Initializable {
             protected Void call() throws Exception
             {
 
-                singleScoreCPU[0] = 11234;
-                multiScoreCPU[0] = 25506;
+
                 totalScoreCPU[0] = singleScoreCPU[0] + multiScoreCPU[0];
 
                 int increment = Math.max(totalScoreCPU[0] / 100, 1);
@@ -425,6 +425,8 @@ public class HelloController implements Initializable {
 
         cpuTestTask.setOnSucceeded(event -> {
 
+            singleScoreCPU[0] = (int) cpuBench.getScoreSingleThreaded();
+            multiScoreCPU[0] = (int) cpuBench.getScoreMultiThreaded();
 
             cpuLoad.getProgressBar().setVisible(false);
             cpuLoad.getTaskText().setLayoutX(255);
@@ -456,19 +458,20 @@ public class HelloController implements Initializable {
 
                 if(user.length()>0)
                 {
-                        dialog.setDisable(true);
-                        dialogButton.setVisible(false);
-                        dialogText.setText(user + " ,your score has been saved!");
-                        mongoDB.connect();
-                        Document document = new Document("user", user)
-                                .append("CPU", CPU_id)
-                                .append("RAM", RAM_id)
-                                .append("RAMScore", 200)
-                                .append("CPUScore", totalScoreCPU[0]+1000)
-                                .append("TotalScore", totalScoreCPU[0] +1000);
-                        mongoDB.insertDocument(document);
+                    dialog.setDisable(true);
+                    dialogButton.setVisible(false);
+                    dialogText.setText(user + " ,your score has been saved!");
 
-                        mongoDB.closeConnection();
+                    mongoDB.connect();
+                    Document document = new Document("user", user)
+                            .append("CPU", CPU_id)
+                            .append("RAM", RAM_id)
+                            .append("RAMScore", 200)
+                            .append("CPUScore", totalScoreCPU[0])
+                            .append("TotalScore", totalScoreCPU[0]+200);
+                    mongoDB.insertDocument(document);
+
+                    mongoDB.closeConnection();
                 }
             });
 
@@ -478,8 +481,6 @@ public class HelloController implements Initializable {
         });
 
     }
-
-
     protected void TestRam(AnchorPane side, Button runTestButton) throws IOException
     {
         AnchorPane viewLoad = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("RAMTEST-view.fxml")));
@@ -684,6 +685,7 @@ public class HelloController implements Initializable {
         ramScoreColumn.setCellValueFactory(new PropertyValueFactory<>("RAMScore"));
         totalScoreColumn.setCellValueFactory(new PropertyValueFactory<>("TotalScore"));
 
+
         ObservableList<LeaderboardEntry> data = FXCollections.observableArrayList();
         for (Document doc : documents)
         {
@@ -692,9 +694,6 @@ public class HelloController implements Initializable {
             data.add(entry);
         }
         data.sort(Comparator.comparingInt(LeaderboardEntry::getTotalScore).reversed());
-
-
-
 
         table.setItems(data);
 
@@ -712,6 +711,32 @@ public class HelloController implements Initializable {
     {
         AnchorPane newSidePane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("About-view.fxml")));
         borderpane.getChildren().setAll(newSidePane);
+        borderpane.getChildren().setAll(newSidePane);
+        Text text = (Text) newSidePane.lookup("#TextHover");
+        Label textAbout = (Label) newSidePane.lookup("#TextAbout");
+
+        Pane pane = (Pane) newSidePane.lookup("#TeamPane");
+        Button teamButton = (Button) newSidePane.lookup("#TeamButton");
+        Button aboutButton = (Button) newSidePane.lookup("#AboutButton");
+
+        final boolean[] isAbout = {true};
+
+        teamButton.setOnMouseClicked(event -> {
+            if (isAbout[0])
+            {
+                teamButton.setText("About");
+                isAbout[0] = false;
+                textAbout.setOpacity(0);
+                pane.setOpacity(1);
+            } else {
+                teamButton.setText("Team");
+                isAbout[0] = true;
+                textAbout.setOpacity(1);
+                pane.setOpacity(0);
+            }
+
+        });
+
     }
 
 
