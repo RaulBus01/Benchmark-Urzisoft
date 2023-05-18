@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e57a20e6-0f23-41e6-937b-3a158c4b4f94" name="Changes" comment="Refactored code&#10;Implemented CPU benchmark and GUI">
-      <change afterPath="$PROJECT_DIR$/CPU_Benchmark/src/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_04_2023_15_47__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_04_2023_15_47__Changes_.xml" afterDir="false" />
+    <list default="true" id="e57a20e6-0f23-41e6-937b-3a158c4b4f94" name="Changes" comment="Added hover effects for buttons;&#10;Fixed styling">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/CSS/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/HelloController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/CPU-View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/CPU-View.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/Home-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/Home-view.fxml" afterDir="false" />
@@ -39,11 +35,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="KEEP" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -93,6 +89,7 @@
       <recent name="C:\Java\Benchmark-Urzisoft\Frontend\Frontend Urzisoft\src\main\resources\com\example\frontend_urzisoft\png" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\alcat\OneDrive\Desktop\SY\CO\Benchmark-Urzisoft\src\main\resources\com\example\frontend_urzisoft\png" />
       <recent name="C:\Java\Benchmark-Urzisoft\Frontend\Frontend Urzisoft\src\main\resources\com\example\frontend_urzisoft\CSS" />
       <recent name="C:\Java\Benchmark-Urzisoft\Frontend\Frontend Urzisoft\src\main\resources\com\example\frontend_urzisoft\ProgressCircleCSS" />
       <recent name="C:\Java\Benchmark-Urzisoft\Frontend\Frontend Urzisoft\src\main\java\com\example\frontend_urzisoft\ProgressCircle" />
@@ -207,6 +204,10 @@
       <workItem from="1684219027779" duration="801000" />
       <workItem from="1684221491809" duration="23000" />
       <workItem from="1684248749081" duration="5977000" />
+      <workItem from="1684255575364" duration="143000" />
+      <workItem from="1684312341135" duration="288000" />
+      <workItem from="1684347227585" duration="8301000" />
+      <workItem from="1684395417577" duration="1078000" />
     </task>
     <task id="LOCAL-00001" summary="Added Scene in Scene">
       <created>1682795848210</created>
@@ -325,7 +326,8 @@
     <MESSAGE value="added Icons for home page&#10;added Ram Page" />
     <MESSAGE value="Fixed PNGS" />
     <MESSAGE value="Added CPUTest-view&#10;Added RAMTEST-view&#10;Added Leaderboard-view&#10;Added About-view&#10;Linked the mongoDB with the app" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added CPUTest-view&#10;Added RAMTEST-view&#10;Added Leaderboard-view&#10;Added About-view&#10;Linked the mongoDB with the app" />
+    <MESSAGE value="Added hover effects for buttons;&#10;Fixed styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added hover effects for buttons;&#10;Fixed styling" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

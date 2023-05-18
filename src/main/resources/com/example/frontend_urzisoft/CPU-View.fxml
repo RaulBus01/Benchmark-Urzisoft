@@ -44,7 +44,7 @@
                </font>
             </Text>
             <Separator layoutX="315.0" orientation="VERTICAL" prefHeight="550.0" prefWidth="5.0" style="-fx-background-color: #C2C0A6;" />
-            <Button fx:id="cputest_btn" layoutX="105.0" layoutY="448.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #A3CD32; -fx-background-radius: 10; -fx-alignment: center;" text="Run Test" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <Button fx:id="cputest_btn" layoutX="20.0" layoutY="440.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="100.0" styleClass="smallButton" stylesheets="@CSS/styles.css" text="Run Test" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                <font>
                   <Font name="Calibri Bold" size="19.0" />
                </font>
@@ -69,6 +69,11 @@
                   <Font name="Calibri" size="16.0" />
                </font>
             </Text>
+            <Button fx:id="cputest_btn1" layoutX="190.0" layoutY="440.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="100.0" styleClass="smallRedButton" stylesheets="@CSS/styles.css" text="Stop" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Calibri Bold" size="19.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
       <AnchorPane fx:id="CPUTest_View" layoutX="320.0" prefHeight="550.0" prefWidth="645.0" style="-fx-background-color: #28403D;" />

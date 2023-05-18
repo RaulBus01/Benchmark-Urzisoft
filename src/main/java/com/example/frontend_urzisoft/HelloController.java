@@ -211,16 +211,15 @@ public class HelloController implements Initializable {
     @FXML
     protected void onHomeButtonClicked() throws IOException {
         AnchorPane sidePane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Home-view.fxml")));
-
         SetSystemInformation(sidePane);
 
         sidePane.setMaxSize(1280, 720);
         sidePane.setMinSize(1280, 720);
         sidePane.setPrefSize(1280, 720);
         borderpane.getChildren().setAll(sidePane);
-
-
     }
+
+
 
     @FXML
     protected void onCPUTestButtonClicked() throws IOException {

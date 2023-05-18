@@ -103,7 +103,7 @@
                </font>
             </Text>
             <Separator layoutX="-5.0" orientation="VERTICAL" prefHeight="550.0" prefWidth="5.0" style="-fx-background-color: #C2C0A6;" />
-            <Button fx:id="bank_btn" layoutX="115.0" layoutY="448.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="90.0" style="-fx-background-color: #A3CD32; -fx-background-radius: 10; -fx-alignment: center;" text="Select Bank" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <Button fx:id="bank_btn" layoutX="115.0" layoutY="448.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="90.0" style="-fx-background-color: #A3CD32; -fx-background-radius: 10; -fx-alignment: center;" styleClass="smallButton" stylesheets="@CSS/styles.css" text="Select Bank" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                <font>
                   <Font name="Calibri Bold" size="19.0" />
                </font>
