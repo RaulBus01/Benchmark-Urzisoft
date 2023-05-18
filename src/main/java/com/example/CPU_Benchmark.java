@@ -1,20 +1,12 @@
 package com.example;
 
 import com.example.backend.CPU.FixedPointBenchmark;
-import com.example.backend.CPU.LZWEncoder;
 import com.example.backend.CPU.ThreadedRoots;
 import com.example.backend.CPU.TypeOfOperation;
-import com.example.backend.CPU.timing.Timer;
-import com.example.backend.CPU.timing.*;
+import com.example.backend.timing.Timer;
+import com.example.backend.timing.*;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
-
-import static javafx.application.Platform.exit;
 
 public class CPU_Benchmark {
     private long scoreMultiThreaded = 0;

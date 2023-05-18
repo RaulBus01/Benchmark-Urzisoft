@@ -1,6 +1,7 @@
 package com.example.frontend_urzisoft;
 
 import com.example.CPU_Benchmark;
+import com.example.backend.RAM.RamBenchmark_Test;
 import com.example.frontend_urzisoft.DataBase.LeaderboardEntry;
 import com.example.frontend_urzisoft.DataBase.MongoDB;
 import com.example.frontend_urzisoft.HardwareDetails.CPU;
@@ -513,12 +514,10 @@ public class HelloController implements Initializable {
         multiScoreIndicator.getStylesheets().add(css);
 
         // Create a task to perform the RAM test
-        final int[] singleScoreRAM = {0};
-        final int[] multiScoreRAM = {0};
-        final int[] totalScoreRAM = {0};
+        RamBenchmark_Test ramBench = new RamBenchmark_Test();
 
 
-
+        int[] totalScoreRAM = {0};
 
         Task<Void> ramTestTask = new Task<>() {
             @Override
@@ -526,8 +525,7 @@ public class HelloController implements Initializable {
                 //First Message
                 updateMessage("Loading Tests...");
                 Thread.sleep(1000);
-                updateMessage("Testing RAM with Algo... ");
-                Thread.sleep(4000);
+                ramBench.startBenchmark();
                 for (int i = 0; i < 10; i++) {
                     Thread.sleep(40);
                     updateProgress(i + 1, 10);
@@ -552,9 +550,7 @@ public class HelloController implements Initializable {
             {
 
 
-                singleScoreRAM[0] = 11234;
-                multiScoreRAM[0] = 25506;
-                totalScoreRAM[0] = singleScoreRAM[0] + multiScoreRAM[0];
+
 
                 int increment = Math.max(totalScoreRAM[0] / 100, 1);
                 int progress = 0;
@@ -565,26 +561,8 @@ public class HelloController implements Initializable {
                     Thread.sleep(10);
                     if (progress < totalScoreRAM[0])
                     {
-                        int finalProgress = progress;
+                        final int finalProgress = progress;
                         Platform.runLater(() -> totalScoreIndicator.setProgress(finalProgress));
-                        if( progress < multiScoreRAM[0])
-                        {
-                            Platform.runLater(() -> multiScoreIndicator.setProgress(finalProgress));
-                            if(progress<singleScoreRAM[0])
-                            {
-                                Platform.runLater(() -> singleScoreIndicator.setProgress(finalProgress));
-                            }
-                            else
-                            {
-                                Platform.runLater(() -> singleScoreIndicator.setProgress(singleScoreRAM[0]));
-                            }
-
-
-
-                        }
-                        else {
-                            Platform.runLater(() -> multiScoreIndicator.setProgress(multiScoreRAM[0]));
-                        }
                     }
                     else
                     {
@@ -612,6 +590,8 @@ public class HelloController implements Initializable {
         thread.start();
 
         ramTestTask.setOnSucceeded(event -> {
+
+            totalScoreRAM[0] = (int)ramBench.getScore();
 
             ramLoad.getProgressBar().setVisible(false);
             ramLoad.getTaskText().setLayoutX(255);
@@ -648,9 +628,7 @@ public class HelloController implements Initializable {
                     Document document = new Document("user", user)
                             .append("CPU", CPU_id)
                             .append("RAM", RAM_id)
-                            .append("RAMScore", 200)
-                            .append("CPUScore", totalScoreRAM[0] + 30)
-                            .append("TotalScore", totalScoreRAM[0] + 330);
+                            .append("RAMScore", totalScoreRAM[0]);
                     mongoDB.insertDocument(document);
 
                     mongoDB.closeConnection();
