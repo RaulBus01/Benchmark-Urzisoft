@@ -45,3 +45,9 @@
     -fx-scale-x: 1.05;
     -fx-scale-y: 1.05;
 }
+
+.textLabel
+{
+    -fx-spacing: 10px;
+
+}

@@ -5,9 +5,9 @@
     -fx-font-size: 20px;
     -fx-font-weight: bold;
     -fx-font-family: "Calibri";
-    -fx-background-color:#599FA6;
+    -fx-background-color:#457565;
     -fx-text-fill: #0A7373;
-
+    -fx-wrap-text: true;
 }
 .table-column:even
 {
@@ -16,15 +16,16 @@
     -fx-font-size: 16px;
     -fx-font-weight: bold;
     -fx-font-family: "Calibri";
-    -fx-background-color:  #CBA834;
-    -fx-text-fill: #0A7373;
+    -fx-background-color:#374f7f;
+    -fx-text-fill: #FFAE00;
 
 
 }
+
 .table-column:odd
 {
     -fx-text-alignment:center;
-    -fx-alignment: CENTER;
+
     -fx-font-size: 16px;
     -fx-font-weight: bold;
     -fx-font-family: "Calibri";
@@ -38,7 +39,7 @@
 
 .table-column .scroll-bar:vertical .thumb
 {
-    -fx-background-color: #CBA834;
+    -fx-background-color: #374f7f;
     -fx-background-radius: 0;
     -fx-scale-x: 0.7;
 

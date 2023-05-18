@@ -16,7 +16,7 @@
          <children>
             <ImageView fitHeight="175.0" fitWidth="1329.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@png/dasdas.png" />
+                  <Image url="@png/background.jpg" />
                </image>
             </ImageView>
             <Text fill="WHITE" layoutX="25.0" layoutY="68.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="Urzisoft Benchmark" wrappingWidth="307.54296875">
