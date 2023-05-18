@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e57a20e6-0f23-41e6-937b-3a158c4b4f94" name="Changes" comment="Added hover effects for buttons;&#10;Fixed styling">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/CSS/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/CPU-View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/CPU-View.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/Home-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/Home-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/RAM-View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/RAM-View.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -207,7 +202,7 @@
       <workItem from="1684255575364" duration="143000" />
       <workItem from="1684312341135" duration="288000" />
       <workItem from="1684347227585" duration="8301000" />
-      <workItem from="1684395417577" duration="1078000" />
+      <workItem from="1684395417577" duration="1811000" />
     </task>
     <task id="LOCAL-00001" summary="Added Scene in Scene">
       <created>1682795848210</created>
@@ -265,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683184656098</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added hover effects for buttons;&#10;Fixed styling">
+      <created>1684396520025</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1684396520025</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
