@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e57a20e6-0f23-41e6-937b-3a158c4b4f94" name="Changes" comment="">
+    <list default="true" id="e57a20e6-0f23-41e6-937b-3a158c4b4f94" name="Changes" comment="Refactored code&#10;Implemented CPU benchmark and GUI">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CPU_Benchmark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/CPU_Benchmark.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/CPU/ThreadedRoots.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/CPU/ThreadedRoots.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/ui/RingProgressIndicatorSkin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/ui/RingProgressIndicatorSkin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/ui/UILoading.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/ui/UILoading.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/CPU-View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/CPU-View.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/FXMLDocumentController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/Home-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/Home-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/RAM-View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/RAM-View.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Update_Frontend" />
+        <entry key="$PROJECT_DIR$" value="Improve_UI_About" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -191,9 +188,52 @@
         </list>
       </recent_temporary>
     </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test.Main" />
+      <module name="Benchmark-Urzisoft" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MongoDB" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.frontend_urzisoft.DataBase.MongoDB" />
+      <module name="Frontend_Urzisoft" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.frontend_urzisoft.DataBase.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RingProgressIndicatorExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.frontend_urzisoft.example.RingProgressIndicatorExample" />
+      <module name="Frontend_Urzisoft" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.frontend_urzisoft.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="Application.RingProgressIndicatorExample" />
+        <item itemvalue="Application.MongoDB" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.FillProgressIndicatorExample" />
       </list>
     </recent_temporary>
   </component>
@@ -250,6 +290,7 @@
       <workItem from="1684312341135" duration="288000" />
       <workItem from="1684347227585" duration="8301000" />
       <workItem from="1684395417577" duration="1811000" />
+      <workItem from="1684500614301" duration="12110000" />
     </task>
     <task id="LOCAL-00001" summary="Added Scene in Scene">
       <created>1682795848210</created>
@@ -307,7 +348,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683184656098</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Refactored code&#10;Implemented CPU benchmark and GUI">
+      <created>1684410127853</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1684410127853</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -393,23 +441,16 @@
     <MESSAGE value="added Icons for home page&#10;added Ram Page" />
     <MESSAGE value="Fixed PNGS" />
     <MESSAGE value="Added CPUTest-view&#10;Added RAMTEST-view&#10;Added Leaderboard-view&#10;Added About-view&#10;Linked the mongoDB with the app" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added CPUTest-view&#10;Added RAMTEST-view&#10;Added Leaderboard-view&#10;Added About-view&#10;Linked the mongoDB with the app" />
+    <MESSAGE value="Refactored code&#10;Implemented CPU benchmark and GUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored code&#10;Implemented CPU benchmark and GUI" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.ClassCastException" package="java.lang" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/ui/FillProgressIndicator.java</url>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Frontend/Frontend Urzisoft/src/main/java/com/example/frontend_urzisoft/example/RingProgressIndicatorExample.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="7" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/CPU_Benchmark.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

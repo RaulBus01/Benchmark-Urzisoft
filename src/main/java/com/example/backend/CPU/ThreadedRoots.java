@@ -39,6 +39,8 @@ public class ThreadedRoots {
                 threads[i].join();
             } catch (InterruptedException e) {
                 e.printStackTrace();
+                canceled = true;
+                break;
             }
             running = false;
         }

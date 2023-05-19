@@ -69,7 +69,7 @@
                   <Font name="Calibri Bold" size="16.0" />
                </font>
             </Text>
-            <Button fx:id="cputest_btn1" layoutX="190.0" layoutY="440.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="100.0" styleClass="smallRedButton" stylesheets="@CSS/styles.css" text="Stop" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <Button fx:id="Stop" layoutX="190.0" layoutY="440.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="100.0" styleClass="smallRedButton" stylesheets="@CSS/styles.css" text="Stop" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                <font>
                   <Font name="Calibri Bold" size="19.0" />
                </font>

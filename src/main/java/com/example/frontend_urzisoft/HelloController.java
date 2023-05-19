@@ -29,6 +29,7 @@ import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 
 import javafx.scene.layout.Pane;
@@ -36,7 +37,6 @@ import javafx.scene.text.Text;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TableColumn;
 
-import javafx.util.Duration;
 import org.bson.Document;
 
 
@@ -57,7 +57,7 @@ public class HelloController implements Initializable {
 
 
     public boolean disableButtons = false;
-    private Pane PaneTeam;
+    public Button cputest_stop;
 
 
     @Override
@@ -83,7 +83,7 @@ public class HelloController implements Initializable {
         AnchorPane menu = (AnchorPane) HelloApplication.scene.lookup("#menuPane");
 
 
-        ArrayList<Button> buttons = new ArrayList<>(6);
+
         ArrayList<ImageView> icons = new ArrayList<>(6);
 
             icons.add((ImageView) menu.lookup("#homeIcon"));
@@ -92,20 +92,11 @@ public class HelloController implements Initializable {
             icons.add((ImageView) menu.lookup("#leaderboardIcon"));
             icons.add((ImageView) menu.lookup("#aboutIcon"));
             icons.add((ImageView) menu.lookup("#exitIcon"));
-//    nu sunt sigur ca trebuie facut si asta.
+
+
 
         menu.setDisable(disabled);
 
-//        buttons.add((Button) menu.lookup("#homeButton"));
-//        buttons.add((Button) menu.lookup("#cpuTestButton"));
-//        buttons.add((Button) menu.lookup("#ramTestButton"));
-//        buttons.add((Button) menu.lookup("#leaderboardButton"));
-//        buttons.add((Button) menu.lookup("#aboutButton"));
-//        buttons.add((Button) menu.lookup("#exitButton"));
-//
-//        for (Button button : buttons) {
-//            button.setDisable(disabled);
-//        }
 
         if(disabled){
             for (ImageView icon : icons) {
@@ -226,6 +217,9 @@ public class HelloController implements Initializable {
 
         Button startButton = (Button) newSidePane.lookup("#cputest_btn");
         AnchorPane CPU_load = (AnchorPane) newSidePane.lookup("#CPUTest_View");
+        Button stopButton = (Button) newSidePane.lookup("#Stop");
+
+        stopButton.setDisable(true);
         startButton.setOnAction(event -> {
             try {
                 changePanesView(true);
@@ -334,27 +328,85 @@ public class HelloController implements Initializable {
         final int[] totalScoreCPU = {0};
 
 
-        Task<Void> cpuTestTask = new Task<>() {
+        AnchorPane pane = (AnchorPane) viewLoad.getParent().getParent();
+
+        Button stopButton = (Button) pane.lookup("#Stop");
+        stopButton.setDisable(false);
+        Task<Void> cpuTestTask = new Task<Void>() {
             @Override
             protected Void call() throws Exception {
-                //First Message
+                // First Message
+                if (isCancelled()) {
+
+                    System.out.println("Test Canceled1");
+                    return null;
+                }
                 updateMessage("Loading Tests...");
-                Thread.sleep(1000);
-                updateMessage("Testing CPU with Single Core...");
-                cpuBench.runSingle();
+                Thread.sleep(100);
+
+                if (isCancelled()) {
+
+                    System.out.println("Test Canceled2");
+                    return null;
+                }
+
+
+                if (!isCancelled()) {
+                    updateMessage("Testing CPU with Single Core...");
+                    cpuBench.runSingle();
+                }
+
+                if (isCancelled()) {
+
+                    System.out.println("Test Canceled3");
+                    return null;
+                }
+
                 updateMessage("Testing CPU with Multi Core...");
-                cpuBench.runMulti();
+                if (!isCancelled()) {
+                    cpuBench.runMulti();
+                }
+
                 for (int i = 0; i < 10; i++) {
                     Thread.sleep(40);
+
                     updateProgress(i + 1, 10);
+
+                    if (isCancelled()) {
+
+                        System.out.println("Test Canceled4");
+                        return null;
+                    }
                 }
+                stopButton.setDisable(true);
                 updateMessage("CPU Test Complete");
                 Thread.sleep(750);
-
 
                 return null;
             }
         };
+
+
+        stopButton.setOnAction(event -> {
+            cpuTestTask.cancel();
+            cpuBench.cancel();
+            Platform.runLater(() -> {
+                cpuLoad.getProgressBar().progressProperty().unbind();
+                cpuLoad.getTaskText().textProperty().unbind();
+                cpuLoad.getProgressBar().setProgress(1);
+                cpuLoad.getProgressBar().setStyle("-fx-accent: red;");
+                cpuLoad.getTaskText().setLayoutX(275);
+                cpuLoad.getTaskText().setText("Test Canceled");
+
+
+                runTestButton.setDisable(false);
+                changePanesView(false);
+                stopButton.setDisable(true);
+
+
+            });
+        });
+
         cpuLoad.getProgressBar().progressProperty().bind(cpuTestTask.progressProperty());
         cpuLoad.getTaskText().textProperty().bind(cpuTestTask.messageProperty());
         // Create a task to update the ring indicator
@@ -420,6 +472,7 @@ public class HelloController implements Initializable {
 
         Thread thread = new Thread(cpuTestTask);
         thread.start();
+
 
 
 
@@ -737,6 +790,12 @@ public class HelloController implements Initializable {
 
         });
 
+    }
+    @FXML
+    protected boolean onStopButtonCPU() throws IOException
+    {
+
+        return true;
     }
 
 

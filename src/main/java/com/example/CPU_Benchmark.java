@@ -1,20 +1,12 @@
 package com.example;
 
 import com.example.backend.CPU.FixedPointBenchmark;
-import com.example.backend.CPU.LZWEncoder;
 import com.example.backend.CPU.ThreadedRoots;
 import com.example.backend.CPU.TypeOfOperation;
 import com.example.backend.CPU.timing.Timer;
 import com.example.backend.CPU.timing.*;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
-
-import static javafx.application.Platform.exit;
 
 public class CPU_Benchmark {
     private long scoreMultiThreaded = 0;
@@ -31,6 +23,7 @@ public class CPU_Benchmark {
     public void cancel(){
         fixedPointBenchmark.cancel();
         threadedRoots.cancel();
+
     }
 
     public long getScoreMultiThreaded() {
@@ -46,6 +39,7 @@ public class CPU_Benchmark {
         // INIT
         ArrayList<Long> scoresList_FIXED_POINT_OP = new ArrayList<>();
         Timer timer = new Timer();
+
         // INIT_FIXED_POINT_OP
         final int n = 1000000000;
         System.out.println("Start");
@@ -56,6 +50,7 @@ public class CPU_Benchmark {
         fixedPointBenchmark.warmup();
         for (int i = 0; i < 3; i++) {
 
+            System.out.println("Warmup " + i);
             // RUN_ARITHMETIC
             TypeOfOperation operation = TypeOfOperation.ARITHMETIC;
             timer.start();
@@ -104,6 +99,7 @@ public class CPU_Benchmark {
         System.out.println("Start");
 
         for (int i = 0; i < 3; i++) {
+            System.out.println("Warmup " + i);
             long SystemThreadCount = Runtime.getRuntime().availableProcessors();
             threadedRoots.initialize(1000000000L);
             threadedRoots.warmup(SystemThreadCount);
