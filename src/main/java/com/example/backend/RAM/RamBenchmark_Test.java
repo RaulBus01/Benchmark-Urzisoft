@@ -5,10 +5,22 @@ import java.io.IOException;
 public class RamBenchmark_Test {
 
     private double score = 0;
+    private String prefix = "C:\\Users\\Andre\\Desktop\\Irian\\hello";
+    private String suffix = ".js";
+    private int minIndex = 0;
+    private int maxIndex = 8;
+    private long fileSize = 512*1024*1024; // 256, 512 MB, 1GB // type Long!
+    private int bufferSize = 2*1024; // 4 KB
     public void startBenchmark(){
         RamBenchmark bench = new RamBenchmark();
         Timer t = new Timer();
-        bench.initialize();
+        bench.initialize(8);
+        try {
+            bench.streamWriteFixedFileSize(prefix, suffix, minIndex,
+                    maxIndex, fileSize, false);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         t.start();
         bench.run();
         long time = t.stop();
@@ -21,4 +33,6 @@ public class RamBenchmark_Test {
     public double getScore() {
         return score;
     }
+
+
 }
