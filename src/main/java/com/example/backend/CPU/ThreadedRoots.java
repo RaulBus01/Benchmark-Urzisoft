@@ -5,12 +5,16 @@ public class ThreadedRoots {
     private double result;
     private long size;
     private boolean running;
+    private boolean canceled = false;
 
 
     public void initialize(Object... params) {
         if(params[0] instanceof Long) {
             size = (long) params[0];
         }
+    }
+    public void cancel(){
+        canceled = true;
     }
 
     public void run(Object... options) {
@@ -24,13 +28,13 @@ public class ThreadedRoots {
         Thread[] threads = new Thread[(int)nThreads];
         final long jobPerThread = size/nThreads;
         running = true; // flag used to stop all started threads
-        for (int i = 0; i < nThreads; ++i) {
+        for (int i = 0; i < nThreads && !canceled; ++i) {
             threads[i] = new Thread(new SquareRootTask(i * jobPerThread, (i + 1) * jobPerThread));
             threads[i].start();
         }
 
         // join threads
-        for (int i = 0; i < nThreads; ++i) {
+        for (int i = 0; i < nThreads && !canceled; ++i) {
             try {
                 threads[i].join();
             } catch (InterruptedException e) {
@@ -47,6 +51,8 @@ public class ThreadedRoots {
         return String.valueOf(result);
     }
 
+
+
     class SquareRootTask implements Runnable {
 
         private final long from;
@@ -59,7 +65,7 @@ public class ThreadedRoots {
             this.to = to;
         }
         public void run() {
-            for(long i = from; i < to && running; ++i) {
+            for(long i = from; i < to && running && !canceled; ++i) {
                 result += getNewtonian(i);
             }
         }

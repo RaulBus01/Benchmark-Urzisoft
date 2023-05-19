@@ -25,6 +25,14 @@ public class CPU_Benchmark {
         return getScoreMultiThreaded()+getScoreSingleThreaded();
     }
 
+    private FixedPointBenchmark fixedPointBenchmark = new FixedPointBenchmark();
+
+    private ThreadedRoots threadedRoots = new ThreadedRoots();
+    public void cancel(){
+        fixedPointBenchmark.cancel();
+        threadedRoots.cancel();
+    }
+
     public long getScoreMultiThreaded() {
         return scoreMultiThreaded;
     }
@@ -42,7 +50,6 @@ public class CPU_Benchmark {
         final int n = 1000000000;
         System.out.println("Start");
         long scoreFixedPointOp;
-        FixedPointBenchmark fixedPointBenchmark = new FixedPointBenchmark();
         fixedPointBenchmark.initialize(n);
 
         // FIXED_POINT_OP_WARMUP
@@ -98,7 +105,6 @@ public class CPU_Benchmark {
 
         for (int i = 0; i < 3; i++) {
             long SystemThreadCount = Runtime.getRuntime().availableProcessors();
-            ThreadedRoots threadedRoots = new ThreadedRoots();
             threadedRoots.initialize(1000000000L);
             threadedRoots.warmup(SystemThreadCount);
             timer.start();
