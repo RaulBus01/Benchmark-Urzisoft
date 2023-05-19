@@ -1,7 +1,5 @@
 package com.example.backend.CPU;
 
-//import bench.IBenchmark;
-
 public class FixedPointBenchmark{
     private int workload;
     private int[] num;
@@ -9,8 +7,10 @@ public class FixedPointBenchmark{
     private int[] c;
     private int j, k, l;
 
+    private boolean canceled = false;
+
     private void ArithmeticOPS(){ // random numbers in num
-        for(int i=0; i < workload; i++){ // => 29 OPS
+        for(int i=0; i < workload && !canceled; i++){ // => 29 OPS
             j = num[1] * (k - j) * (l - k);
             k = num[3] * k - (l - j) * k;
             l = (l - k) * (num[2] + j);
@@ -20,7 +20,7 @@ public class FixedPointBenchmark{
     }
 
     private void BranchingOPS(){// => 11 OPS
-        for(int i=0; i < workload; i++){
+        for(int i=0; i < workload && !canceled; i++){
             if (j == 1) {
                 j = num[2];
             } else {
@@ -40,8 +40,8 @@ public class FixedPointBenchmark{
         }
     }
 
-   private void AssignementOPS(){ // => 34 OPS
-        for(int i=0; i < workload; i++){
+    private void AssignementOPS(){ // => 34 OPS
+        for(int i=0; i < workload && !canceled; i++){
             j = num[c[i%1000]%1000];
             k = res[(num[c[i%1000]])%3];
             l = res[c[num[i%1000]%1000]%3];
@@ -89,4 +89,8 @@ public class FixedPointBenchmark{
             run();
         }
     }
+    public void cancel(){
+        canceled = true;
+    }
+
 }
