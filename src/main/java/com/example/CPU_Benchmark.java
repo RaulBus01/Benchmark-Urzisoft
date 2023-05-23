@@ -3,8 +3,8 @@ package com.example;
 import com.example.backend.CPU.FixedPointBenchmark;
 import com.example.backend.CPU.ThreadedRoots;
 import com.example.backend.CPU.TypeOfOperation;
-import com.example.backend.CPU.timing.Timer;
-import com.example.backend.CPU.timing.*;
+import com.example.backend.timing.Timer;
+import com.example.backend.timing.*;
 
 import java.util.ArrayList;
 

@@ -2,10 +2,8 @@ package com.example.backend.RAM;
 
 import  com.example.backend.timing.Timer;
 
-import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class RamBenchmark_Test {
