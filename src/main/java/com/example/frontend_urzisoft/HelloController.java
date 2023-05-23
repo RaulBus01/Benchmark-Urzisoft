@@ -22,6 +22,7 @@ import javafx.geometry.Side;
 
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
@@ -29,7 +30,7 @@ import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
-import java.util.concurrent.atomic.AtomicBoolean;
+
 
 
 import javafx.scene.layout.Pane;
@@ -56,30 +57,29 @@ public class HelloController implements Initializable {
     private  final MongoDB mongoDB = new MongoDB();
 
 
-    public boolean disableButtons = false;
-    public Button cputest_stop;
+
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        System.out.println("HelloController initialized");
+       // System.out.println("HelloController initialized");
         ComponentsService componentsService = new ComponentsService();
         this.cpu = componentsService.createCPU();
         this.ram = componentsService.createRAM();
         this.syi = componentsService.createSYI();
 
-        System.out.println("CPU: " + this.cpu.getName() + " " + this.cpu.getPhysicalCores() + " " + this.cpu.getLogicalCores() + " " + this.cpu.getFrequency());
+       // System.out.println("CPU: " + this.cpu.getName() + " " + this.cpu.getPhysicalCores() + " " + this.cpu.getLogicalCores() + " " + this.cpu.getFrequency());
 
         for (RAM ram1 : ram) {
             if(ram1 != null){
-                System.out.println("RAM: " + ram1.getManufacturer() + " " + ram1.getBank() + " " + ram1.getCapacity() + " " + ram1.getFrequency());
+                //System.out.println("RAM: " + ram1.getManufacturer() + " " + ram1.getBank() + " " + ram1.getCapacity() + " " + ram1.getFrequency());
             }
         }
 
-        System.out.println("SYI: " + this.syi.getOperatingSystem() + " " + this.syi.getModel() + " Motherboard: " + this.syi.getMotherboard());
+        //System.out.println("SYI: " + this.syi.getOperatingSystem() + " " + this.syi.getModel() + " Motherboard: " + this.syi.getMotherboard());
     }
 
-    private void changePanesView(boolean disabled){
+    void changePanesView(boolean disabled){
         AnchorPane menu = (AnchorPane) HelloApplication.scene.lookup("#menuPane");
 
 
@@ -199,7 +199,10 @@ public class HelloController implements Initializable {
     @FXML
     protected void onHomeButtonClicked() throws IOException {
         AnchorPane sidePane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Home-view.fxml")));
-
+        ImageView aboutImage = (ImageView) borderpane.getParent().lookup("#AboutPng");
+        aboutImage.setVisible(false);
+        ImageView leaderboardImage = (ImageView) borderpane.getParent().lookup("#LeaderboardPng");
+        leaderboardImage.setVisible(false);
         SetSystemInformation(sidePane);
 
         sidePane.setMaxSize(1280, 720);
@@ -214,6 +217,10 @@ public class HelloController implements Initializable {
     protected void onCPUTestButtonClicked() throws IOException {
         AnchorPane newSidePane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("CPU-View.fxml")));
         borderpane.getChildren().setAll(newSidePane);
+        ImageView aboutImage = (ImageView) borderpane.getParent().lookup("#AboutPng");
+        aboutImage.setVisible(false);
+        ImageView leaderboardImage = (ImageView) borderpane.getParent().lookup("#LeaderboardPng");
+        leaderboardImage.setVisible(false);
 
         Button startButton = (Button) newSidePane.lookup("#cputest_btn");
         AnchorPane CPU_load = (AnchorPane) newSidePane.lookup("#CPUTest_View");
@@ -251,6 +258,10 @@ public class HelloController implements Initializable {
     {
         AnchorPane newSidePane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("RAM-View.fxml")));
         borderpane.getChildren().setAll(newSidePane);
+        ImageView aboutImage = (ImageView) borderpane.getParent().lookup("#AboutPng");
+        aboutImage.setVisible(false);
+        ImageView leaderboardImage = (ImageView) borderpane.getParent().lookup("#LeaderboardPng");
+        leaderboardImage.setVisible(false);
         Button runTestButton = (Button) newSidePane.lookup("#ramtest_btn");
         AnchorPane RAM_load = (AnchorPane) newSidePane.lookup("#RAMTest_View");
 
@@ -332,13 +343,15 @@ public class HelloController implements Initializable {
 
         Button stopButton = (Button) pane.lookup("#Stop");
         stopButton.setDisable(false);
-        Task<Void> cpuTestTask = new Task<Void>() {
+        ImageView ramImage = (ImageView) borderpane.lookup("#RAMPng");
+        Task<Void> cpuTestTask = new Task<>() {
             @Override
             protected Void call() throws Exception {
                 // First Message
                 if (isCancelled()) {
 
                     System.out.println("Test Canceled1");
+
                     return null;
                 }
                 updateMessage("Loading Tests...");
@@ -390,6 +403,7 @@ public class HelloController implements Initializable {
         stopButton.setOnAction(event -> {
             cpuTestTask.cancel();
             cpuBench.cancel();
+            ramImage.setVisible(false);
             Platform.runLater(() -> {
                 cpuLoad.getProgressBar().progressProperty().unbind();
                 cpuLoad.getTaskText().textProperty().unbind();
@@ -426,7 +440,7 @@ public class HelloController implements Initializable {
                 while (progress < totalScoreCPU[0] )
                 {
                     progress += increment;
-                    Thread.sleep(10);
+
                     if (progress < totalScoreCPU[0])
                     {
                         int finalProgress = progress;
@@ -478,6 +492,7 @@ public class HelloController implements Initializable {
 
         cpuTestTask.setOnSucceeded(event -> {
 
+            ramImage.setVisible(false);
             singleScoreCPU[0] = (int) cpuBench.getScoreSingleThreaded();
             multiScoreCPU[0] = (int) cpuBench.getScoreMultiThreaded();
 
@@ -570,6 +585,9 @@ public class HelloController implements Initializable {
         final int[] multiScoreRAM = {0};
         final int[] totalScoreRAM = {0};
 
+        ImageView ramImage = (ImageView) borderpane.lookup("#RAMPng");
+
+
 
 
 
@@ -615,7 +633,7 @@ public class HelloController implements Initializable {
                 while (progress < totalScoreRAM[0] )
                 {
                     progress += increment;
-                    Thread.sleep(10);
+
                     if (progress < totalScoreRAM[0])
                     {
                         int finalProgress = progress;
@@ -665,7 +683,7 @@ public class HelloController implements Initializable {
         thread.start();
 
         ramTestTask.setOnSucceeded(event -> {
-
+            ramImage.setVisible(false);
             ramLoad.getProgressBar().setVisible(false);
             ramLoad.getTaskText().setLayoutX(255);
             ramLoad.getTaskText().setLayoutY(25);
@@ -717,6 +735,10 @@ public class HelloController implements Initializable {
     {
         AnchorPane newSidePane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Leaderboard-view.fxml")));
         borderpane.getChildren().setAll(newSidePane);
+        ImageView aboutImage = (ImageView) borderpane.getParent().lookup("#AboutPng");
+        aboutImage.setVisible(false);
+        ImageView leaderboardImage = (ImageView) borderpane.getParent().lookup("#LeaderboardPng");
+        leaderboardImage.setVisible(true);
 
         TableView<LeaderboardEntry> table = (TableView<LeaderboardEntry>) newSidePane.lookup("#Table");
         TableColumn<LeaderboardEntry, String> nameColumn = (TableColumn<LeaderboardEntry, String>) table.getColumns().get(0);
@@ -758,11 +780,18 @@ public class HelloController implements Initializable {
 
 
 
+
+
     }
     @FXML
     protected void onAboutButtonClicked() throws IOException
     {
         AnchorPane newSidePane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("About-view.fxml")));
+        ImageView leaderboardImage = (ImageView) borderpane.getParent().lookup("#LeaderboardPng");
+        leaderboardImage.setVisible(false);
+        ImageView aboutImage = (ImageView) borderpane.getParent().lookup("#AboutPng");
+        aboutImage.setVisible(true);
+        
         borderpane.getChildren().setAll(newSidePane);
         borderpane.getChildren().setAll(newSidePane);
         Text text = (Text) newSidePane.lookup("#TextHover");

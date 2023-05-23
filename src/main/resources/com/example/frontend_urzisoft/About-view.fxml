@@ -35,7 +35,7 @@
                   <Font name="Calibri Bold" size="19.0" />
                </font>
                <effect>
-                  <Glow level="0.48" />
+                  <Glow level="0.0" />
                </effect>
             </Label>
             <Pane fx:id="TeamPane" layoutX="20.0" layoutY="160.0" opacity="0.0">

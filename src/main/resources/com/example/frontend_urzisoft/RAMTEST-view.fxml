@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane fx:id="RAMTest_View" prefHeight="555.0" prefWidth="645.0" style="-fx-background-color: #28403D;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" />
+<AnchorPane fx:id="RAMTest_View" prefHeight="555.0" prefWidth="645.0" style="-fx-background-color: #28403D;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fx:id="RAMPng" fitHeight="150.0" fitWidth="200.0" layoutX="250.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@png/Ram1.gif" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

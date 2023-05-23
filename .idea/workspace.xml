@@ -4,13 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e57a20e6-0f23-41e6-937b-3a158c4b4f94" name="Changes" comment="Refactored code&#10;Implemented CPU benchmark and GUI">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="e57a20e6-0f23-41e6-937b-3a158c4b4f94" name="Changes" comment="&#10;Added Animations">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/png/About.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/png/LeaderBoard.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/png/Loading.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/png/Ram1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/png/pngwing.com.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CPU_Benchmark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/CPU_Benchmark.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/CPU/ThreadedRoots.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/CPU/ThreadedRoots.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/CPU-View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/CPU-View.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/About-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/About-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/CPUTEST-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/CPUTEST-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/RAMTEST-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/RAMTEST-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -290,7 +296,10 @@
       <workItem from="1684312341135" duration="288000" />
       <workItem from="1684347227585" duration="8301000" />
       <workItem from="1684395417577" duration="1811000" />
-      <workItem from="1684500614301" duration="12110000" />
+      <workItem from="1684500614301" duration="12765000" />
+      <workItem from="1684755219335" duration="22000" />
+      <workItem from="1684765960740" duration="149000" />
+      <workItem from="1684848175621" duration="7638000" />
     </task>
     <task id="LOCAL-00001" summary="Added Scene in Scene">
       <created>1682795848210</created>
@@ -355,7 +364,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684410127853</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="&#10;Implemented CPU Stop Button">
+      <created>1684513516142</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1684513516142</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -377,7 +393,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="refactorController" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -442,7 +458,9 @@
     <MESSAGE value="Fixed PNGS" />
     <MESSAGE value="Added CPUTest-view&#10;Added RAMTEST-view&#10;Added Leaderboard-view&#10;Added About-view&#10;Linked the mongoDB with the app" />
     <MESSAGE value="Refactored code&#10;Implemented CPU benchmark and GUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored code&#10;Implemented CPU benchmark and GUI" />
+    <MESSAGE value="&#10;Implemented CPU Stop Button" />
+    <MESSAGE value="&#10;Added Animations" />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;Added Animations" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
