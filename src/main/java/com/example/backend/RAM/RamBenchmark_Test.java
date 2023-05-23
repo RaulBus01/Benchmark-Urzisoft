@@ -1,11 +1,18 @@
 package com.example.backend.RAM;
 
 import  com.example.backend.timing.Timer;
+
+import javax.imageio.ImageIO;
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
 public class RamBenchmark_Test {
 
     private double score = 0;
-    private String prefix = "C:\\Users\\Andre\\Desktop\\Irian\\hello";
+
+    private String prefix = "src/main/resources/com/example/frontend_urzisoft/output/";
     private String suffix = ".js";
     private int minIndex = 0;
     private int maxIndex = 8;
@@ -16,22 +23,37 @@ public class RamBenchmark_Test {
         Timer t = new Timer();
         bench.initialize(8);
         try {
-            bench.streamWriteFixedFileSize(prefix, suffix, minIndex,
-                    maxIndex, fileSize, false);
+
+            bench.streamWriteFixedFileSize(prefix, suffix, minIndex, maxIndex, fileSize, true);
+
         } catch (IOException e) {
+
             throw new RuntimeException(e);
         }
+
         t.start();
         bench.run();
+
         long time = t.stop();
+        for(int i = 0; i < 8; i++)
+        {
+            String path = "src/main/resources/com/example/frontend_urzisoft/output/" + Integer.toString(i) + ".js";
+
+            File file = Path.of(path).toFile();
+
+            file.delete();
+
+
+
+        }
         double timeinsec = (double)time / 1000000000;
 
         score = bench.getResult() / (double)timeinsec;
-        System.out.println("Score: " + score);
+
     }
 
     public double getScore() {
-        return score;
+        return score/5;
     }
 
 

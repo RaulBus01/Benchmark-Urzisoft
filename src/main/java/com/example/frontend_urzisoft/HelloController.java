@@ -600,14 +600,13 @@ public class HelloController implements Initializable {
             ramLoad.getTaskText().setText("Loading Scores...");
             Thread thread2 = new Thread(updateRingTask);
             thread2.start();
-            viewLoad.getChildren().add(singleScoreIndicator);
+
             viewLoad.getChildren().add(totalScoreIndicator);
-            viewLoad.getChildren().add(multiScoreIndicator);
-            viewLoad.getChildren().add(ramLoad.getSingleScoreText());
-            viewLoad.getChildren().add(ramLoad.getMultiScoreText());
+
+
+
             viewLoad.getChildren().add(ramLoad.getTotalScoreText());
-            ramLoad.getSingleScoreText().setText("Single Core Score ");
-            ramLoad.getMultiScoreText().setText("Multi Core Score ");
+
             ramLoad.getTotalScoreText().setText("Total Score ");
 
             changePanesView(false);

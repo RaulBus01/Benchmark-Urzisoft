@@ -8,6 +8,7 @@ import com.example.backend.timing.*;
 
 import java.util.ArrayList;
 
+
 public class CPU_Benchmark {
     private long scoreMultiThreaded = 0;
     private long scoreSingleThreaded = 0;
