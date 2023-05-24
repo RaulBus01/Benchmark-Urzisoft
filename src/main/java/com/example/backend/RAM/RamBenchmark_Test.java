@@ -16,8 +16,9 @@ public class RamBenchmark_Test {
     private int maxIndex = 8;
     private long fileSize = 512*1024*1024; // 256, 512 MB, 1GB // type Long!
     private int bufferSize = 2*1024; // 4 KB
+    private RamBenchmark bench = new RamBenchmark();
     public void startBenchmark(){
-        RamBenchmark bench = new RamBenchmark();
+
         Timer t = new Timer();
         bench.initialize(8);
         try {
@@ -51,7 +52,12 @@ public class RamBenchmark_Test {
     }
 
     public double getScore() {
-        return score/5;
+        return score/5.5;
+    }
+
+    public void cancel(){
+
+        bench.cancel();
     }
 
 

@@ -24,10 +24,16 @@ public class RamBenchmark{
 
     private long bytes;
 
+    private boolean canceled = false;
+    public void cancel()
+    {
+        this.canceled = true;
+    }
     public void run(Object... objects) {
         try {
-            for(int i = 0; i < maxImages; i++)
+            for(int i = 0; i < maxImages && !canceled; i++)
             {
+                System.out.println("Image " + i + " of " + maxImages);
                 String path = "src/main/resources/com/example/frontend_urzisoft/output/" + Integer.toString(i) + ".js";
                 this.bytes = this.bytes + Files.size(Path.of(path));
                 images[i] = ImageIO.read(new File(path));
@@ -61,8 +67,8 @@ public class RamBenchmark{
         int fileIndex = 0;
 
         while (currentBufferSize <= MAX_BUFFER_SIZE
-                && fileIndex <= maxIndex - minIndex) {
-
+                && fileIndex <= maxIndex - minIndex && !canceled) {
+            System.out.println("Buffer size: " + currentBufferSize + " bytes");
             fileName = filePrefix + fileIndex + fileSuffix;
 
             writeFile(fileName, currentBufferSize, fileSize, clean);
@@ -121,4 +127,5 @@ public class RamBenchmark{
 //           file.delete();
 
     }
+
 }

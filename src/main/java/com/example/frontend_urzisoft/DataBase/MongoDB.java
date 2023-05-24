@@ -9,6 +9,8 @@ import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.IndexOptions;
 import org.bson.Document;
 
+import static com.mongodb.client.model.Filters.eq;
+
 public class MongoDB {
     private MongoClient mongoClient;
     private MongoDatabase database;
@@ -25,36 +27,22 @@ public class MongoDB {
     }
 
     public boolean checkUser(String user) {
-        long count = collection.countDocuments(Filters.eq("user", user));
+        long count = collection.countDocuments(eq("user", user));
+
         return count > 0;
     }
 
-    public void insertDocument(Document doc) {
-        if (this.collection != null) {
-            String user = doc.getString("user");
-            int newTotalScore = doc.getInteger("TotalScore", 0);
-            if (!checkUser(user))
-            {
-                collection.insertOne(doc);
 
-               // System.out.println("Document inserted");
-            }
-            else
-            {
-                Document existingDocument = collection.find(Filters.eq("user", user)).first();
-                int existingTotalScore = existingDocument.getInteger("TotalScore", 0);
 
-                if (newTotalScore > existingTotalScore) {
-                    collection.updateOne(
-                            Filters.eq("user", user),
-                            new Document("$set", doc)
-                    );
-                }
-            }
-        } else {
-           // System.out.println("Collection is null");
-        }
+
+
+
+
+    public void insertDocument(Document doc)
+    {
+        collection.insertOne(doc);
     }
+
 
     public MongoCollection<Document> getCollection() {
         return collection;

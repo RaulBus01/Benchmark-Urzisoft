@@ -15,7 +15,7 @@
          <children>
             <Text fill="WHITE" layoutX="80.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RAM Information">
                <font>
-                  <Font name="Calibri" size="20.0" />
+                  <Font name="Calibri Bold" size="20.0" />
                </font>
             </Text>
             <Text fill="WHITE" layoutX="20.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Capacity:">
@@ -28,9 +28,9 @@
                   <Font name="Calibri Bold" size="18.0" />
                </font>
             </Text>
-            <Text fx:id="RAM_TCapacity" boundsType="VISUAL" fill="WHITE" layoutX="150.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16; -fx-fill: #DBF227;" text="Model" wrappingWidth="200.0">
+            <Text fx:id="RAM_TCapacity" boundsType="VISUAL" fill="WHITE" layoutX="139.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18; -fx-fill: #DBF227;" text="Model">
                <font>
-                  <Font name="Calibri" size="16.0" />
+                  <Font name="Calibri Bold" size="20.0" />
                </font>
             </Text>
             <Text fill="WHITE" layoutX="20.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type:">
@@ -38,9 +38,9 @@
                   <Font name="Calibri Bold" size="18.0" />
                </font>
             </Text>
-            <Text fx:id="RAM_Type" fill="WHITE" layoutX="80.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16; -fx-fill: #DBF227;" text="Type:">
+            <Text fx:id="RAM_Type" fill="WHITE" layoutX="65.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18; -fx-fill: #DBF227;" text="Type:">
                <font>
-                  <Font name="Calibri" size="16.0" />
+                  <Font name="Calibri Bold" size="20.0" />
                </font>
             </Text>
             <Separator layoutX="315.0" orientation="VERTICAL" prefHeight="550.0" prefWidth="5.0" style="-fx-background-color: #C2C0A6;" />
@@ -56,12 +56,12 @@
                   <Image url="@png/ram.png" />
                </image>
             </ImageView>
-            <Text fx:id="RAM_Freq" boundsType="VISUAL" fill="WHITE" layoutX="135.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16; -fx-fill: #DBF227;" text="Model" wrappingWidth="200.0">
+            <Text fx:id="RAM_Freq" boundsType="VISUAL" fill="WHITE" layoutX="114.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18; -fx-fill: #DBF227;" text="Model">
                <font>
-                  <Font name="Calibri" size="16.0" />
+                  <Font name="Calibri Bold" size="20.0" />
                </font>
             </Text>
-            <Button fx:id="ramtest_btn1" layoutX="190.0" layoutY="440.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="100.0" styleClass="smallRedButton" stylesheets="@CSS/styles.css" text="Stop" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <Button fx:id="Stop" disable="true" layoutX="190.0" layoutY="440.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="100.0" styleClass="smallRedButton" stylesheets="@CSS/styles.css" text="Stop" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                <font>
                   <Font name="Calibri Bold" size="19.0" />
                </font>

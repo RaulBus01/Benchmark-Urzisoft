@@ -12,6 +12,7 @@ import com.example.frontend_urzisoft.HardwareDetails.SYI;
 import com.example.frontend_urzisoft.ui.RingProgressIndicator;
 import com.example.frontend_urzisoft.ui.UILoading;
 import com.mongodb.client.FindIterable;
+import com.mongodb.client.MongoCollection;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -30,6 +31,7 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.*;
 
 
@@ -41,6 +43,7 @@ import javafx.scene.control.TableColumn;
 
 import org.bson.Document;
 
+import static com.mongodb.client.model.Filters.eq;
 
 
 public class HelloController implements Initializable {
@@ -68,14 +71,24 @@ public class HelloController implements Initializable {
         this.cpu = componentsService.createCPU();
         this.ram = componentsService.createRAM();
         this.syi = componentsService.createSYI();
+        CPU_id = cpu.getName();
+        double capacity = 0;
+
+
+
+
 
        // System.out.println("CPU: " + this.cpu.getName() + " " + this.cpu.getPhysicalCores() + " " + this.cpu.getLogicalCores() + " " + this.cpu.getFrequency());
 
         for (RAM ram1 : ram) {
             if(ram1 != null){
+
+                String ramCapacity = ram1.getCapacity();
+                capacity =capacity+  Double.parseDouble(ramCapacity.replace("GB", ""));
                 //System.out.println("RAM: " + ram1.getManufacturer() + " " + ram1.getBank() + " " + ram1.getCapacity() + " " + ram1.getFrequency());
             }
         }
+        RAM_id = capacity + " GB " + ram.get(0).getFrequency() + "MHz" + " " + ram.get(0).getMemoryType();
 
         //System.out.println("SYI: " + this.syi.getOperatingSystem() + " " + this.syi.getModel() + " Motherboard: " + this.syi.getMotherboard());
     }
@@ -248,7 +261,7 @@ public class HelloController implements Initializable {
         CPU_Logical_Processors.setText(String.valueOf(this.cpu.getLogicalCores()));
         CPU_Frequency.setText(String.valueOf(this.cpu.getFrequency()));
 
-        CPU_id = this.cpu.getName();
+
 
 
 
@@ -297,7 +310,7 @@ public class HelloController implements Initializable {
         ram_capacity.setText(totalMemory +" GB");
         ram_frequency.setText(frequency+" MHz");
         ram_type.setText(memoryType);
-        RAM_id = totalMemory+" GB "+frequency+" MHz "+memoryType;
+
 
     }
     protected void TestCPU(AnchorPane side, Button runTestButton) throws IOException
@@ -530,20 +543,51 @@ public class HelloController implements Initializable {
                 {
                     dialog.setDisable(true);
                     dialogButton.setVisible(false);
-                    dialogText.setText(user + " ,your score has been saved!");
-
                     mongoDB.connect();
                     Document document = new Document("user", user)
                             .append("CPU", CPU_id)
                             .append("RAM", RAM_id)
-                            .append("RAMScore", 200)
+                            .append("RAMScore", 0)
                             .append("CPUScore", totalScoreCPU[0])
-                            .append("TotalScore", totalScoreCPU[0]+200);
-                    mongoDB.insertDocument(document);
+                            .append("TotalScore", totalScoreCPU[0]);
+
+
+                    if (mongoDB.checkUser(user)) {
+                        MongoCollection<Document> collection = mongoDB.getCollection();
+                        Document existingDocument = collection.find(eq("user", user)).first();
+
+                        int existingRAMScore = existingDocument.getInteger("RAMScore", 0);
+                        int existingCPUScore = existingDocument.getInteger("CPUScore", 0);
+
+
+                        if (existingCPUScore == 0) {
+                            // Add the CPUScore only if it doesn't exist in the document
+                            existingDocument.put("CPUScore", totalScoreCPU[0]);
+                            int newTotalScore = totalScoreCPU[0] + existingRAMScore; // Calculate the new TotalScore
+                            existingDocument.put("TotalScore", newTotalScore);
+                            dialogText.setText(user + ", your score has been updated!");
+                            dialogText.setStyle("-fx-font-size: 18px; -fx-text-fill: green;");
+                        } else if (existingRAMScore > 0) {
+                            // User already has CPUScore and RAMScore
+                            dialogText.setText(user + ", your score already exists!");
+                            dialogText.setStyle("-fx-font-size: 18px; -fx-text-fill: red;");
+                        } else {
+                            // User already has CPUScore but RAMScore is 0
+                            dialogText.setText(user + ", your CPU score is lower!");
+                            dialogText.setStyle("-fx-font-size: 18px; -fx-text-fill: #ffc816;");
+                        }
+
+                        collection.replaceOne(eq("user", user), existingDocument);
+                    } else {
+                        mongoDB.insertDocument(document);
+                        dialogText.setText(user + ", your score has been saved!");
+                        dialogText.setStyle("-fx-font-size: 18px; -fx-text-fill: green;");
+                    }
 
                     mongoDB.closeConnection();
-                }
-            });
+                    }
+
+                });
 
             changePanesView(false);
             runTestButton.setDisable(false);
@@ -591,17 +635,47 @@ public class HelloController implements Initializable {
 
         int[] totalScoreRAM = {0};
 
+        AnchorPane pane = (AnchorPane) viewLoad.getParent().getParent();
+        Button stopButton = (Button) pane.lookup("#Stop");
+        stopButton.setDisable(false);
         Task<Void> ramTestTask = new Task<>() {
             @Override
             protected Void call() throws Exception {
                 //First Message
+
+                if (isCancelled()) {
+
+                    System.out.println("Test Canceled1");
+
+                    return null;
+                }
                 updateMessage("Loading Tests...");
-                Thread.sleep(1000);
-                ramBench.startBenchmark();
-                for (int i = 0; i < 10; i++) {
+                Thread.sleep(100);
+
+                if (isCancelled()) {
+
+                    System.out.println("Test Canceled2");
+                    return null;
+                }
+
+
+                if (!isCancelled())
+                {
+                    updateMessage("Loading RAM");
+                   ramBench.startBenchmark();
+                }
+
+                for (int i = 0; i < 10; i++)
+                {
                     Thread.sleep(40);
+                    if (isCancelled()) {
+
+                        System.out.println("Test Canceled4");
+                        return null;
+                    }
                     updateProgress(i + 1, 10);
                 }
+                stopButton.setDisable(true);
                 updateMessage("RAM Test Complete");
                 Thread.sleep(750);
 
@@ -609,7 +683,26 @@ public class HelloController implements Initializable {
                 return null;
             }
         };
+        stopButton.setOnAction(event -> {
+            ramTestTask.cancel();
+            ramBench.cancel();
+            ramImage.setVisible(false);
+            Platform.runLater(() -> {
+                ramLoad.getProgressBar().progressProperty().unbind();
+                ramLoad.getTaskText().textProperty().unbind();
+                ramLoad.getProgressBar().setProgress(1);
+                ramLoad.getProgressBar().setStyle("-fx-accent: red;");
+                ramLoad.getTaskText().setLayoutX(275);
+                ramLoad.getTaskText().setText("Test Canceled");
 
+
+                runTestButton.setDisable(false);
+                changePanesView(false);
+                stopButton.setDisable(true);
+
+
+            });
+        });
 
         ramLoad.getProgressBar().progressProperty().bind(ramTestTask.progressProperty());
         ramLoad.getTaskText().textProperty().bind(ramTestTask.messageProperty());
@@ -695,13 +788,44 @@ public class HelloController implements Initializable {
                 if (user.length() > 0) {
                     dialog.setDisable(true);
                     dialogButton.setVisible(false);
-                    dialogText.setText(user + " ,your score has been saved!");
+
                     mongoDB.connect();
                     Document document = new Document("user", user)
                             .append("CPU", CPU_id)
                             .append("RAM", RAM_id)
-                            .append("RAMScore", totalScoreRAM[0]);
-                    mongoDB.insertDocument(document);
+                            .append("RAMScore", totalScoreRAM[0])
+                            .append("CPUScore", 0)
+                            .append("TotalScore", totalScoreRAM[0]);
+                    if (mongoDB.checkUser(user)) {
+                        MongoCollection<Document> collection = mongoDB.getCollection();
+                        Document existingDocument = collection.find(eq("user", user)).first();
+
+                        int existingRAMScore = existingDocument.getInteger("RAMScore", 0);
+                        int existingCPUScore = existingDocument.getInteger("CPUScore", 0);
+
+                        if (existingRAMScore == 0) {
+                            // Add the RAMScore only if it doesn't exist in the document
+                            existingDocument.put("RAMScore", totalScoreRAM[0]);
+                            int newTotalScore = totalScoreRAM[0] + existingCPUScore; // Calculate the new TotalScore
+                            existingDocument.put("TotalScore", newTotalScore);
+                            dialogText.setText(user + ", your score has been updated!");
+                            dialogText.setStyle("-fx-font-size: 18px; -fx-text-fill: green;");
+                        } else if (existingCPUScore > 0) {
+                            // User already has CPUScore and RAMScore
+                            dialogText.setText(user + ", your score already exists!");
+                            dialogText.setStyle("-fx-font-size: 18px; -fx-text-fill: red;");
+                        } else {
+                            // User already has RAMScore but CPUScore is 0
+                            dialogText.setText(user + ", your RAM score is lower!");
+                            dialogText.setStyle("-fx-font-size: 18px; -fx-text-fill: #ffc816;");
+                        }
+
+                        collection.replaceOne(eq("user", user), existingDocument);
+                    } else {
+                        mongoDB.insertDocument(document);
+                        dialogText.setText(user + ", your score has been saved!");
+                        dialogText.setStyle("-fx-font-size: 18px; -fx-text-fill: green;");
+                    }
 
                     mongoDB.closeConnection();
                 }

@@ -55,9 +55,9 @@
             </Pane>
             <Pane layoutY="150.0" styleClass="menuButton" stylesheets="@CSS/styles.css">
                <children>
-                  <Button fx:id="ramTestButton" alignment="CENTER" contentDisplay="CENTER" layoutX="-6.0" layoutY="1.0" mnemonicParsing="false" onAction="#onRAMTestButtonClicked" prefHeight="54.0" prefWidth="250.0" styleClass="menuButton" stylesheets="@CSS/styles.css" text="RAM Test" textFill="WHITE">
+                  <Button fx:id="ramTestButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onRAMTestButtonClicked" prefHeight="54.0" prefWidth="250.0" styleClass="menuButton" stylesheets="@CSS/styles.css" text="RAM Test" textFill="WHITE">
                      <font>
-                        <Font name="Snap ITC" size="79.0" />
+                        <Font name="Snap ITC" size="74.0" />
                      </font>
                   </Button>
                   <ImageView fx:id="ramTestIcon" fitHeight="45.0" fitWidth="45.0" layoutX="190.0" layoutY="5.0" mouseTransparent="true" onMouseClicked="#onRAMTestButtonClicked" pickOnBounds="true" preserveRatio="true">
@@ -71,7 +71,7 @@
                <children>
                   <Button fx:id="cpuTestButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onCPUTestButtonClicked" prefHeight="54.0" prefWidth="250.0" styleClass="menuButton" stylesheets="@CSS/styles.css" text="CPU Test" textFill="WHITE">
                      <font>
-                        <Font name="Calibri" size="79.0" />
+                        <Font name="Snap ITC" size="79.0" />
                      </font>
                      <opaqueInsets>
                         <Insets />

@@ -15,7 +15,7 @@
          <children>
             <Text fill="WHITE" layoutX="80.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CPU Information">
                <font>
-                  <Font name="Calibri" size="20.0" />
+                  <Font name="Calibri Bold" size="20.0" />
                </font>
             </Text>
             <Text fill="WHITE" layoutX="20.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ECF6FC;" text="Name:">
@@ -28,7 +28,7 @@
                   <Font name="Calibri Bold" size="18.0" />
                </font>
             </Text>
-            <Text fx:id="CPU_Name" boundsType="VISUAL" fill="WHITE" layoutX="90.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16; -fx-fill: #DBF227;" text="Model" wrappingWidth="200.0">
+            <Text fx:id="CPU_Name" boundsType="VISUAL" fill="WHITE" layoutX="79.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16; -fx-fill: #DBF227;" text="Model" wrappingWidth="200.0">
                <font>
                   <Font name="Calibri Bold" size="16.0" />
                </font>
@@ -38,7 +38,7 @@
                   <Font name="Calibri Bold" size="18.0" />
                </font>
             </Text>
-            <Text fx:id="Logic_Core" fill="WHITE" layoutX="185.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16; -fx-fill: #DBF227;" text="Type:">
+            <Text fx:id="Logic_Core" fill="WHITE" layoutX="167.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18; -fx-fill: #DBF227;" text="Type:">
                <font>
                   <Font name="Calibri Bold" size="16.0" />
                </font>
@@ -54,7 +54,7 @@
                   <Image url="@png/cpu.png" />
                </image>
             </ImageView>
-            <Text fx:id="Phiys_Core" boundsType="VISUAL" fill="WHITE" layoutX="185.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16; -fx-fill: #DBF227;" text="Model" wrappingWidth="200.0">
+            <Text fx:id="Phiys_Core" boundsType="VISUAL" fill="WHITE" layoutX="172.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18; -fx-fill: #DBF227;" text="Model" wrappingWidth="200.0">
                <font>
                   <Font name="Calibri Bold" size="16.0" />
                </font>
@@ -64,7 +64,7 @@
                   <Font name="Calibri Bold" size="18.0" />
                </font>
             </Text>
-            <Text fx:id="CPU_Freq" fill="WHITE" layoutX="185.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16; -fx-fill: #DBF227;" text="Type:">
+            <Text fx:id="CPU_Freq" fill="WHITE" layoutX="149.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18; -fx-fill: #DBF227;" text="Type:">
                <font>
                   <Font name="Calibri Bold" size="16.0" />
                </font>

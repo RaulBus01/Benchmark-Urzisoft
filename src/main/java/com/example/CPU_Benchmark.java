@@ -48,7 +48,7 @@ public class CPU_Benchmark {
 
         // FIXED_POINT_OP_WARMUP
         fixedPointBenchmark.warmup();
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i <3; i++) {
 
             System.out.println("Warmup " + i);
             // RUN_ARITHMETIC
