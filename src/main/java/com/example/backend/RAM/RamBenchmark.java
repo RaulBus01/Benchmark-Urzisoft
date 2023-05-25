@@ -15,7 +15,7 @@ public class RamBenchmark{
     private static final int MIN_BUFFER_SIZE = 1024 * 1; // KB
     private static final int MAX_BUFFER_SIZE = 1024 * 1024 * 32; // MB
     private static final long MIN_FILE_SIZE = 1024 * 1024 * 1; // MB
-    private static final long MAX_FILE_SIZE = 4L*1024 * 1024 * 1024; // MB
+    private static final long MAX_FILE_SIZE = 512 * 1024 * 1024; // MB
     private BufferedImage[] images;
     private BufferedImage img = null;
     private int maxImages = 50;
@@ -34,12 +34,20 @@ public class RamBenchmark{
             for(int i = 0; i < maxImages && !canceled; i++)
             {
                 System.out.println("Image " + i + " of " + maxImages);
-                String path = "src/main/resources/com/example/frontend_urzisoft/output/" + Integer.toString(i) + ".js";
+                String path = "src/main/resources/com/example/frontend_urzisoft/output/" + i + ".js";
                 this.bytes = this.bytes + Files.size(Path.of(path));
                 images[i] = ImageIO.read(new File(path));
                 File file = Path.of(path).toFile();
+            }
 
-
+            if(canceled)
+            {
+                for(int i = 0; i < maxImages; i++)
+                {
+                    String path = "src/main/resources/com/example/frontend_urzisoft/output/" + i + ".js";
+                    File file = Path.of(path).toFile();
+                    file.delete();
+                }
             }
 
         } catch (IOException e) {

@@ -6,15 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="e57a20e6-0f23-41e6-937b-3a158c4b4f94" name="Changes" comment="&#10;Fixed the score and Implementation for general use">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/CPU_Benchmark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/CPU_Benchmark.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/CPU/LZWEncoder.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/RAM/RamBenchmark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/RAM/RamBenchmark.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/RAM/RamBenchmark_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/RAM/RamBenchmark_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/DataBase/MongoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/DataBase/MongoDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/frontend_urzisoft/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/CPU-View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/CPU-View.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/Home-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/Home-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/RAM-View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/RAM-View.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/RAMTEST-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/RAMTEST-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/About-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/About-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/frontend_urzisoft/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -130,7 +126,7 @@
     </configuration>
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.frontend_urzisoft.HelloApplication" />
-      <module name="Benchmark-Urzisoft" />
+      <module name="Frontend_Urzisoft" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.frontend_urzisoft.*" />
@@ -485,6 +481,16 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/example/CPU_Benchmark.java</url>
           <line>45</line>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend/RAM/RamBenchmark.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend/RAM/RamBenchmark.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

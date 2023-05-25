@@ -17,23 +17,32 @@ import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Side;
 
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
 
+import java.awt.*;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.*;
-
+import java.util.List;
 
 
 import javafx.scene.layout.Pane;
@@ -88,7 +97,7 @@ public class HelloController implements Initializable {
                 //System.out.println("RAM: " + ram1.getManufacturer() + " " + ram1.getBank() + " " + ram1.getCapacity() + " " + ram1.getFrequency());
             }
         }
-        RAM_id = capacity + " GB " + ram.get(0).getFrequency() + "MHz" + " " + ram.get(0).getMemoryType();
+        RAM_id = capacity + " GB " + ram.get(0).getFrequency() + " " + ram.get(0).getMemoryType();
 
         //System.out.println("SYI: " + this.syi.getOperatingSystem() + " " + this.syi.getModel() + " Motherboard: " + this.syi.getMotherboard());
     }
@@ -902,8 +911,27 @@ public class HelloController implements Initializable {
 
         Pane pane = (Pane) newSidePane.lookup("#TeamPane");
         Button teamButton = (Button) newSidePane.lookup("#TeamButton");
+        Button moreButton = (Button) newSidePane.lookup("#MoreButton");
         Button aboutButton = (Button) newSidePane.lookup("#AboutButton");
 
+
+        moreButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                openBrowserLink();
+            }
+
+            private void openBrowserLink() {
+                if (Desktop.isDesktopSupported()) {
+                    Desktop desktop = Desktop.getDesktop();
+                    try {
+                        desktop.browse(new URI("http://github.com/RaulBus01/Benchmark-Urzisoft/"));
+                    } catch (IOException | URISyntaxException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
         final boolean[] isAbout = {true};
 
         teamButton.setOnMouseClicked(event -> {

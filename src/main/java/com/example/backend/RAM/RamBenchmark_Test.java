@@ -5,6 +5,7 @@ import  com.example.backend.timing.Timer;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
+import java.util.ArrayList;
 
 public class RamBenchmark_Test {
 
@@ -14,45 +15,47 @@ public class RamBenchmark_Test {
     private String suffix = ".js";
     private int minIndex = 0;
     private int maxIndex = 8;
-    private long fileSize = 512*1024*1024; // 256, 512 MB, 1GB // type Long!
+    private long fileSize = 512L * 1024 * 1024; // 256, 512 MB, 1GB // type Long!
     private int bufferSize = 2*1024; // 4 KB
     private RamBenchmark bench = new RamBenchmark();
-    public void startBenchmark(){
+    private ArrayList<Double> scores = new ArrayList<Double>(3);
 
-        Timer t = new Timer();
-        bench.initialize(8);
-        try {
+    public void startBenchmark() {
 
-            bench.streamWriteFixedFileSize(prefix, suffix, minIndex, maxIndex, fileSize, true);
+        for(int j = 0; j < 3; j++) {
+            Timer t = new Timer();
+            bench.initialize(8);
+            try {
 
-        } catch (IOException e) {
+                bench.streamWriteFixedFileSize(prefix, suffix, minIndex, maxIndex, fileSize, true);
 
-            throw new RuntimeException(e);
+            } catch (IOException e) {
+
+                throw new RuntimeException(e);
+            }
+
+            t.start();
+            bench.run();
+
+            long time = t.stop();
+            for (int i = 0; i < 8; i++) {
+                String path = "src/main/resources/com/example/frontend_urzisoft/output/" + Integer.toString(i) + ".js";
+
+                File file = Path.of(path).toFile();
+
+                file.delete();
+            }
+            double timeinsec = (double) time / 1000000000;
+
+            score = bench.getResult() / timeinsec;
+            scores.add(score);
         }
-
-        t.start();
-        bench.run();
-
-        long time = t.stop();
-        for(int i = 0; i < 8; i++)
-        {
-            String path = "src/main/resources/com/example/frontend_urzisoft/output/" + Integer.toString(i) + ".js";
-
-            File file = Path.of(path).toFile();
-
-            file.delete();
-
-
-
-        }
-        double timeinsec = (double)time / 1000000000;
-
-        score = bench.getResult() / (double)timeinsec;
-
+        scores.sort(Double::compareTo);
+        System.out.println("Scores: " + scores);
     }
 
     public double getScore() {
-        return score/5.5;
+        return scores.get(1)/5.5;
     }
 
     public void cancel(){
