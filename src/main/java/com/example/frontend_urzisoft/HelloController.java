@@ -671,6 +671,7 @@ public class HelloController implements Initializable {
                 if (!isCancelled())
                 {
                     updateMessage("Loading RAM");
+                    ramBench.warmUp();
                    ramBench.startBenchmark();
                 }
 
@@ -843,8 +844,7 @@ public class HelloController implements Initializable {
     }
 
     @FXML
-    protected void onLeaderboardButtonClicked() throws IOException
-    {
+    protected void onLeaderboardButtonClicked() throws IOException {
         AnchorPane newSidePane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Leaderboard-view.fxml")));
         borderpane.getChildren().setAll(newSidePane);
         ImageView aboutImage = (ImageView) borderpane.getParent().lookup("#AboutPng");
@@ -864,7 +864,6 @@ public class HelloController implements Initializable {
         FindIterable<Document> documents = mongoDB.getCollection().find();
 
 
-
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("user"));
         cpuColumn.setCellValueFactory(new PropertyValueFactory<>("CPU"));
         ramColumn.setCellValueFactory(new PropertyValueFactory<>("RAM"));
@@ -874,27 +873,16 @@ public class HelloController implements Initializable {
 
 
         ObservableList<LeaderboardEntry> data = FXCollections.observableArrayList();
-        for (Document doc : documents)
-        {
-            LeaderboardEntry entry= new LeaderboardEntry(doc.getString("user"), doc.getString("CPU"), doc.getString("RAM"), doc.getInteger("CPUScore"), doc.getInteger("RAMScore"), doc.getInteger("TotalScore"));
+        for (Document doc : documents) {
+            LeaderboardEntry entry = new LeaderboardEntry(doc.getString("user"), doc.getString("CPU"), doc.getString("RAM"), doc.getInteger("CPUScore"), doc.getInteger("RAMScore"), doc.getInteger("TotalScore"));
 
             data.add(entry);
         }
         data.sort(Comparator.comparingInt(LeaderboardEntry::getTotalScore).reversed());
 
         table.setItems(data);
-
-
-
-
-
-
-
-
-
-
-
     }
+
     @FXML
     protected void onAboutButtonClicked() throws IOException
     {
