@@ -38,14 +38,6 @@ The leaderboard feature allows you to save benchmark scores for future reference
 
 If you encounter any issues or have suggestions for improvement, please open an issue or submit a pull request on the benchmark's GitHub repository.
 
-## License
-
-This benchmark is open source and released under the [MIT License](LICENSE).
-
-## Acknowledgements
-
-We would like to acknowledge the contributions of the developers and researchers who have contributed to the benchmark's algorithms and methodologies.
-
 ## Disclaimer
 
 This benchmark provides performance measurements based on specific algorithms and workloads. The results may vary depending on the system configuration, hardware, and software environment. Use these results as a reference and consider running the benchmark on your specific system to evaluate its performance accurately.
