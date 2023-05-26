@@ -5,7 +5,7 @@ This benchmark measures the performance of RAM and CPU using single-core and mul
 ## Minimum Requirements
 
 - 2GB RAM
-- Java Runtime Environment (JRE) to run the Jar file
+- Java Runtime Environment (JRE) [v19.0.2](https://www.oracle.com/java/technologies/javase/jdk19-archive-downloads.html) or higher to run the Jar file
 
 ## Features
 
