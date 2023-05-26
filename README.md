@@ -20,9 +20,10 @@ This benchmark measures the performance of RAM and CPU using single-core and mul
 2. Download the benchmark Jar file.
 3. Run the Jar file using the following command in the terminal or command prompt:
 
-   ```
+   ```powershell
    java -jar benchmark.jar
    ```
+   Note that you will need to run the benchmark using a specific JRE 19.0.2
 
 4. The benchmark will execute different tests and provide the results.
 
